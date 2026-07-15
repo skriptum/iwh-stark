@@ -4,7 +4,7 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 
 
 
-Fragen
+**Fragen**:
 
 - Welche Stein-/Braunkohlekraftwerke werden in den Revieren abgeschaltet?
   - Wie viele Beschäftigte haben dort gearbeitet?
@@ -14,13 +14,56 @@ Fragen
 
 
 
-Datensatz 1: AbbauKW
 
-| Variable | Beschreibung | Quelle |
-| -------- | ------------ | ------ |
-|          |              |        |
-|          |              |        |
-|          |              |        |
 
-Datensatz 2: AufbauKW
+**Datenquellen**
 
+- Marktstammdatenregister (MASTR): [Bundesnetzagentur](https://www.marktstammdatenregister.de/MaStR)
+- Kraftwerksliste (KWL): [Bundesnetzagentur](https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/start.html), basiert auf MASTR
+- Liste deutscher Braunkohletagebaue (LBKT): [Wikipedia](https://de.wikipedia.org/wiki/Liste_deutscher_Braunkohletagebaue#Weblinks)
+- PLZ-Zuordnung zu Ort / BL (PLZ): [Postleitzahl.net](https://www.postleitzahl.net/plz-downloads)
+- Kompensation für Kraftwerke (KVBG): [Anlage 2 KVBG](https://www.buzer.de/Anlage_2_KVBG.htm)
+- Fördergebiete / Reviere (INVKG): [§2 / §11 / §12 InvKG](https://www.vdivde-it.de/sites/default/files/document/Hinweisblatt-F%c3%b6rdergebiete_0.pdf)
+
+
+
+**Datensatz 1**: AbbauKW
+
+| Variable            | Beschreibung / Kommentar                                | Quelle |
+| ------------------- | ------------------------------------------------------- | ------ |
+| nr_MASTR            | Nr im MASTR                                             | KWL    |
+| betreiber           | Betreiber des Kraftwerks (unvollständig!)               | KWL    |
+| name                | Name des Kraftwerks (unvollständig!)                    | KWL    |
+| energietraeger      | Erdgas, Kohle etc                                       | KWL    |
+| leistung_brutto     | Bruttoleistung in Megawatt                              | KWL    |
+| leistung_netto      | Nettoleistung in Megawatt                               | KWL    |
+| plz                 | Postleitzahl                                            | KWL    |
+| kreis               | Landkreis                                               | PLZ    |
+| bundesland          | Bundesland                                              | PLZ    |
+| region              | `Rheinisches Revier`, `Mitteldeutsches Revier`, ...     | INVKG  |
+|                     |                                                         |        |
+| jahr_inbetriebnahme | Jahr der Inbetriebname des KW                           | KWL    |
+| stillgelegt         | `true / false`                                          |        |
+| stillegung_type     | `EnWG / KVBG / ohne / KVBG_gestreckt / reserve / other` | KWL    |
+| jahr_stillegung     | wenn `stillgelegt=true`                                 | KWL    |
+| entschädigung_kvbg  | `true / false`                                          | KVBG   |
+
+Erklärung zu `stillegung_type`: Diese Variable erklärt, aus welchem Grund das KW stillgelegt wurde, bspw nach KVBG etc
+
+
+
+**Datensatz 2**: AufbauKW
+
+| Variable | Beschreibung                                                 | Quelle |
+| -------- | ------------------------------------------------------------ | ------ |
+| nr_MASTR | Nr im MASTR |        |
+| anlagenbetreiber    | Betreiber des Kraftwerks (unvollständig!)               | KWL    |
+| anzeigename         | Name des Kraftwerks (unvollständig!)                    | KWL    |
+| energietraeger      | Erdgas, Kohle etc                                       | KWL    |
+| bruttoleistung      | Bruttoleistung in Megawatt                              | KWL    |
+| nettoleistung       | Nettoleistung in Megawatt                               | KWL    |
+| region   | `Rheinisches Revier`, `Mitteldeutsches Revier`, ...          | INVKG  |
+| tagebau  | `true/false`: ob die Analge auf ehemaligen Tagebaugebiet ist | LBKT |
+| plz                 | Postleitzahl                                            | MASTR  |
+| kreis               | Landkreis                                               | PLZ    |
+| bundesland          | Bundesland                                              | PLZ    |
