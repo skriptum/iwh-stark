@@ -1,0 +1,325 @@
+nr_MASTR,name,betreiber,energietraeger,leistung_brutto,leistung_netto,jahr_inbetriebnahme,plz,stillgelegt,jahr_stillegung,stillegung_type,ort,landkreis,Bundesland,Paragraph,Revier
+SEE905721866655,Fab Frechen,RWE Power AG,Braunkohle,82,56,1962,50226,FALSE,NA,NA,Frechen,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE902114639810,Bitterfeld BHKW,envia THERM GmbH,Erdgas,2.478,2,2016,06749,FALSE,NA,NA,Bitterfeld-Wolfen,Landkreis Anhalt-Bitterfeld,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE909886576275,Weisweiler G VGT,RWE Power AG,Erdgas,202,200,2006,52249,FALSE,NA,NA,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE903983424590,Kraftwerk Knapsack II,Statkraft Markets GmbH,Erdgas,450,430,2013,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE915851127786,BHKW Schwarzer Weg,STAWAG – Stadt- und Städteregionswerke Aachen AG,Erdgas,22.535,21.505,2023,52070,FALSE,NA,NA,Aachen,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE904165703137,GT1,BASF InfraService & Solutions Lausitz GmbH,Erdgas,52,51.35,1994,01987,FALSE,NA,NA,Schwarzheide,Landkreis Oberspreewald-Lausitz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE900348277440,BHKW Hafen - Modul 4,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,2.19,2.173,2013,59067,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE906830618081,Fab Fortuna,RWE Power AG,Braunkohle,30,15,1948,50129,FALSE,NA,NA,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE908746529123,GuD-Block 3,Stadtwerke Rostock Aktiengesellschaft,Erdgas,37,36,1996,18069,FALSE,NA,NA,Lambrechtshagen,Landkreis Rostock,Mecklenburg-Vorpommern,§11/12,Steinkohlenbergbaugebiete
+SEE917689107459,BESS Merseburg,Münch visiontec GmbH & Co. KG,Batteriespeicher,6.67,6.67,2023,06217,FALSE,NA,NA,Merseburg,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE906215229154,MVA EEW Helmstedt,EEW Energy from Waste Helmstedt GmbH,Abfall,42.3,37.5,2014,38372,FALSE,NA,NA,Helmstedt,Landkreis Helmstedt,Niedersachsen,§11/12,Steinkohlenbergbaugebiete
+SEE916532936024,Batteriespeicher Westfalen 1,RWE Generation SE,Batteriespeicher,174.24,140,2024,59071,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE908089235248,Dormagen GT2,RWE Generation SE,Erdgas,189,184,2000,41540,FALSE,NA,NA,Dormagen,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE906681939748,BHKW Hafen - Modul 1,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,2.19,2.173,2013,59067,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE914128531905,Euskirchen Generator 2,Pfeifer & Langen GmbH & Co. KG,Erdgas,6.6,6.232,1981,53879,FALSE,NA,NA,Euskirchen,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE912020488365,Ruhrort 2,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),64,59.6,1955,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE911129038174,BHKW-Anlage,Stadtwerke Cottbus GmbH,Erdgas,53.916,53.481,2022,03052,FALSE,NA,NA,Cottbus - Chóśebuz,Cottbus - Chóśebuz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE905270326723,Großkayna GT3,envia THERM GmbH,Mineraloelprodukte,45.625,45.625,1994,06242,FALSE,NA,NA,Braunsbedra,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE914857304191,Dormagen GT1,RWE Generation SE,Erdgas,189,184,2000,41540,FALSE,NA,NA,Dormagen,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE911454349471,Batteriespeicher Garzweiler,RWE Battery Solutions GmbH,Batteriespeicher,6.5,6.5,2023,50181,FALSE,NA,NA,Bedburg,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE918609979057,Heizkraftwerk Leipzig Süd GTA 9A,Stadtwerke Leipzig GmbH,Erdgas,66.766,66.321,2022,04279,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE912681231416,Anlage 2009,Mercer Torgau GmbH & Co. KG,Biomasse,2.59,2.578,2009,04860,FALSE,NA,NA,Dreiheide,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE905930139120,Big Battery Lausitz,Lausitz Energie Kraftwerke AG,Batteriespeicher,66,66,2020,03130,FALSE,NA,NA,Felixsee,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE918143230942,Walsum 10,STEAG Power GmbH,Steinkohle,790,725,2013,47179,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE921905907730,Niederaußem G,RWE Power AG,Braunkohle,668,628,1974,50129,FALSE,2033,KVBG,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE929516405690,BMK Lünen,BMK Biomassekraftwerk Lünen GmbH,Biomasse,20.5,18.5,2006,44536,FALSE,NA,NA,Lünen,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE930277153294,Mitte BHKW 2 Modul 7,Stadtwerke Duisburg AG,Erdgas,4.5,4.472,2023,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE915885358156,HKW III  Block B,Stadtwerke Duisburg AG,Erdgas,75.3,75.2,2004,47249,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE918705951896,GT2,BASF InfraService & Solutions Lausitz GmbH,Erdgas,40.94,40.428,1994,01987,FALSE,NA,NA,Schwarzheide,Landkreis Oberspreewald-Lausitz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE905192478234,Knapsack I - Gasturbine GT12,Knapsack Power GmbH & Co. KG,Erdgas,295,295,2007,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE906326984744,Weiher 3,STEAG Power GmbH,Steinkohle,724,655.6,1976,66287,FALSE,NA,reserve,Quierschied,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE916662059105,GuD-Block 1,Stadtwerke Rostock Aktiengesellschaft,Erdgas,37,36,1996,18069,FALSE,NA,NA,Lambrechtshagen,Landkreis Rostock,Mecklenburg-Vorpommern,§11/12,Steinkohlenbergbaugebiete
+SEE913203719740,GKW,AG der Dillinger Hüttenwerke,Sonstige Energietraeger (nicht erneuerbar),95.558,89.337,2009,66763,FALSE,NA,NA,Dillingen/Saar,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE902932530221,Second Foundation BESS Oberröblingen,BESS Oberröblingen GmbH & Co. KG,Batteriespeicher,13.8,13.8,2025,06526,FALSE,NA,NA,Sangerhausen,Landkreis Mansfeld-Südharz,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE922579581844,GT2,Smurfit Westrock Zülpich Paper GmbH,Erdgas,5.9895,4.946,1996,53909,FALSE,NA,NA,Zülpich,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE924053403383,"Shell Energy and Chemicals Park, Kraftwerk Wesseling, Turbine 5",Shell Deutschland GmbH,Mineraloelprodukte,34.3,34.3,1979,50389,FALSE,NA,NA,Wesseling,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE907389779292,Boxberg Block Q,Lausitz Energie Kraftwerke AG,Braunkohle,893,840,2000,02943,FALSE,2038,KVBG,Boxberg/O.L. - Hamor,Landkreis Görlitz,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE912160334607,Leuna GT2,TotalEnergies Raffinerie Mitteldeutschland GmbH,Erdgas,37.6,37,1994,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE928761575349,EEW Großräschen GmbH,EEW Energy from Waste Großräschen GmbH,Abfall,25,25,2008,01983,FALSE,NA,NA,Großräschen,Landkreis Oberspreewald-Lausitz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE933236950972,Scholven C,Uniper Kraftwerke GmbH,Steinkohle,370,345,1969,45896,FALSE,NA,other,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE904017020009,ET HO5,ROGESA Roheisengesellschaft Saar mbH,Sonstige Energietraeger (nicht erneuerbar),9.52,9.52,1984,66763,FALSE,NA,NA,Dillingen/Saar,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE923943268279,Kraftwerk Jänschwalde Block D,Lausitz Energie Kraftwerke AG,Braunkohle,535,500,1985,03185,FALSE,NA,NA,Drachhausen,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE921449009914,Dampfturbine IV CropEnergies Zeitz,CropEnergies Bioethanol GmbH,Erdgas,20.273,17.773,2004,06712,FALSE,NA,NA,Gutenborn,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE905647753862,Partition_3,BMW AG,Batteriespeicher,3.4,3.4,2017,04349,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE900403199748,Heizkraftwerk Halle-Trotha - Dampfturbine,Heizkraftwerk Halle-Trotha GmbH,Erdgas,12.471,12.1585,1994,06118,FALSE,NA,NA,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE900957573537,KT1,InfraLeuna GmbH,Waerme,21.6,20,2010,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE904887370686,DT1,InfraLeuna GmbH,Waerme,9.1,8.7,1994,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE922849915072,MVA Hamm Turbine 1,MHB Hamm Betriebsführungsgesellschaft mbH,Abfall,9.094,6.6,1985,59075,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE912440649056,Euskirchen Generator 3,Pfeifer & Langen GmbH & Co. KG,Braunkohle,1.2,1.133,1980,53879,TRUE,2022,KVBG,Euskirchen,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE936196276359,Heizkraftwerk Leipzig Nord GT82,Stadtwerke Leipzig GmbH,Erdgas,65.867,64.603,2022,04105,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE915108754215,Kraftwerk Basell Wesseling,Basell Polyolefine GmbH,Mineraloelprodukte,102,90,1962,50389,FALSE,NA,NA,Wesseling,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE909689464656,ET Prozessdampf,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),1.2,1.2,2013,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE916495905242,HKW III  Block B,Stadtwerke Duisburg AG,Waerme,88.3,84,2005,47249,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE922855765289,HKW III  Block B,Stadtwerke Duisburg AG,Erdgas,75.3,75.2,2004,47249,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE915375007878,Mitte BHKW 2 Modul 4,Stadtwerke Duisburg AG,Erdgas,4.5,4.472,2023,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE900628853036,Trianel Gaskraftwerk Hamm Block 20,Trianel Gaskraftwerk Hamm,Erdgas,453,445,2007,59071,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE907222955227,Sermuth BHKW 3,envia THERM GmbH,Mineraloelprodukte,7.2,5.7,1995,04680,FALSE,NA,NA,Colditz,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE927727929912,MVA-Turbine,MVA Weisweiler GmbH & Co. KG,Abfall,33,27,1996,52249,FALSE,NA,NA,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE934669010578,Bitterfeld GuD,envia THERM GmbH,Erdgas,110,108,2000,06749,FALSE,NA,NA,Bitterfeld-Wolfen,Landkreis Anhalt-Bitterfeld,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE908672656115,Gersteinwerk G DT (G2),RWE Generation SE,Erdgas,355,355,1973,59368,FALSE,NA,reserve,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE912935247576,Raffineriekraftwerk Leuna MDT,TotalEnergies Raffinerie Mitteldeutschland GmbH,Mineraloelprodukte,38.3,33.4,1997,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE927622980674,Euskirchen Generator 1,Pfeifer & Langen GmbH & Co. KG,Braunkohle,7.2,7.2,1979,53879,TRUE,2024,KVBG,Euskirchen,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE956207547964,BHKW Hafen - Modul 3,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,2.19,2.173,2013,59067,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE967448123107,BHKW Hafen - Modul 2,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,2.19,2.173,2013,59067,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE917568874298,7710MKA10-DT,Sachsenmilch Leppersdorf GmbH,Waerme,6.44,5.874,2014,01454,FALSE,NA,NA,Radeberg,Landkreis Bautzen,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE900310540558,Speicher Beilrode I - Teilanlage 6,Solarpark Beilrode GmbH & Co. KG,Batteriespeicher,6.16,6.16,2025,04886,FALSE,NA,NA,Arzberg,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE913072031325,Beilrode II - BESS - CoLocation,Solarpark Beilrode GmbH & Co. KG,Batteriespeicher,44.72,44.72,2026,04886,FALSE,NA,NA,Arzberg,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE913483427694,Speicher Beilrode II - Teilanlage 1,Solarpark Beilrode GmbH & Co. KG,Batteriespeicher,10.4,10.4,2025,04886,FALSE,NA,NA,Arzberg,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE916877868585,Hamborn 4,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),108,101.3,1976,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE930842265841,BESS Halle (Saale),CCE Deutschland GmbH,Batteriespeicher,11.263,11.263,2025,06116,FALSE,NA,NA,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE919395394109,Leipzig KWK 2,BMW AG,Erdgas,3.36,3.36,2016,04349,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE938587513135,Scholven 1 GT2,Uniper Kraftwerke GmbH,Erdgas,55,54,2023,45896,FALSE,NA,NA,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE927630371594,Grubenheizkraftwerk Amsdorf,ROMONTA GmbH,Braunkohle,45.189,45.189,1960,06317,FALSE,NA,NA,Seegebiet Mansfelder Land,Landkreis Mansfeld-Südharz,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE922877375398,GuD Anlage GT,Julius Schulte Trebsen GmbH & Co. KG,Erdgas,9.023,9.023,2013,04687,FALSE,NA,NA,Trebsen/Mulde,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE915051196278,BHKW Ford Saarlouis Modul 4,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA,Saarlouis,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE919134316447,Schkopau A+B Bahngenerator,Saale Energie GmbH,Waerme,112,110,1996,06258,FALSE,2034,KVBG,Schkopau,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE938337436349,Kraftwerk Schwarze Pumpe Block A,Lausitz Energie Kraftwerke AG,Braunkohle,803,755,1997,03130,FALSE,2038,KVBG,Felixsee,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE952672318108,Kraftwerk Schwarze Pumpe Block B,Lausitz Energie Kraftwerke AG,Braunkohle,803,755,1998,03130,FALSE,2038,KVBG,Felixsee,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE925794342412,TREA Leuna 2,MVV Umwelt Asset GmbH,Abfall,18.545,16.245,2007,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE932787342328,Gersteinwerk G GT (G1),RWE Generation SE,Erdgas,72,55,1973,59368,FALSE,NA,reserve,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE952352206145,Scholven B,Uniper Kraftwerke GmbH,Steinkohle,370,345,1968,45896,FALSE,NA,other,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE939692270074,Scholven 1 GT1,Uniper Kraftwerke GmbH,Erdgas,55,54,2023,45896,FALSE,NA,NA,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE942234222677,BHKW Hafen - Modul 5,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,2.19,2.173,2013,59067,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE927968132478,ET HO 9,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),7,7,1990,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE936262825863,Ruhrort 4,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),177,164.7,1969,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE939242219362,Huckingen A,Hüttenwerke Krupp Mannesmann GmbH,Sonstige Energietraeger (nicht erneuerbar),320,303,1975,47259,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE934298270268,T.A. Lauta,Thermische Abfallbehandlung Lauta GmbH & Co. oHG,Abfall,21,15.7,2004,02991,FALSE,NA,NA,Lauta,Landkreis Bautzen,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE905410926998,FZJ_WVVZ-03.19_BHKW-1,Forschungszentrum Jülich GmbH,Erdgas,4.3,4.3,2022,52428,FALSE,NA,NA,Jülich,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE961788817153,DT2,BASF InfraService & Solutions Lausitz GmbH,Erdgas,9.256,9.156,1997,01987,FALSE,NA,NA,Schwarzheide,Landkreis Oberspreewald-Lausitz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE965067693100,Kraftwerk DK,DK Recycling und Roheisen GmbH,Erdgas,22.1,20.85,2011,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE919393178787,Fenne MKV,STEAG Power GmbH,Steinkohle,195,179,1982,66333,FALSE,NA,reserve,Völklingen,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE919443669678,GBS KW Fenne,Iqony Battery System,Batteriespeicher,15,15,2016,66333,FALSE,NA,NA,Völklingen,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE922519934914,Euskirchen BHKW,Pfeifer & Langen GmbH & Co. KG,Erdgas,1.2,1.178,2022,53879,FALSE,NA,NA,Euskirchen,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE943565217936,Partition_4,BMW AG,Batteriespeicher,3.4,3.4,2017,04349,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE905490507995,Q_ESS_Luenen,Coulomb GmbH,Batteriespeicher,11.92,11.92,2016,44536,FALSE,NA,NA,Lünen,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE950895373805,Dampfturbinenanlage DT3,Energie SaarLorLux AG,Erdgas,34.6,34,2011,66121,FALSE,NA,NA,Saarbrücken,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE970579995963,Scholven 1 DT,Uniper Kraftwerke GmbH,Waerme,30.802,30,2023,45896,FALSE,NA,NA,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE932907515472,Elsteraue Battery Storage,Obton Storage GmbH & Co. KG,Batteriespeicher,13.8,13.8,2022,06729,FALSE,NA,NA,Elsteraue,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE901050642113,Heizkraftwerk Dieselstraße Block C,EVH GmbH,Erdgas,57.322,57.322,2020,06130,FALSE,NA,NA,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE904662075126,7712MKA10-GT2,Sachsenmilch Leppersdorf GmbH,Erdgas,15.45,14.885,2014,01454,FALSE,NA,NA,Radeberg,Landkreis Bautzen,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE908125004449,Boxberg Block P,Lausitz Energie Kraftwerke AG,Braunkohle,540,500,1980,02943,FALSE,2029,KVBG,Boxberg/O.L. - Hamor,Landkreis Görlitz,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE936042422251,GT,Kraftwerk Neuss GmbH,Erdgas,16.971,16.871,2025,41460,FALSE,NA,NA,Neuss,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE937544161082,EBS Heizkraftwerk Spremberg,SpreeStromErzeugungs GmbH,Abfall,22.707,17.5,2012,03130,FALSE,NA,NA,Felixsee,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE966331411864,Kraftwerk Lippendorf Block R,Lausitz Energie Kraftwerke AG,Braunkohle,942,891,2000,04575,FALSE,2035,KVBG,Neukieritzsch,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE911097916719,Gasturbine Model Sachsen Papier,Model Sachsen Papier GmbH,Erdgas,30.6493,30.6493,2009,04838,FALSE,NA,NA,Doberschütz,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE912994271871,Hamborn 3,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),64,59.6,1958,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE915966254872,Hamborn 5,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),241,225,2003,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE946556052639,GSH Green Steam Hürth GmbH,GSH Green Steam Hürth GmbH,Biomasse,20,18.3,2023,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE923304040681,Gersteinwerk F GT (F1),RWE Generation SE,Erdgas,72,55,1972,59368,FALSE,NA,reserve,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE926900618322,Sermuth BHKW 1,envia THERM GmbH,Mineraloelprodukte,7.2,5.7,1995,04680,FALSE,NA,NA,Colditz,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE927582792126,BESS Leuna 2,Münch NextGen Storage GmbH,Batteriespeicher,50.94,46.332,2026,06217,FALSE,NA,NA,Merseburg,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE930982693153,Knapsack I - Gasturbine  GT11,Knapsack Power GmbH & Co. KG,Erdgas,295,295,2007,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE914438115895,Heizkraftwerk Dieselstraße Block A,EVH GmbH,Erdgas,57.646,56.845,2020,06130,FALSE,NA,NA,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE925158531827,Heizkraftwerk Dieselstraße NEA,EVH GmbH,Erdgas,1.56,1.541,2020,06130,FALSE,NA,NA,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE931406146903,LBG-1/599,Ruhr Oel GmbH – BP Gelsenkirchen,Sonstige Energietraeger (nicht erneuerbar),15,15,2025,45896,FALSE,NA,NA,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE941844408532,Großkayna GT2,envia THERM GmbH,Mineraloelprodukte,45.625,45.625,1994,06242,FALSE,NA,NA,Braunsbedra,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE957229968300,Niederaußem H,RWE Power AG,Braunkohle,690,648,1974,50129,FALSE,2030,KVBG,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE918916993708,Wolfen GT,envia THERM GmbH,Erdgas,50,50,1996,06766,FALSE,NA,NA,Bitterfeld-Wolfen,Landkreis Anhalt-Bitterfeld,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE923244371197,Heizkraftwerk Leipzig Nord GT81,Stadtwerke Leipzig GmbH,Erdgas,64.783,63.54,1996,04105,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE956906670420,BMHKW Bergkamen,E.ON Energy Solutions GmbH,Biomasse,20,18.472,2005,59192,FALSE,NA,NA,Bergkamen,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE966844914388,Großkayna GT1,envia THERM GmbH,Mineraloelprodukte,45.625,45.625,1994,06242,FALSE,NA,NA,Braunsbedra,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE976362409624,BES GRO,BES Groitzsch GmbH& Co. KG,Batteriespeicher,17.25,16.425,2019,04539,FALSE,NA,NA,Groitzsch,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE930673793902,Bergkamen A,STEAG Power GmbH,Steinkohle,780,720,1981,59192,FALSE,NA,reserve,Bergkamen,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE958519166192,ET HO4,ROGESA Roheisengesellschaft Saar mbH,Sonstige Energietraeger (nicht erneuerbar),9.52,9.52,1986,66763,FALSE,NA,NA,Dillingen/Saar,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE925599434282,Neurath F,RWE Power AG,Braunkohle,1110,1060,2012,41517,FALSE,2030,KVBG,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE943297204990,ZF-SBR-GuD-Heizkraftwerk,Energie SaarLorLux AG,Erdgas,39.0292,38.6102,2012,66117,FALSE,NA,NA,Saarbrücken,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE938669585906,Kraftwerk Jänschwalde Block B,Lausitz Energie Kraftwerke AG,Braunkohle,535,500,1982,03185,FALSE,NA,NA,Drachhausen,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE993116568932,Batteriespeicher Neurath,RWE Generation SE,Batteriespeicher,99,80,2025,41517,FALSE,NA,NA,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE993592183001,Neurath G,RWE Power AG,Braunkohle,1110,1060,2012,41517,FALSE,2030,KVBG,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE942226311273,GuD-Block 2,Stadtwerke Rostock Aktiengesellschaft,Erdgas,37,36,1996,18069,FALSE,NA,NA,Lambrechtshagen,Landkreis Rostock,Mecklenburg-Vorpommern,§11/12,Steinkohlenbergbaugebiete
+SEE971138728251,GBS KW Herne,Iqony Battery System,Batteriespeicher,15,15,2016,44653,FALSE,NA,NA,Herne,Herne,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE954883124240,DT,Kraftwerk Neuss GmbH,Erdgas,6.451,6.303,2025,41460,FALSE,NA,NA,Neuss,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE955696590697,BMKW Königs Wusterhausen,MVV Umwelt Asset GmbH,Biomasse,20.6,17.7,2003,15711,FALSE,NA,NA,Königs Wusterhausen,Landkreis Dahme-Spreewald,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE964745752825,HKW III  Block A,Stadtwerke Duisburg AG,Erdgas,35.6,35,1974,47249,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE973931205885,GSH Green Steam Hürth - Stromerzeugung nach KWKG,GSH Green Steam Hürth GmbH,Abfall,20,18.3,2025,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE974038381946,BESS Krumpa I,Münch EnerStore GmbH,Batteriespeicher,50.94,46.332,2026,06242,FALSE,NA,NA,Braunsbedra,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE980915157566,Heizkraftwerk Leipzig Süd GTA 9B,Stadtwerke Leipzig GmbH,Erdgas,66.465,66.02,2022,04279,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE971164680486,DT1,BASF InfraService & Solutions Lausitz GmbH,Erdgas,25.84,25.517,1994,01987,FALSE,NA,NA,Schwarzheide,Landkreis Oberspreewald-Lausitz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE947020088925,KWK HS Timber,HS Timber Services GmbH,Biomasse,5.552,5.552,2020,02923,FALSE,NA,NA,Hähnichen,Landkreis Görlitz,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE932127408097,Generator Zorbau,PreZero Energy Zorbau GmbH,Abfall,29.68,27.2,2005,06686,FALSE,NA,NA,Lützen,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE948351715917,GuD Herne,GuD Herne GmbH,Erdgas,621,608,2022,44653,FALSE,NA,NA,Herne,Herne,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE964940893804,GBS KW Walsum,Iqony Battery System,Batteriespeicher,15,15,2016,47179,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE923129957027,Mitte BHKW 2 Modul 3,Stadtwerke Duisburg AG,Erdgas,4.5,4.472,2023,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE943538028071,BHKW Leipzig Nord,Stadtwerke Leipzig GmbH,Erdgas,1.999,1.999,2017,04105,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE934842271741,Batteriespeicher Jackerath,RWE Battery Solutions GmbH,Batteriespeicher,4.05,4.05,2023,50181,FALSE,NA,NA,Bedburg,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE955310827123,Heizkraftwerk Leipzig Nord DT8B,Stadtwerke Leipzig GmbH,Erdgas,25.743,25.249,2022,04105,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE961989517128,Bad Düben Battery Storage,Obton Storage GmbH & Co. KG,Batteriespeicher,13.883,13.883,2022,04849,FALSE,NA,NA,Bad Düben,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE970305352633,Dampfturbine III Südzucker Zeitz,Südzucker AG,Waerme,19.35,16.85,1993,06712,FALSE,NA,NA,Gutenborn,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE927282130440,Gasmotorenkraftwerk Römerbrücke,Energie SaarLorLux AG,Erdgas,53.109,52.496,2022,66121,FALSE,NA,NA,Saarbrücken,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE930522848685,GT3,InfraLeuna GmbH,Erdgas,37.6,37,1994,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE942237774470,Gersteinwerk F DT (F2),RWE Generation SE,Erdgas,355,355,1972,59368,FALSE,NA,reserve,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE916508151147,BHKW Ford Saarlouis Modul 5,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA,Saarlouis,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE947225300921,GT1,InfraLeuna GmbH,Erdgas,37.6,37,1994,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE953987748918,Mitte BHKW 2 Modul 6,Stadtwerke Duisburg AG,Erdgas,4.5,4.472,2023,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE959044776498,Mitte BHKW 2 Modul 5,Stadtwerke Duisburg AG,Erdgas,4.5,4.472,2023,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE959576281422,Knapsack I - Dampfturbine - DT 10,Knapsack Power GmbH & Co. KG,Erdgas,290,290,2007,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE942777699660,EBKW Knapsack,EBS Kraftwerk GmbH,Abfall,33.42,29.9,2009,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE983252937631,Niederaußem K,RWE Power AG,Braunkohle,998,944,2003,50129,FALSE,2029,KVBG,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE945908806647,Herne 4,STEAG Power GmbH,Steinkohle,490,435,1989,44653,FALSE,NA,reserve,Herne,Herne,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE965768299069,Heizkraftwerk Halle-Trotha - Gasturbine,Heizkraftwerk Halle-Trotha GmbH,Erdgas,56.242,54.8325,1994,06118,FALSE,NA,NA,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE968206101610,GT3,Smurfit Westrock Zülpich Paper GmbH,Erdgas,5.4,4.946,1997,53909,FALSE,NA,NA,Zülpich,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE961029163353,Trianel Kohlekraftwerk Lünen,Trianel Kohlekraftwerk Lünen GmbH & Co KG,Steinkohle,812,746,2013,44536,FALSE,NA,NA,Lünen,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE963081865633,BES BEN,BES Bennewitz GmbH & Co. KG,Batteriespeicher,16.425,16.425,2018,04828,FALSE,NA,NA,Bennewitz,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE985107396679,Schwammenauel Maschine 1,RWE Generation Hydro GmbH,Wasser,14,14,1938,52396,FALSE,NA,NA,Heimbach,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE949799257847,Ruhrort 3,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),101,94,1963,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE973366398565,SEE PPO2,Progroup Power 2 GmbH,Abfall,21.9,19.339,2025,06792,FALSE,NA,NA,Sandersdorf-Brehna,Landkreis Anhalt-Bitterfeld,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE959858570855,GT4,InfraLeuna GmbH,Erdgas,39,38.4,1998,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE964448645769,BMKW Delitzsch,Danpower Energie Service GmbH,Biomasse,20,18.3,2004,04509,FALSE,NA,NA,Delitzsch,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE958260519834,Mitte BHKW3 M2,Stadtwerke Duisburg AG,Erdgas,4.5,4.4,2025,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE962496130121,BEE Merseburg GmbH,BEE Merseburg GmbH,Batteriespeicher,12,12,2025,06217,FALSE,NA,NA,Merseburg,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE981067351215,Heizkraftwerk Leipzig Süd Schwarzstartbatterie 9C,Stadtwerke Leipzig GmbH,Batteriespeicher,4,3.5,2022,04279,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE996047653111,"KW TRB Bitterfeld, Bitterfeld-Wolfen, Oststr. 1",PD energy GmbH,Abfall,11.44,10,2009,06749,FALSE,NA,NA,Bitterfeld-Wolfen,Landkreis Anhalt-Bitterfeld,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE986331287955,Fab Berrenrath,RWE Power AG,Braunkohle,107,98,1992,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE989200392347,7711MKA10-GT1,Sachsenmilch Leppersdorf GmbH,Erdgas,15.45,14.885,2014,01454,FALSE,NA,NA,Radeberg,Landkreis Bautzen,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE971914041024,Gasturbine Basell Wesseling,Basell Polyolefine GmbH,Erdgas,51.9,51.9,1996,50389,FALSE,NA,NA,Wesseling,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE968161544286,Mitte BHKW3 M1,Stadtwerke Duisburg AG,Erdgas,4.5,4.4,2025,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE987838157994,Fenne HKV,STEAG Power GmbH,Steinkohle,236,211,1989,66333,FALSE,NA,reserve,Völklingen,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE955314088254,Weisweiler H,RWE Power AG,Braunkohle,696,656,1975,52249,FALSE,2029,KVBG,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE957262802302,Anlage 2014,Mercer Torgau GmbH & Co. KG,Biomasse,5.3,4.95,2014,04860,FALSE,NA,NA,Dreiheide,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE929090964958,FZJ_WVVZ-03.19_BHKW-3,Forschungszentrum Jülich GmbH,Erdgas,4.3,4.3,2022,52428,FALSE,NA,NA,Jülich,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE943427876363,Kraftwerk Rostock Block A,EnBW Energie Baden-Württemberg AG,Steinkohle,553,514,1994,18147,FALSE,NA,NA,Rostock,Rostock,Mecklenburg-Vorpommern,§11/12,Steinkohlenbergbaugebiete
+SEE976826191515,MVA Hamm Turbine 2,MHB Hamm Betriebsführungsgesellschaft mbH,Abfall,8.95,6.5,1985,59075,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE994238154089,MVA Hamm Turbine 3,MHB Hamm Betriebsführungsgesellschaft mbH,Abfall,6.45,6.45,2006,59075,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE935153258285,ET HO 8,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),8,8,2012,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE945682618689,Dampfturbine Model Sachsen Papier,Model Sachsen Papier GmbH,Erdgas,16.62,16.2514,1994,04838,FALSE,NA,NA,Doberschütz,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE946568262484,Heizkraftwerk Dieselstraße Block B,EVH GmbH,Erdgas,57.95,57.144,2020,06130,FALSE,NA,NA,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE954351462355,Partition_2,BMW AG,Batteriespeicher,3.4,3.4,2017,04349,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE944498947082,BMHKW Biomasseheizkraftwerk Elsterwerda,Danpower GmbH,Biomasse,12.6,11.5,2004,04910,FALSE,NA,NA,Elsterwerda,Landkreis Elbe-Elster,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE965327731764,BHKW Jülich,Pfeifer & Langen GmbH & Co. KG,Erdgas,1.413,1.387,2002,52428,FALSE,NA,NA,Jülich,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE984352856976,Leipzig KWK 1,BMW AG,Erdgas,3.119,3.119,2009,04349,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE993638387103,NEA EEW Helmstedt,EEW Energy from Waste Helmstedt GmbH,Mineraloelprodukte,6,5.18,2018,38372,FALSE,NA,NA,Helmstedt,Landkreis Helmstedt,Niedersachsen,§11/12,Steinkohlenbergbaugebiete
+SEE998623498277,DT3,InfraLeuna GmbH,Waerme,24.4,23.9,2022,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE998199911088,Kraftwerk Lippendorf Block S,MIBRAG Kraftwerk Lippendorf GmbH,Braunkohle,942,891,1999,04575,FALSE,NA,NA,Neukieritzsch,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE991050894971,EKT,InfraLeuna GmbH,Waerme,14.7,14,2000,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE960158091162,T3,AG der Dillinger Hüttenwerke,Waerme,13,9.9,1971,66763,FALSE,NA,NA,Dillingen/Saar,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE986418252418,Partition_1,BMW AG,Batteriespeicher,3.4,3.4,2017,04349,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE968582186379,Boxberg Block R,Lausitz Energie Kraftwerke AG,Braunkohle,666,630,2012,02943,FALSE,2038,KVBG,Boxberg/O.L. - Hamor,Landkreis Görlitz,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE971932533266,Batteriespeicher Werne,RWE Supply & Trading GmbH,Batteriespeicher,72,72,2022,59368,FALSE,NA,NA,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE972612434835,Dampfturbine V Südzucker Zeitz,Südzucker AG,Waerme,5.804,5.641,2016,06712,FALSE,NA,NA,Gutenborn,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE965350369514,ET HO 1,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),16,16,1982,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE981876305560,TREA Leuna 1,MVV Umwelt Asset GmbH,Abfall,18.545,16.245,2005,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE982556430190,Raffineriekraftwerk Leuna HDT,TotalEnergies Raffinerie Mitteldeutschland GmbH,Mineraloelprodukte,33.6,29.3,1997,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE990523934756,"Shell Energy and Chemicals Park, Kraftwerk Wesseling, Turbine 1",Shell Deutschland GmbH,Mineraloelprodukte,35,35,1993,50389,FALSE,NA,NA,Wesseling,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE987113516188,Mitte BHKW 2 Modul 1,Stadtwerke Duisburg AG,Erdgas,4.5,4.472,2023,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE987709592503,ET HO 2,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),18,18,1993,47166,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE991220769276,Dormagen DT,RWE Generation SE,Erdgas,194,194,2000,41540,FALSE,NA,NA,Dormagen,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE992213654456,Huckingen B,Hüttenwerke Krupp Mannesmann GmbH,Sonstige Energietraeger (nicht erneuerbar),320,303,1976,47259,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE956061511231,GuD Anlage DT,Julius Schulte Trebsen GmbH & Co. KG,Erdgas,1.434,1.434,2013,04687,FALSE,NA,NA,Trebsen/Mulde,Landkreis Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE967403086416,Speicher Braunsbedra,Münch visiontec GmbH & Co. KG,Batteriespeicher,5,5,2024,06217,FALSE,NA,NA,Merseburg,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE992864019192,GT5,InfraLeuna GmbH,Erdgas,56.5,55.4,2022,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE941708872783,GBS KW Weiher,Iqony Battery System,Batteriespeicher,15,15,2016,66287,FALSE,NA,NA,Quierschied,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE944787978346,Gaskesselhaus DT,Martinswerk GmbH,Erdgas,5.786,5.544,2024,50127,FALSE,NA,NA,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE985107237163,Anlage 2013,Mercer Torgau GmbH & Co. KG,Biomasse,5.3,4.95,2013,04860,FALSE,NA,NA,Dreiheide,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE999145467468,GoWerk F,RWE Power AG,Braunkohle,83,63,1992,50354,FALSE,NA,NA,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE947677200282,Schkopau B,Saale Energie GmbH,Braunkohle,500,450,1996,06258,FALSE,2034,KVBG,Schkopau,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE958578071345,KWK II HS Timber,HS Timber Services GmbH,Biomasse,5.552,5.28,2024,02923,FALSE,NA,NA,Hähnichen,Landkreis Görlitz,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE963537340127,BESS Leuna 3,Münch VoltDepot GmbH,Batteriespeicher,50.94,46.332,2026,06217,FALSE,NA,NA,Merseburg,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE974711013546,Raffineriekraftwerk Leuna NDT,TotalEnergies Raffinerie Mitteldeutschland GmbH,Mineraloelprodukte,34.2,29.8,1997,06237,FALSE,NA,NA,Leuna,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE991324265957,DT06,Smurfit Westrock Zülpich Paper GmbH,Erdgas,15.552,14.383,2010,53909,FALSE,NA,NA,Zülpich,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE929050048728,Gaskesselhaus GT,Martinswerk GmbH,Erdgas,6.749,6.467,2024,50127,FALSE,NA,NA,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE953907486180,FZJ_WVVZ-03.19_BHKW-2,Forschungszentrum Jülich GmbH,Erdgas,4.3,4.3,2022,52428,FALSE,NA,NA,Jülich,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE987007884447,Weisweiler G,RWE Power AG,Braunkohle,703,663,1974,52249,FALSE,2028,KVBG,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE974767618801,Mitte BHKW 2 Modul 2,Stadtwerke Duisburg AG,Erdgas,4.5,4.472,2023,47053,FALSE,NA,NA,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE939426112649,Gersteinwerk I DT (I2),RWE Generation SE,Erdgas,355,355,1973,59368,FALSE,NA,other,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE949646756097,FZJ_BATA_10.55,Forschungszentrum Jülich GmbH,Batteriespeicher,1.05,1.05,2022,52428,FALSE,NA,NA,Jülich,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE998356674993,GT1,Smurfit Westrock Zülpich Paper GmbH,Erdgas,5.4,4.946,1996,53909,FALSE,NA,NA,Zülpich,Kreis Euskirchen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE998558143099,Generator Jülich,Pfeifer & Langen GmbH & Co. KG,Erdgas,25.21,22.86,2004,52428,FALSE,NA,NA,Jülich,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE978654614532,Gersteinwerk H1,RWE Generation SE,Erdgas,46,46,2022,59368,FALSE,NA,NA,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE959496642280,AVA Velsen GmbH,AVA Velsen GmbH,Abfall,21,16,1997,66127,FALSE,NA,NA,Saarbrücken,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE970425279599,Kraftwerk Wilhelmshaven Onyx,Onyx Kraftwerk Wilhelmshaven GmbH & Co. KG,Steinkohle,790,726,2015,26386,FALSE,NA,NA,Wilhelmshaven,Wilhelmshaven,Niedersachsen,§11/12,Steinkohlenbergbaugebiete
+SEE944656117388,Heimbach Maschine 1,RWE Generation Hydro GmbH,Wasser,8,8,1905,52396,FALSE,NA,NA,Heimbach,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE958354990617,BES ELS,BSA Elsteraue GmbH,Batteriespeicher,20.295,20.295,2024,06729,FALSE,NA,NA,Elsteraue,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE964242179781,Gersteinwerk K,RWE Generation SE,Erdgas,112.5,112,1984,59368,FALSE,NA,reserve,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE969468708715,BESS Leuna 4,Münch SmartCharge Systems GmbH,Batteriespeicher,50.94,46.332,2026,06217,FALSE,NA,NA,Merseburg,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE989591633753,Kraftwerk Jänschwalde Block C,Lausitz Energie Kraftwerke AG,Braunkohle,535,500,1984,03185,FALSE,NA,NA,Drachhausen,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE946934017984,EBS-HKW Rostock,Danpower New Energy GmbH,Abfall,22.4,18.5,2010,18147,FALSE,NA,NA,Rostock,Rostock,Mecklenburg-Vorpommern,§11/12,Steinkohlenbergbaugebiete
+SEE991627285584,KWK-Anlage: Generator 4 (Gas),Martinswerk GmbH,Erdgas,5,4.5,1971,50127,FALSE,NA,NA,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE978888539755,Mittel-Niederdruckdampfturbine,Stadtwerke Cottbus GmbH,Erdgas,48.9,45,1999,03052,FALSE,NA,NA,Cottbus - Chóśebuz,Cottbus - Chóśebuz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE975343602986,KWK-Anlage: Generator 2,Martinswerk GmbH,Braunkohle,11,9.9,1961,50127,FALSE,NA,NA,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE995184714136,Solar Zerbst Batterie,Solar Zerbst GmbH & Co.KG,Batteriespeicher,17.56,17.56,2025,39261,FALSE,NA,NA,Zerbst/Anhalt,Landkreis Anhalt-Bitterfeld,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE985842749525,Boxberg Block N,Lausitz Energie Kraftwerke AG,Braunkohle,540,500,1979,02943,FALSE,2029,KVBG,Boxberg/O.L. - Hamor,Landkreis Görlitz,Sachsen,§2,Lausitzer Braunkohlerevier
+SEE995899706617,Gersteinwerk I GT (I1),RWE Generation SE,Erdgas,72,55,1974,59368,FALSE,NA,NA,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE998111672394,IKW Wählitz,MIBRAG GmbH,Braunkohle,35,31,1994,06679,FALSE,NA,NA,Hohenmölsen,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE960652233358,Schkopau A,Saale Energie GmbH,Braunkohle,500,450,1995,06258,FALSE,2034,KVBG,Schkopau,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE980013554151,BHKW Ford Saarlouis Modul 2,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA,Saarlouis,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE939346315557,Speicher Beilrode I - Teilanlage 5,Solarpark Beilrode GmbH & Co. KG,Batteriespeicher,6.16,5.6,2025,04886,FALSE,NA,NA,Arzberg,Landkreis Nordsachsen,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE977356213593,Heimbach Maschine 2,RWE Generation Hydro GmbH,Wasser,8,8,1905,52396,FALSE,NA,NA,Heimbach,Kreis Düren,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE975188536989,HKW-Römerbrücke GuD-Anlage,Energie SaarLorLux AG,Erdgas,41,40,2005,66121,FALSE,NA,NA,Saarbrücken,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE977583940965,BHKW Hafen - Modul 7,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,2.193,2.176,2017,59067,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE979779484642,HKW-Römerbrücke Dampfturbinenanlage DT2,Energie SaarLorLux AG,Erdgas,56,53,1988,66121,FALSE,NA,NA,Saarbrücken,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE986936308987,KWK-Anlage: Generator 1,Martinswerk GmbH,Braunkohle,11,9.9,1961,50127,FALSE,NA,NA,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE991817093418,Kraftwerk Jänschwalde Block A,Lausitz Energie Kraftwerke AG,Braunkohle,535,500,1981,03185,FALSE,2028,KVBG,Drachhausen,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE977956291342,BHKW Ford Saarlouis Modul 1,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA,Saarlouis,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE999117793854,Weisweiler H VGT,RWE Power AG,Erdgas,202,200,2006,52249,FALSE,NA,NA,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE980461358011,BESS Leuna 1,Münch NatureDepot GmbH,Batteriespeicher,50.94,46.332,2026,06217,FALSE,NA,NA,Merseburg,Saalekreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE987970110314,Trianel Gaskraftwerk Hamm Block 10,Trianel Gaskraftwerk Hamm,Erdgas,453,445,2007,59071,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE986249505394,Heizkraftwerk Leipzig Nord DT8C,Stadtwerke Leipzig GmbH,Erdgas,26.11,25.609,2022,04105,FALSE,NA,NA,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE982412379564,BHKW Hafen - Modul 6,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,1.415,1.398,2017,59067,FALSE,NA,NA,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE995570780608,BHKW Ford Saarlouis Modul 3,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA,Saarlouis,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE904421343152,Weisweiler E,NA,Braunkohle,375,321,1965,52249,TRUE,2022,KVBG,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE907162822238,Wilhelmshaven 1 DT,NA,Steinkohle,782,715,1976,26386,TRUE,2021,KVBG,Wilhelmshaven,Wilhelmshaven,Niedersachsen,§11/12,Steinkohlenbergbaugebiete
+SEE931736847297,Neurath D,NA,Braunkohle,647,607,1975,41517,TRUE,2024,KVBG,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE941974735591,Rauchgasturbine,NA,Braunkohle,15,13,1998,03052,TRUE,2022,EnWG,Cottbus - Chóśebuz,Cottbus - Chóśebuz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE939468630132,Heizkraftwerk Leipzig Nord DT83,NA,Waerme,45.6,44.414,1996,04105,TRUE,2021,other,Leipzig,Leipzig,Sachsen,§2,Mitteldeutsches Braunkohlerevier
+SEE964729462818,Kraftwerk Jänschwalde Block F,NA,Braunkohle,535,500,1989,03185,TRUE,2024,other,Drachhausen,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE901786750397,Niederaußem E,NA,Braunkohle,324,295,1970,50129,TRUE,2024,other,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE907142597378,KWD Bestandsanlage,NA,Erdgas,49.189,48.279,2005,06130,TRUE,2020,other,Halle (Saale),Halle (Saale),Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+SEE933685962403,Weisweiler F,NA,Braunkohle,361,321,1967,52249,TRUE,2025,KVBG,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE977258693776,Wilhelmshaven 1 ZT,NA,Steinkohle,140,140,1998,26386,TRUE,2021,KVBG,Wilhelmshaven,Wilhelmshaven,Niedersachsen,§11/12,Steinkohlenbergbaugebiete
+SEE978327902850,Westfalen E,NA,Steinkohle,800,763.7,2014,59071,TRUE,2021,KVBG,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE978389589440,Walsum 9,NA,Steinkohle,410,370,1988,47179,TRUE,2021,KVBG,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE907150117643,Neurath A,NA,Braunkohle,294,294,1972,41517,TRUE,2022,KVBG,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE923485223774,Fenne MKV Gasturbine,NA,Mineraloelprodukte,35,34.86,1982,66333,TRUE,2025,EnWG,Völklingen,Regionalverband Saarbrücken,Saarland,§11/12,Steinkohlenbergbaugebiete
+SEE934897209904,Wilhelmshaven GT,NA,Mineraloelprodukte,57,56,1976,26386,TRUE,2024,EnWG,Wilhelmshaven,Wilhelmshaven,Niedersachsen,§11/12,Steinkohlenbergbaugebiete
+SEE930228090937,Niederaußem F,NA,Braunkohle,334,299,1971,50129,TRUE,2024,other,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE989054024678,Scholven FWK,NA,Steinkohle,70,70,1985,45896,TRUE,2023,EnWG,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+SEE976414005279,Neurath E,NA,Braunkohle,645,604,1976,41517,TRUE,2024,KVBG,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE978971638464,Neurath C,NA,Braunkohle,316,292,1973,41517,TRUE,2024,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE946537967655,Hochdruckdampfturbine,NA,Braunkohle,17.8,16,1999,03052,TRUE,2022,EnWG,Cottbus - Chóśebuz,Cottbus - Chóśebuz,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE992750539261,Frimmersdorf P,NA,Braunkohle,333,284,1966,41517,TRUE,2021,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE979012663285,Neurath B,NA,Braunkohle,318,294,1972,41517,TRUE,2022,KVBG,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE999431209765,Frimmersdorf Q,NA,Braunkohle,321,278,1970,41517,TRUE,2021,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE967605837250,Niederaußem C,NA,Braunkohle,333,295,1965,50129,TRUE,2022,KVBG,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+SEE985047526785,Kraftwerk Jänschwalde Block E,NA,Braunkohle,535,500,1987,03185,TRUE,2024,other,Drachhausen,Landkreis Spree-Neiße,Brandenburg,§2,Lausitzer Braunkohlerevier
+SEE999977738880,IKW Deuben,NA,Braunkohle,78,67,1936,06682,TRUE,2022,KVBG,Teuchern,Burgenlandkreis,Sachsen-Anhalt,§2,Mitteldeutsches Braunkohlerevier
+BNA0302,Frimmersdorf,NA,Braunkohle,146,129,1957,41517,TRUE,2011,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0303,Frimmersdorf,NA,Braunkohle,147,130,1957,41517,TRUE,2011,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0304,Frimmersdorf,NA,Braunkohle,143,124,1960,41517,TRUE,2011,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0414,Westfalen,NA,Steinkohle,160,152,1963,59071,TRUE,2011,other,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0415,Westfalen,NA,Steinkohle,160,152,1963,59071,TRUE,2011,other,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0710,Niederaußem,NA,Braunkohle,140,125,1963,50129,TRUE,2012,other,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0711,Niederaußem,NA,Braunkohle,140,125,1963,50129,TRUE,2012,other,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0212,HKW II/B,NA,Steinkohle,144,133,1965,47053,TRUE,2012,other,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA1021,Weisweiler,NA,Braunkohle,146,123,1955,52249,TRUE,2012,other,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA1022,Weisweiler,NA,Braunkohle,155,135,1959,52249,TRUE,2012,other,Eschweiler,Städteregion Aachen,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0307,Frimmersdorf,NA,Braunkohle,144,128,1960,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0308,Frimmersdorf,NA,Braunkohle,152,136,1962,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0305,Frimmersdorf,NA,Braunkohle,146,130,1959,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0306,Frimmersdorf,NA,Braunkohle,151,132,1960,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0309,Frimmersdorf,NA,Braunkohle,153,135,1964,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0310,Frimmersdorf,NA,Braunkohle,155,138,1962,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0311,Frimmersdorf,NA,Braunkohle,147,131,1962,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0312,Frimmersdorf,NA,Braunkohle,149,133,1964,41517,TRUE,2012,other,Grevenbroich,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0448,Shamrock,NA,Steinkohle,162,132,1957,44653,TRUE,2013,other,Herne,Herne,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0215,KW Walsum,NA,Steinkohle,150,129,1959,47179,TRUE,2014,EnWG,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0333,Scholven,NA,Steinkohle,370,345,1970,45896,TRUE,2014,EnWG,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0334,Scholven,NA,Steinkohle,370,345,1971,45896,TRUE,2014,EnWG,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0335,Scholven,NA,Steinkohle,740,676,1979,45896,TRUE,2014,EnWG,Gelsenkirchen,Gelsenkirchen,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0447,KW Herne,NA,Steinkohle,150,133,1963,44653,TRUE,2014,EnWG,Herne,Herne,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0490b,Goldenberg,NA,Braunkohle,45,45,1993,50354,TRUE,2015,EnWG,Hürth,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0413a,Westfalen,NA,Steinkohle,305,284,1969,59071,TRUE,2016,EnWG,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0413b,Westfalen,NA,Steinkohle,800,765,2014,59071,TRUE,2016,other,Hamm,Hamm,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0449,KW Herne,NA,Steinkohle,310,280,1966,44653,TRUE,2017,EnWG,Herne,Herne,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0211,HKW I,NA,Steinkohle,105,95,1985,47053,TRUE,2018,EnWG,Duisburg,Duisburg,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0252,Kraftwerk Ensdorf,NA,Steinkohle,310,283,2011,66806,TRUE,2018,EnWG,Ensdorf/Saar,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+BNA0253,Kraftwerk Ensdorf,NA,Steinkohle,120,106,1963,66806,TRUE,2018,EnWG,Ensdorf/Saar,Landkreis Saarlouis,Saarland,§11/12,Steinkohlenbergbaugebiete
+BNA0618,KW Lünen,NA,Steinkohle,157,149,1962,44536,TRUE,2018,EnWG,Lünen,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0619,KW Lünen,NA,Steinkohle,350,324,1970,44536,TRUE,2018,EnWG,Lünen,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA1041,Gersteinwerk,NA,Erdgas,55,55,1973,59368,TRUE,2018,EnWG,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA1046a,Gersteinwerk,NA,Steinkohle,665.5,614,1984,59368,TRUE,2019,EnWG,Werne,Kreis Unna,Nordrhein-Westfalen,§11/12,Steinkohlenbergbaugebiete
+BNA0705,Niederaußem D,NA,Braunkohle,320,297,1968,50129,TRUE,2021,KVBG,Bergheim,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0439,Buschhaus,NA,Braunkohle,390,352,1985,38350,TRUE,2020,KVBG,Helmstedt,Landkreis Helmstedt,Niedersachsen,§11/12,Steinkohlenbergbaugebiete
+BNA0199,Dormagen,NA,Erdgas,597,24,2000,41539,TRUE,2021,KVBG,Dormagen,Rhein-Kreis Neuss,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier
+BNA0292,Fab Frechen,NA,Braunkohle,202,120,1962,50226,TRUE,2023,KVBG,Frechen,Rhein-Erft-Kreis,Nordrhein-Westfalen,§2,Rheinisches Braunkohlerevier

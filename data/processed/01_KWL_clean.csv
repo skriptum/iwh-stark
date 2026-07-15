@@ -1,4 +1,4 @@
-nr_MASTR,name,betreiber,energietraeger,leistung_brutto,lestung_netto,jahr_inbetriebnahme,plz,stillgelegt,jahr_stillegung,stillegung_type
+nr_MASTR,name,betreiber,energietraeger,leistung_brutto,leistung_netto,jahr_inbetriebnahme,plz,stillgelegt,jahr_stillegung,stillegung_type
 SEE900600559253,RADAG Wehrkraftwerk,Rheinkraftwerk Albbruck-Dogern AG,Wasser,28.45,24,2009,79804,FALSE,NA,NA
 SEE900838448145,MKW SAD Turbine 3,Zweckverband Müllverwertung Schwandorf,Abfall,10,10,1982,92421,FALSE,NA,NA
 SEE901246020381,Gasmotor Bad Salzungen,TEAG Thüringer Energie AG,Erdgas,10.051,10.003,2018,36433,FALSE,NA,NA
@@ -30,7 +30,7 @@ SEE901440918859,RADAG M1,Rheinkraftwerk Albbruck-Dogern AG,Wasser,27.94,27.94,19
 SEE904165703137,GT1,BASF InfraService & Solutions Lausitz GmbH,Erdgas,52,51.35,1994,01987,FALSE,NA,NA
 SEE914414538991,GuD Mitte GT12,BASF SE,Erdgas,206,204,2005,67063,FALSE,NA,NA
 SEE907524301289,T/G 15,OXEA Produktion GmbH & Co.KG,Mineraloelprodukte,12,10,1954,46147,FALSE,NA,NA
-SEE910562646632,Motor 2,Biomethan Produktion Ottersberg GmbH,Biomasse,1.048,1.048,2007,28870,FALSE,NA,vorlaeufig
+SEE910562646632,Motor 2,Biomethan Produktion Ottersberg GmbH,Biomasse,1.048,1.048,2007,28870,FALSE,NA,other
 SEE901516014812,Dampfturbine 1,Smurfit Westrock Herzberg Solid Board GmbH,Erdgas,2.84,2.64,1955,37412,FALSE,NA,NA
 SEE904076796426,Küstenkraftwerk K.I.E.L Motor 4,Stadtwerke Kiel AG,Erdgas,9.571,9.456,2018,24149,FALSE,NA,NA
 SEE905939296770,Küstenkraftwerk K.I.E.L Motor 13,Stadtwerke Kiel AG,Erdgas,9.571,9.456,2018,24149,FALSE,NA,NA
@@ -121,7 +121,7 @@ SEE905108374407,BHKW Si Si307,Robert Bosch GmbH Schwieberdingen,Erdgas,1.56,1.47
 SEE907837230047,Prem K(Ro)1,Uniper Kraftwerke GmbH,Wasser,6.4,6.4,1971,86983,FALSE,NA,NA
 SEE908836263777,IN_N19_KWKK_GT2,AUDI,Erdgas,5.1,4.985,1998,85057,FALSE,NA,NA
 SEE914128531905,Euskirchen Generator 2,Pfeifer & Langen GmbH & Co. KG,Erdgas,6.6,6.232,1981,53879,FALSE,NA,NA
-SEE912008346410,Dampfturbine,Baden Board GmbH,Waerme,10.8,10.8,1974,76593,FALSE,NA,vorlaeufig
+SEE912008346410,Dampfturbine,Baden Board GmbH,Waerme,10.8,10.8,1974,76593,FALSE,NA,other
 SEE912020488365,Ruhrort 2,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),64,59.6,1955,47166,FALSE,NA,NA
 SEE900559860912,WUN Pellets - BHKW - Modul II,WUN Pellets GmbH,Erdgas,4.5,4.41,2018,95632,FALSE,NA,NA
 SEE902009757629,Notstromdiesel,AVEA Entsorgungsbetriebe,Mineraloelprodukte,1.395,1.395,2010,51373,FALSE,NA,NA
@@ -240,7 +240,7 @@ SEE912160334607,Leuna GT2,TotalEnergies Raffinerie Mitteldeutschland GmbH,Erdgas
 SEE928076311489,Fernwärmekraftwerk Kassel DT2,Städtische Werke Energie + Wärme GmbH,Braunkohle,38,33.5,1989,34134,FALSE,NA,NA
 SEE928761575349,EEW Großräschen GmbH,EEW Energy from Waste Großräschen GmbH,Abfall,25,25,2008,01983,FALSE,NA,NA
 SEE927787059284,BHKW Hastedt Motor 04,swb Erzeugung AG & Co. KG,Erdgas,11.8096,11.6794,2022,28207,FALSE,NA,NA
-SEE933236950972,Scholven C,Uniper Kraftwerke GmbH,Steinkohle,370,345,1969,45896,FALSE,NA,NA
+SEE933236950972,Scholven C,Uniper Kraftwerke GmbH,Steinkohle,370,345,1969,45896,FALSE,NA,other
 SEE933564106935,Emsland B GT1,RWE Generation SE,Erdgas,60,58,2011,49808,FALSE,NA,NA
 SEE933767950021,AEG,Borchers Biomassekraftwerk GmbH,Biomasse,3.705,3.705,2006,46325,FALSE,NA,NA
 SEE922286010279,TEAtherm,TEAtherm GmbH,Biomasse,9.68,9.68,2007,91550,FALSE,NA,NA
@@ -281,7 +281,7 @@ SEE922395631839,Block1,Salzgitter Flachstahl GmbH,Sonstige Energietraeger (nicht
 SEE900291433160,Hybridspeicher AU,Allgäuer Überlandwerk GmbH,Batteriespeicher,16,16,2018,87477,FALSE,NA,NA
 SEE900403199748,Heizkraftwerk Halle-Trotha - Dampfturbine,Heizkraftwerk Halle-Trotha GmbH,Erdgas,12.471,12.1585,1994,06118,FALSE,NA,NA
 SEE900957573537,KT1,InfraLeuna GmbH,Waerme,21.6,20,2010,06237,FALSE,NA,NA
-SEE902215081075,M_01,Ahrtal-Werke GmbH,Erdgas,2.004,1.993,2016,53474,TRUE,2026,NA
+SEE902215081075,M_01,Ahrtal-Werke GmbH,Erdgas,2.004,1.993,2016,53474,TRUE,2026,other
 SEE904887370686,DT1,InfraLeuna GmbH,Waerme,9.1,8.7,1994,06237,FALSE,NA,NA
 SEE915098640406,ZI TR GT2,K+S Minerals and Agriculture GmbH,Erdgas,5.592,5.5,1997,39326,FALSE,NA,NA
 SEE912764206645,HKW - GuD1,Erlanger Stadtwerke AG,Erdgas,12.7,12.405,2005,91052,FALSE,NA,NA
@@ -323,7 +323,7 @@ SEE906834978235,Lage Generator 2,Pfeifer & Langen GmbH & Co. KG,Steinkohle,4.48,
 SEE909689464656,ET Prozessdampf,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (nicht erneuerbar),1.2,1.2,2013,47166,FALSE,NA,NA
 SEE914143996840,GT3,Sasol Germany GmbH,Erdgas,7.486,7.428,2020,25541,FALSE,NA,NA
 SEE914931712744,HK_001_Industrieheizkraftwerk-Walsrode_BHKW-GM1,EnBW Contracting GmbH,Erdgas,3.2,3.2,2019,29699,FALSE,NA,NA
-SEE916274994887,bnBm Gaskraftwerk Leipheim,Gaskraftwerk Leipheim GmbH & Co. KG,Erdgas,311.6,310,2023,89340,FALSE,NA,betriebsmittel
+SEE916274994887,bnBm Gaskraftwerk Leipheim,Gaskraftwerk Leipheim GmbH & Co. KG,Erdgas,311.6,310,2023,89340,FALSE,NA,reserve
 SEE917110358740,Steinbeis Energie EBS Kessel 6,Steinbeis Energie GmbH,Abfall,21.4,17,2010,25348,FALSE,NA,NA
 SEE920405564993,Kraftwerk Stammham MS2,VERBUND Innkraftwerke GmbH,Wasser,7.733,7.733,1955,84533,FALSE,NA,NA
 SEE925023182710,Alzwerk Maschine 5,Wacker Chemie,Wasser,10.08,10.08,1923,84489,FALSE,NA,NA
@@ -366,7 +366,7 @@ SEE922477386435,Franken DT2,Uniper Kraftwerke GmbH,Erdgas,395,387,1975,90449,FAL
 SEE923918497345,Gasmotoren-Blockheizkraftwerk I (Generator 4),GLOBALFOUNDRIES Dresden Module Two LLC & Co. KG,Erdgas,3.884,3.879,1998,01468,FALSE,NA,NA
 SEE926367113644,Obervermuntwerk II Maschine 1 Turbine,EnBW Energie Baden-Württemberg AG,Pumpspeicher,190,190,2018,A-6794,FALSE,NA,NA
 SEE927419839802,"Heizkraftwerk Bonn-Nord, Gasturbine 2 der GuD-Anlage",Energie- und Wasserversorgung Bonn/Rhein-Sieg GmbH,Erdgas,39.291,39.186,2024,53115,FALSE,NA,NA
-SEE927542617698,bnBm GasKW BIB GT5,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE927542617698,bnBm GasKW BIB GT5,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE949500107867,Mühltal F3,Uniper Kraftwerke GmbH,Wasser,3.73,3.73,1924,82064,FALSE,NA,NA
 SEE951620659119,Emsland B GT2,RWE Generation SE,Erdgas,60,58,2011,49808,FALSE,NA,NA
 SEE923421872301,GuD Süd GT2,BASF SE,Erdgas,167.5,165.5,1997,67063,FALSE,NA,NA
@@ -380,7 +380,7 @@ SEE932569905017,Küstenkraftwerk K.I.E.L Motor 17,Stadtwerke Kiel AG,Erdgas,9.57
 SEE937830141170,BHKW-G66-KWK-klein,Volkswagen Sachsen GmbH,Erdgas,3.8,3.736,2017,08058,FALSE,NA,NA
 SEE904604163027,Karnap B,RWE Generation SE,Abfall,48,38,1987,45329,FALSE,NA,NA
 SEE905035807238,Kirchmöser GT 1,Uniper Kraftwerke GmbH,Erdgas,63,60,1994,14774,FALSE,NA,NA
-SEE907597880766,Kraftwerk Emden Dampfturbine,Statkraft Markets GmbH,Erdgas,450,433,1973,26725,FALSE,NA,vorlaeufig
+SEE907597880766,Kraftwerk Emden Dampfturbine,Statkraft Markets GmbH,Erdgas,450,433,1973,26725,FALSE,NA,other
 SEE909466066615,Motor-Heizkraftwerk Chemnitz-Nord. Motor 3,eins energie in sachsen GmbH & Co. KG,Erdgas,12.65,12.538,2023,09114,FALSE,NA,NA
 SEE911219414864,PSW Markersbach PSS E,Vattenfall Wasserkraft GmbH,Pumpspeicher,175,174.2,1981,08352,FALSE,NA,NA
 SEE914224312040,Gasmotoren-Blockheizkraftwerk I (Generator 1),GLOBALFOUNDRIES Dresden Module Two LLC & Co. KG,Erdgas,3.884,3.879,1998,01468,FALSE,NA,NA
@@ -398,10 +398,10 @@ SEE912935247576,Raffineriekraftwerk Leuna MDT,TotalEnergies Raffinerie Mitteldeu
 SEE915645322953,GT 1,SWE Energie GmbH,Erdgas,23.914,23,1999,99087,FALSE,NA,NA
 SEE919076066929,Happurg F1,Uniper Kraftwerke GmbH,Pumpspeicher,40,40,1958,91230,FALSE,NA,NA
 SEE919544829094,HKW Mitte GTHKW,Braunschweiger Versorgungs-AG & Co. KG,Erdgas,68.41,63.8,2023,38114,FALSE,NA,NA
-SEE926292106278,KWK-Anlage Gasturbine 2,Delkeskamp Verpackungswerke GmbH,Erdgas,4.48,4.346,1997,49638,TRUE,2022,NA
+SEE926292106278,KWK-Anlage Gasturbine 2,Delkeskamp Verpackungswerke GmbH,Erdgas,4.48,4.346,1997,49638,TRUE,2022,other
 SEE927622980674,Euskirchen Generator 1,Pfeifer & Langen GmbH & Co. KG,Braunkohle,7.2,7.2,1979,53879,TRUE,2024,KVBG
 SEE927738616955,PSW Bleiloch PSS A,Vattenfall Wasserkraft GmbH,Pumpspeicher,40,39.9,1932,07907,FALSE,NA,NA
-SEE900252837358,Gasturbine,Baden Board GmbH,Erdgas,4.5,4.35,2000,76593,FALSE,NA,vorlaeufig
+SEE900252837358,Gasturbine,Baden Board GmbH,Erdgas,4.5,4.35,2000,76593,FALSE,NA,other
 SEE906392287978,BHKW Hastedt Motor 02,swb Erzeugung AG & Co. KG,Erdgas,11.8096,11.6794,2022,28207,FALSE,NA,NA
 SEE910324388312,Batteriespeicher Chemnitz GmbH & Co. KG,Batteriespeicher Chemnitz GmbH & Co. KG,Batteriespeicher,15.8,15.8,2017,09114,FALSE,NA,NA
 SEE910929866741,BHKW Hastedt Motor 03,swb Erzeugung AG & Co. KG,Erdgas,11.8096,11.6794,2022,28207,FALSE,NA,NA
@@ -419,13 +419,13 @@ SEE917568874298,7710MKA10-DT,Sachsenmilch Leppersdorf GmbH,Waerme,6.44,5.874,201
 SEE900310540558,Speicher Beilrode I - Teilanlage 6,Solarpark Beilrode GmbH & Co. KG,Batteriespeicher,6.16,6.16,2025,04886,FALSE,NA,NA
 SEE903406002589,Gasmotoren-Blockheizkraftwerk I (Generator 5),GLOBALFOUNDRIES Dresden Module Two LLC & Co. KG,Erdgas,3.884,3.879,1998,01468,FALSE,NA,NA
 SEE910080930862,Gasmotoren-Blockheizkraftwerk II (Generator 4),GLOBALFOUNDRIES Dresden Module One LLC & Co. KG,Erdgas,3.832,3.772,2004,01468,FALSE,NA,NA
-SEE911283118750,Industriekraftwerk Greifswald GmbH,Industriekraftwerk Greifswald GmbH,Erdgas,39,38.2,2013,17509,TRUE,2025,NA
+SEE911283118750,Industriekraftwerk Greifswald GmbH,Industriekraftwerk Greifswald GmbH,Erdgas,39,38.2,2013,17509,TRUE,2025,other
 SEE911764038249,Franken DT1,Uniper Kraftwerke GmbH,Erdgas,395,383,1973,90449,FALSE,NA,NA
-SEE912980761904,bnBm GasKW BIB GT7,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE912980761904,bnBm GasKW BIB GT7,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE906257837416,5MKA,PCK Raffinerie GmbH,Mineraloelprodukte,30,28,1972,16303,FALSE,NA,NA
 SEE906462907775,Kraftwerk HA GT2,K+S Minerals and Agriculture GmbH,Erdgas,5.765,5.67,2017,36269,FALSE,NA,NA
 SEE909297051026,GT2,BP Europa SE,Erdgas,24.88,22.7,1996,49808,FALSE,NA,NA
-SEE910950875330,bnBm GasKW BIB GT1,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE910950875330,bnBm GasKW BIB GT1,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE932792338347,illwerke vkw Rodundwerk I M1,EnBW Energie Baden-Württemberg AG,Wasser,50,50,1943,A-6773,FALSE,NA,NA
 SEE932928232242,GKH 2,enercity AG,Steinkohle,150,136,1989,30419,FALSE,NA,NA
 SEE937791832391,Küstenkraftwerk K.I.E.L Motor 16,Stadtwerke Kiel AG,Erdgas,9.571,9.456,2018,24149,FALSE,NA,NA
@@ -505,8 +505,8 @@ SEE931494186256,Biomasseheizkraftwerk Wismar,Bioenergie Wismar GmbH,Biomasse,18.
 SEE910532842996,Au F3,Untere Iller GmbH,Wasser,2,2,1931,89257,FALSE,NA,NA
 SEE912013538152,Windpark Reußenköge Batteriespeicher 2,Bürgerwindpark Reußenköge GmbH & Co. KG,Batteriespeicher,6.4,6.4,2024,25821,FALSE,NA,NA
 SEE915051196278,BHKW Ford Saarlouis Modul 4,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA
-SEE915432109163,Irsching 6,Uniper Systemstabilität GmbH,Erdgas,320,300,2023,85088,FALSE,NA,betriebsmittel
-SEE919134316447,Schkopau A+B Bahngenerator,Saale Energie GmbH,Waerme,112,110,1996,06258,FALSE,NA,vorlaeufig
+SEE915432109163,Irsching 6,Uniper Systemstabilität GmbH,Erdgas,320,300,2023,85088,FALSE,NA,reserve
+SEE919134316447,Schkopau A+B Bahngenerator,Saale Energie GmbH,Waerme,112,110,1996,06258,FALSE,NA,other
 SEE920825895844,BHKW KW5 54,Kraftwerke Mainz-Wiesbaden AG,Erdgas,10.02,9.93,2020,55120,FALSE,NA,NA
 SEE901453618340,MHKW Dampfturbine 2,Stadtwerke Rosenheim GmbH & Co. KG,Abfall,2.2,2.1,1957,83022,FALSE,NA,NA
 SEE903494881059,Prem K(Ro)3,Uniper Kraftwerke GmbH,Wasser,6.4,6.4,1971,86983,FALSE,NA,NA
@@ -527,7 +527,7 @@ SEE928579781840,Pfrombach D F3,Uniper Kraftwerke GmbH,Wasser,4.38,4.38,1929,8536
 SEE928797247012,Regensburg KWK 5,BMW AG,Erdgas,2.679,2.679,2016,93055,FALSE,NA,NA
 SEE931088083121,Zeltingen Maschine 2,RWE Generation Hydro GmbH,Wasser,3.4,3.4,1964,54492,FALSE,NA,NA
 SEE932569427427,Pielweichs K3,Uniper Kraftwerke GmbH,Wasser,4.2,4.2,1994,94447,FALSE,NA,NA
-SEE931784983831,"Fernheizwerk Bad Elster, Gasturbine",eins energie in sachsen GmbH & Co. KG,Erdgas,5.128,5.128,2012,08645,TRUE,2025,NA
+SEE931784983831,"Fernheizwerk Bad Elster, Gasturbine",eins energie in sachsen GmbH & Co. KG,Erdgas,5.128,5.128,2012,08645,TRUE,2025,other
 SEE933021962319,Waldeck 2 F1,Uniper Kraftwerke GmbH,Pumpspeicher,240,240,1974,34549,FALSE,NA,NA
 SEE933851011843,Turbine 22,INEOS Manufacturing Deutschland,Sonstige Energietraeger (nicht erneuerbar),19.2,19.2,1964,50769,FALSE,NA,NA
 SEE938337436349,Kraftwerk Schwarze Pumpe Block A,Lausitz Energie Kraftwerke AG,Braunkohle,803,755,1997,03130,FALSE,NA,NA
@@ -536,13 +536,13 @@ SEE957844983702,Ma A,Salzgitter Flachstahl GmbH,Sonstige Energietraeger (nicht e
 SEE925794342412,TREA Leuna 2,MVV Umwelt Asset GmbH,Abfall,18.545,16.245,2007,06237,FALSE,NA,NA
 SEE927287469774,KW Wyhlen Straflo 03,naturenergie hochrhein AG,Wasser,4.6,4.5,1993,79639,FALSE,NA,NA
 SEE927932653541,illwerke vkw Kopswerk I M2,EnBW Energie Baden-Württemberg AG,Wasser,96,96,1969,A-6793,FALSE,NA,NA
-SEE930752846949,Grohnde,PreussenElektra,Kernenergie,1430,1360,1984,31860,TRUE,2022,NA
+SEE930752846949,Grohnde,PreussenElektra,Kernenergie,1430,1360,1984,31860,TRUE,2022,other
 SEE930847992643,PES Ohrdruf,PES Ohrdruf GmbH & Co KG,Batteriespeicher,10.35,10.35,2024,99885,FALSE,NA,NA
 SEE931197865137,GT2,Sasol Germany GmbH,Erdgas,5.379,5.163,1996,25541,FALSE,NA,NA
 SEE907294548426,Scheuring K(Ro)2,Uniper Kraftwerke GmbH,Wasser,4.5,4.067,1980,86937,FALSE,NA,NA
 SEE914861690945,Kraftwerk Egglfing-Obernberg MS3,Innwerk AG,Wasser,13.45,13.45,1949,94072,FALSE,NA,NA
 SEE917925869486,Nordland GuD-Anlage HD-DTS,Nordland Papier GmbH,Erdgas,23.84,22.61,2022,26892,FALSE,NA,NA
-SEE926120377375,Cogenerationanlage,Bayernoil Raffineriegesellschaft mbH,Erdgas,29,25.4,1996,93333,FALSE,NA,vorlaeufig
+SEE926120377375,Cogenerationanlage,Bayernoil Raffineriegesellschaft mbH,Erdgas,29,25.4,1996,93333,FALSE,NA,other
 SEE934242259776,Küstenkraftwerk K.I.E.L Motor 8,Stadtwerke Kiel AG,Erdgas,9.571,9.456,2018,24149,FALSE,NA,NA
 SEE934654061066,Wintrich Maschine 4,RWE Generation Hydro GmbH,Wasser,5,5,1965,54487,FALSE,NA,NA
 SEE937857006797,WBS-Tarzow,Solarpark Tarzow GmbH & Co. KG,Batteriespeicher,10,10,2023,23972,FALSE,NA,NA
@@ -556,10 +556,10 @@ SEE944148486770,Generator 4,ORION Engineered Carbons GmbH,Sonstige Energietraege
 SEE949133098242,Turbine 7,Maxauer Papierfarbik GmbH,Waerme,20,18,1968,76187,FALSE,NA,NA
 SEE949722134498,F03G2,Henkel AG & Co. KGaA,Erdgas,13.2,11.88,1965,40589,FALSE,NA,NA
 SEE950641511031,Rain M1,LEW Wasserkraft,Wasser,5.6,5.595,1956,86641,FALSE,NA,NA
-SEE952352206145,Scholven B,Uniper Kraftwerke GmbH,Steinkohle,370,345,1968,45896,FALSE,NA,NA
+SEE952352206145,Scholven B,Uniper Kraftwerke GmbH,Steinkohle,370,345,1968,45896,FALSE,NA,other
 SEE939692270074,Scholven 1 GT1,Uniper Kraftwerke GmbH,Erdgas,55,54,2023,45896,FALSE,NA,NA
 SEE942234222677,BHKW Hafen - Modul 5,Jäckering Mühlen- und Nährmittelwerke GmbH,Erdgas,2.19,2.173,2013,59067,FALSE,NA,NA
-SEE942432515786,Dampfturbine AEG,WMF GmbH,Waerme,2.5,2.454,1943,73312,FALSE,NA,vorlaeufig
+SEE942432515786,Dampfturbine AEG,WMF GmbH,Waerme,2.5,2.454,1943,73312,FALSE,NA,other
 SEE943208281096,Rain BS1,LEW Wasserkraft,Batteriespeicher,1.5,1.5,2019,86641,FALSE,NA,NA
 SEE943548208159,AHKW ND Turbine,AVA Abfallverwertung Augsburg Kommunalunternehmen,Abfall,9.477,6.72,1994,86167,FALSE,NA,NA
 SEE949895584069,HKW Sandreuth (DT3),N-ERGIE Kraftwerke GmbH,Erdgas,44.45,38.774,1982,90441,FALSE,NA,NA
@@ -601,7 +601,7 @@ SEE931158678738,Koblenz Maschine 1,RWE Generation Hydro GmbH,Wasser,4,4,1951,560
 SEE933592339541,RHR1-A-D1-720-GEN-001-NEA5,NTT Global Data Centers EMEA GmbH,Mineraloelprodukte,2.16,2.08,2024,53117,FALSE,NA,NA
 SEE934298270268,T.A. Lauta,Thermische Abfallbehandlung Lauta GmbH & Co. oHG,Abfall,21,15.7,2004,02991,FALSE,NA,NA
 SEE956216040883,Turbine 2,GKS-Gemeinschaftskraftwerk Schweinfurt GmbH,Steinkohle,11.8,10.2,1990,97424,FALSE,NA,NA
-SEE956631893736,F03G1,Henkel AG & Co. KGaA,Erdgas,10,9,1963,40589,TRUE,2025,NA
+SEE956631893736,F03G1,Henkel AG & Co. KGaA,Erdgas,10,9,1963,40589,TRUE,2025,other
 SEE956884287917,Generator 2,Röhm GmbH,Erdgas,12.3,11.9,1990,67547,FALSE,NA,NA
 SEE902267138956,Kirchmöser GT 2,Uniper Kraftwerke GmbH,Erdgas,63,60,1994,14774,FALSE,NA,NA
 SEE905410926998,FZJ_WVVZ-03.19_BHKW-1,Forschungszentrum Jülich GmbH,Erdgas,4.3,4.3,2022,52428,FALSE,NA,NA
@@ -620,12 +620,12 @@ SEE934890098444,KW Wyhlen Straflo 02,naturenergie hochrhein AG,Wasser,4.6,4.5,19
 SEE947816911833,Gasturbinenanlage 12,Wacker Chemie,Erdgas,141,137,2001,84489,FALSE,NA,NA
 SEE919393178787,Fenne MKV,STEAG Power GmbH,Steinkohle,195,179,1982,66333,FALSE,NA,reserve
 SEE920992144554,HKW Mitte GuD BMHKW,Braunschweiger Versorgungs-AG & Co. KG,Erdgas,104.24,97.958,2023,38114,FALSE,NA,NA
-SEE932782707160,Dampfturbine 3,Moritz J. Weig GmbH & Co. KG,Erdgas,28.8,27.5,2015,56727,FALSE,NA,vorlaeufig
+SEE932782707160,Dampfturbine 3,Moritz J. Weig GmbH & Co. KG,Erdgas,28.8,27.5,2015,56727,FALSE,NA,other
 SEE933094075404,UPM Schongau HKW 3 DT,UPM GmbH,Erdgas,30.17,30.17,2014,86956,FALSE,NA,NA
 SEE956808243722,SEDE607510036,ENGIE Deutschland GmbH,Erdgas,4.5,4.472,2018,07546,FALSE,NA,NA
 SEE957830042178,Turbine 3,AVEA Entsorgungsbetriebe,Abfall,23.65,18.65,2010,51373,FALSE,NA,NA
-SEE958702894895,SN-Lankow-GUD_1994,Energieversorgung Schwerin GmbH & Co. Erzeugung KG,Erdgas,8.672,6,1994,19057,FALSE,NA,vorlaeufig
-SEE958847865460,Kraftwerk Zolling,Onyx Kraftwerk Zolling GmbH &Co. KGaA,Steinkohle,501,472,1985,85406,FALSE,NA,NA
+SEE958702894895,SN-Lankow-GUD_1994,Energieversorgung Schwerin GmbH & Co. Erzeugung KG,Erdgas,8.672,6,1994,19057,FALSE,NA,other
+SEE958847865460,Kraftwerk Zolling,Onyx Kraftwerk Zolling GmbH &Co. KGaA,Steinkohle,501,472,1985,85406,FALSE,NA,other
 SEE960733358116,0065 - STW - BHKW - KWK,Stadtwerke Kempen GmbH,Erdgas,2.455,2.419,2024,47906,FALSE,NA,NA
 SEE919443669678,GBS KW Fenne,Iqony Battery System,Batteriespeicher,15,15,2016,66333,FALSE,NA,NA
 SEE922519934914,Euskirchen BHKW,Pfeifer & Langen GmbH & Co. KG,Erdgas,1.2,1.178,2022,53879,FALSE,NA,NA
@@ -636,7 +636,7 @@ SEE950688444200,Biomasse-HKW 2 Kehl,Koehler Kehl GmbH,Biomasse,2.9,2.6,2011,7769
 SEE951966828576,Turbine VE 32 ZV MVA IN,Zweckverband Müllverwertungsanlage Ingolstadt,Abfall,9.2,7.36,1996,85055,FALSE,NA,NA
 SEE905490507995,Q_ESS_Luenen,Coulomb GmbH,Batteriespeicher,11.92,11.92,2016,44536,FALSE,NA,NA
 SEE911507913505,Turbine 2,Kelheim Fibres GmbH,Erdgas,2.943,2.722,1990,93309,FALSE,NA,NA
-SEE902280549463,bnBm GasKW BIB GT3,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE902280549463,bnBm GasKW BIB GT3,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE904052511746,PSW Markersbach PSS D,Vattenfall Wasserkraft GmbH,Pumpspeicher,175,174.2,1981,08352,FALSE,NA,NA
 SEE904653296578,DT_neu,Sustainable Energy Aschaffenburg GmbH,Abfall,3.3,2.98,2025,63741,FALSE,NA,NA
 SEE909927513559,KW3 GT31,Kraftwerke Mainz-Wiesbaden AG,Erdgas,296.3,291.3,2001,55120,FALSE,NA,NA
@@ -680,7 +680,7 @@ SEE927436598478,Werk 1.5 KWK 4,BMW AG,Erdgas,3.431,3.36,2019,80937,FALSE,NA,NA
 SEE930232746332,Scheuring K(Ro)1,Uniper Kraftwerke GmbH,Wasser,4.5,4.067,1980,86937,FALSE,NA,NA
 SEE930595548697,Walchenseekraftwerk D F1,Uniper Kraftwerke GmbH,Wasser,18,18,1924,82431,FALSE,NA,NA
 SEE932907515472,Elsteraue Battery Storage,Obton Storage GmbH & Co. KG,Batteriespeicher,13.8,13.8,2022,06729,FALSE,NA,NA
-SEE934591835126,T4,SWN Stadtwerke Neumünster GmbH,Steinkohle,17.36,14.105,1974,24534,TRUE,2024,NA
+SEE934591835126,T4,SWN Stadtwerke Neumünster GmbH,Steinkohle,17.36,14.105,1974,24534,TRUE,2024,other
 SEE901050642113,Heizkraftwerk Dieselstraße Block C,EVH GmbH,Erdgas,57.322,57.322,2020,06130,FALSE,NA,NA
 SEE904662075126,7712MKA10-GT2,Sachsenmilch Leppersdorf GmbH,Erdgas,15.45,14.885,2014,01454,FALSE,NA,NA
 SEE921399860047,GM2,Stadtwerke Rosenheim GmbH & Co. KG,Erdgas,3.352,3.285,2011,83022,FALSE,NA,NA
@@ -735,7 +735,7 @@ SEE942841758538,illwerke vkw Kopswerk II M2,EnBW Energie Baden-Württemberg AG,P
 SEE945779125267,Pfreimd T2,ENGIE Deutschland Erneuerbare GmbH,Wasser,3.3,3.3,2000,92723,FALSE,NA,NA
 SEE957189569340,illwerke vkw Kopswerk II M3,EnBW Energie Baden-Württemberg AG,Pumpspeicher,175,175,2008,A-6793,FALSE,NA,NA
 SEE962376547568,KW Rheinfelden Maschine 4,naturenergie hochrhein AG,Wasser,23.6,22.9,2010,4310,FALSE,NA,NA
-SEE922145299326,KWK-Modul 13 Gotha West,Gothaer Stadtwerke ENERGIE,Erdgas,2,1.984,2016,99867,TRUE,2026,NA
+SEE922145299326,KWK-Modul 13 Gotha West,Gothaer Stadtwerke ENERGIE,Erdgas,2,1.984,2016,99867,TRUE,2026,other
 SEE928382664095,KWK Neumarkt,Pfleiderer Neumarkt GmbH,Biomasse,4,3,2001,92318,FALSE,NA,NA
 SEE929405778768,Enkirch Maschine 2,RWE Generation Hydro GmbH,Wasser,4.6,4.6,1966,56850,FALSE,NA,NA
 SEE932989146397,NEZ Adlershof Modul 4,"BTB Blockheizkraftwerks-, Träger- und Betreibergesellschaft",Erdgas,2,1.97,2010,12489,FALSE,NA,NA
@@ -810,12 +810,12 @@ SEE960175509510,BHKW Hastedt Motor 07,swb Erzeugung AG & Co. KG,Erdgas,11.8096,1
 SEE963192915654,"HKW Pfaffenwald, Generator 43",Universität Stuttgart,Waerme,2.6,2.4,1963,70569,FALSE,NA,NA
 SEE964170331206,MHKW Coburg,Zweckverband für Abfallwirtschaft in Nordwest-Oberfranken,Abfall,10.6,10.6,1988,96450,FALSE,NA,NA
 SEE968458734758,Vianden M8,RWE Generation SE,Pumpspeicher,100,100,1963,9463,FALSE,NA,NA
-SEE929161243203,Staudinger 5,Uniper Kraftwerke GmbH,Steinkohle,550,522,1992,63538,FALSE,NA,NA
+SEE929161243203,Staudinger 5,Uniper Kraftwerke GmbH,Steinkohle,550,522,1992,63538,FALSE,NA,other
 SEE929182899328,Prüfstände Brühl 3/52,Daimler Truck AG,Mineraloelprodukte,20.758,20.758,2019,73733,FALSE,NA,NA
 SEE931704712701,BESS Balzhausen 2 green flexibility,green flexibility BESS Balzhausen 2 GmbH,Batteriespeicher,38.3,38.3,2026,86483,FALSE,NA,NA
-SEE932657881513,KWK-Anlage Gasturbine 1,Delkeskamp Verpackungswerke GmbH,Erdgas,4.96,4.811,1996,49638,TRUE,2022,NA
+SEE932657881513,KWK-Anlage Gasturbine 1,Delkeskamp Verpackungswerke GmbH,Erdgas,4.96,4.811,1996,49638,TRUE,2022,other
 SEE937617144974,IN_N19_KWKK_GT1,AUDI,Erdgas,5.1,4.985,1998,85057,FALSE,NA,NA
-SEE953266686481,T2,SWN Stadtwerke Neumünster GmbH,Steinkohle,12.8,9.545,1982,24534,FALSE,NA,vorlaeufig
+SEE953266686481,T2,SWN Stadtwerke Neumünster GmbH,Steinkohle,12.8,9.545,1982,24534,FALSE,NA,other
 SEE956906670420,BMHKW Bergkamen,E.ON Energy Solutions GmbH,Biomasse,20,18.472,2005,59192,FALSE,NA,NA
 SEE922473273890,WKW Säckingen M4,EnBW Energie Baden-Württemberg AG,Wasser,23,23,1966,79713,FALSE,NA,NA
 SEE961706754454,Kraftwerk Jochenstein MS4,Donaukraftwerk Jochenstein AG,Wasser,26.4,26.4,1956,94107,FALSE,NA,NA
@@ -827,7 +827,7 @@ SEE972034775981,Biomass Heizkraftwerk Recklinghausen,Ökotech Ing.Ges.mbH,Biomas
 SEE976362409624,BES GRO,BES Groitzsch GmbH& Co. KG,Batteriespeicher,17.25,16.425,2019,04539,FALSE,NA,NA
 SEE930267705700,WKW Rudolf-Fettweis-Werk PSW Schwarzenbach M6,EnBW Energie Baden-Württemberg AG,Pumpspeicher,21.7,21.5,1926,76596,FALSE,NA,NA
 SEE930673793902,Bergkamen A,STEAG Power GmbH,Steinkohle,780,720,1981,59192,FALSE,NA,reserve
-SEE933361522259,Kraftwerk Marbach MAR 4,EnBW Energie Baden-Württemberg AG,Mineraloelprodukte,310,306.5,2024,71672,FALSE,NA,betriebsmittel
+SEE933361522259,Kraftwerk Marbach MAR 4,EnBW Energie Baden-Württemberg AG,Mineraloelprodukte,310,306.5,2024,71672,FALSE,NA,reserve
 SEE937685363109,Eitting E F1,Uniper Kraftwerke GmbH,Wasser,9,9,1925,85462,FALSE,NA,NA
 SEE943021591570,Kraftwerk Wasserburg MS2 20 kV,VERBUND Innkraftwerke GmbH,Wasser,4.82,4.82,1938,83512,FALSE,NA,NA
 SEE946583344691,KWK 6,BMW AG,Erdgas,4.5,4.5,2019,84130,FALSE,NA,NA
@@ -904,7 +904,7 @@ SEE958806714600,Biomethan BHKW 3 Hannover Stöcken,BEH Bioenergie Hannover GmbH,
 SEE967243760361,Dampfturbine 3,Smurfit Westrock Herzberg Solid Board GmbH,Erdgas,14.4,13.49,1983,37412,FALSE,NA,NA
 SEE918373264410,BHKW GT-Ost,Stadtwerke Augsburg Energie GmbH,Erdgas,31,30.7,2004,86167,FALSE,NA,NA
 SEE919104957342,HKW Buch Gasturbine,BEW Berliner Energie und Wärme GmbH,Erdgas,8,7.54,2015,13125,FALSE,NA,NA
-SEE920753145547,bnBm GasKW BIB GT4,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE920753145547,bnBm GasKW BIB GT4,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE947399244915,Field Waldkappel,Field Waldkappel GmbH & Co. KG,Batteriespeicher,16,16,2025,37284,FALSE,NA,NA
 SEE950309975076,Kraftwerk SI DT3,K+S Minerals and Agriculture GmbH,Waerme,7.642,7.5,1997,31515,FALSE,NA,NA
 SEE952340290002,Felix Schoeller GmbH & Co.KG Weißenborn DT,Felix Schoeller GmbH & Co. KG,Erdgas,3.343,3.343,1976,09600,FALSE,NA,NA
@@ -964,7 +964,7 @@ SEE978207781308,GuD Merkenich RheinEnergie,RheinEnergie AG,Erdgas,110.2,108.2,20
 SEE981577033014,KW Laufenburg Maschine 9,naturenergie holding AG,Wasser,10.6,10.442,1992,5080,FALSE,NA,NA
 SEE986633590692,GT1 CTX,Smurfit Westrock Hoya Paper & Board GmbH,Erdgas,5.3696,5.155,1996,27318,FALSE,NA,NA
 SEE956268312785,Kondensationsturbine EKT,Solvay GmbH,Waerme,40.49,30,2009,06406,FALSE,NA,NA
-SEE957509710094,AHKW-Neunkirchen,EEW Energy from Waste Saarbrücken GmbH  AHKW-Neunkirchen,Abfall,14,11.6,1977,66538,FALSE,NA,vorlaeufig
+SEE957509710094,AHKW-Neunkirchen,EEW Energy from Waste Saarbrücken GmbH  AHKW-Neunkirchen,Abfall,14,11.6,1977,66538,FALSE,NA,other
 SEE964721515031,Kaufering K(Ro)1,Uniper Kraftwerke GmbH,Wasser,6.1,5.567,1975,86916,FALSE,NA,NA
 SEE967390177067,GOES Anlagen Dotternhausen Blöcke 1+2+3+4,Holcim (Süddeutschland) GmbH,Mineraloelprodukte,17,15,2000,72359,FALSE,NA,NA
 SEE968035471069,Motor 7,Biomethan Produktion Ottersberg GmbH,Biomasse,3.054,3.054,2018,28870,FALSE,NA,NA
@@ -1014,7 +1014,7 @@ SEE901205245022,"Motor-Heizkraftwerk Chemnitz-Süd, Motor 3",eins energie in sac
 SEE902522034610,HKW Karcherstraße (GT14),SWK Stadtwerke Kaiserslautern Versorgungs-AG,Erdgas,8.88,8.5,2021,67655,FALSE,NA,NA
 SEE906917494423,ECOspeicher Au,Allgäuer Überlandwerk GmbH,Batteriespeicher,6.9,6.9,2022,87477,FALSE,NA,NA
 SEE907686447658,Sperrenkraftwerk Wehr,Schluchseewerk AG,Wasser,1.2,1.2,2001,79664,FALSE,NA,NA
-SEE911202451180,Kraftwerk Werdohl-Elverlingsen E1,Mark-E Aktiengesellschaft,Mineraloelprodukte,105,98,1975,58791,FALSE,NA,vorlaeufig
+SEE911202451180,Kraftwerk Werdohl-Elverlingsen E1,Mark-E Aktiengesellschaft,Mineraloelprodukte,105,98,1975,58791,FALSE,NA,other
 SEE918506212059,Gasmotoren Danziger Straße,Energieversorgung Oberhausen,Erdgas,9,8.8105,2021,46045,FALSE,NA,NA
 SEE927282130440,Gasmotorenkraftwerk Römerbrücke,Energie SaarLorLux AG,Erdgas,53.109,52.496,2022,66121,FALSE,NA,NA
 SEE930522848685,GT3,InfraLeuna GmbH,Erdgas,37.6,37,1994,06237,FALSE,NA,NA
@@ -1025,7 +1025,7 @@ SEE944523267864,NEZ Adlershof Modul 1,"BTB Blockheizkraftwerks-, Träger- und Be
 SEE945093389369,"Kraftwerk IV, GT 421",SYNEQT GmbH,Erdgas,47.99,47,2016,45772,FALSE,NA,NA
 SEE947894664195,GT2,DFS Energy GmbH,Erdgas,4.569,4.459,2014,63225,FALSE,NA,NA
 SEE949685414514,P87,Caterpillar Energy Solutions,Erdgas,1.6,1.6,2004,68167,FALSE,NA,NA
-SEE915847711449,bnBm GasKW BIB GT6,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE915847711449,bnBm GasKW BIB GT6,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE916508151147,BHKW Ford Saarlouis Modul 5,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA
 SEE982462684892,Ettling K1,Uniper Kraftwerke GmbH,Wasser,4.1,4.1,1988,94522,FALSE,NA,NA
 SEE938449433663,Kraftwerk GRI,Gunvor Raffinerie Ingolstadt GmbH,Erdgas,7.2,7.2,1964,85092,FALSE,NA,NA
@@ -1064,7 +1064,7 @@ SEE976607134694,KWK 2 Geb. 192.0,BMW AG,Erdgas,4.13,4.09,2014,84130,FALSE,NA,NA
 SEE972377801989,Pfreimd R2,ENGIE Deutschland Erneuerbare GmbH,Pumpspeicher,33,33,1955,92555,FALSE,NA,NA
 SEE974883809046,HKW Reuter West Dampfturbine E,BEW Berliner Energie und Wärme GmbH,Steinkohle,300,282,1988,13599,FALSE,NA,NA
 SEE916865356940,Kraftwerk HA GT4,K+S Minerals and Agriculture GmbH,Erdgas,32.604,32,2012,36269,FALSE,NA,NA
-SEE918332839635,bnBm GasKW BIB GT8,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE918332839635,bnBm GasKW BIB GT8,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE924602311411,SWD KWF T1,Stadtwerke Düsseldorf AG,Biomasse,55,53.7,2000,40233,FALSE,NA,NA
 SEE924780675428,Irsching 5 GT2,Gemeinschaftskraftwerk Irsching GmbH,Erdgas,287,282,2010,85088,FALSE,NA,NA
 SEE925705511180,BHKW 2 - GOM 3,Flughafen München GmbH,Erdgas,4.3,4.207,2014,85356,FALSE,NA,NA
@@ -1100,7 +1100,7 @@ SEE984446277410,Büttel Speicher,Sunnic Lighthouse Solar Invest 11 TU 2 GmbH,Bat
 SEE985220684011,Kraftwerk SI DT2,K+S Minerals and Agriculture GmbH,Waerme,9.439,9.3,1973,31515,FALSE,NA,NA
 SEE957367978162,Kraftwerk Egglfing-Obernberg MS5,Innwerk AG,Wasser,13.45,13.45,1950,94072,FALSE,NA,NA
 SEE966988528885,PSW Geesthacht PSS C,Vattenfall Wasserkraft GmbH,Pumpspeicher,40,39.7,1958,21502,FALSE,NA,NA
-SEE972475289894,Gasturbine 1 - GuD MPE,Mitsubishi HiTec Paper Europe GmbH,Erdgas,14.25,14.05,2005,33699,FALSE,NA,vorlaeufig
+SEE972475289894,Gasturbine 1 - GuD MPE,Mitsubishi HiTec Paper Europe GmbH,Erdgas,14.25,14.05,2005,33699,FALSE,NA,other
 SEE976325553869,DTS 1,Essity Operations Mannheim GmbH,Biomasse,28.5,28.448,1966,68305,FALSE,NA,NA
 SEE983645175053,Ingolstadt 4,Uniper Kraftwerke GmbH,Mineraloelprodukte,420,365,1974,85098,FALSE,NA,reserve
 SEE987633796220,GKH 1,enercity AG,Steinkohle,150,136,1989,30419,TRUE,2026,KVBG
@@ -1146,7 +1146,7 @@ SEE962737235608,Block 1,Müllheizkraftwerk Rothensee GmbH,Abfall,33.6,29.2,2005,
 SEE976184145496,KW Rheinfelden Maschine 5,naturenergie hochrhein AG,Wasser,1.8,1.72,2010,4310,FALSE,NA,NA
 SEE976333173899,Gaskraftwerk Landesbergen - Gasturbine,Statkraft Markets GmbH,Erdgas,66,65,1972,31628,FALSE,NA,reserve
 SEE982889459141,Werk 1.5 KWK 3,BMW AG,Erdgas,3.431,3.36,2019,80937,FALSE,NA,NA
-SEE930159654734,Kraftwerk Werdohl Elverlingsen E2,Mark-E Aktiengesellschaft,Mineraloelprodukte,105,98,1975,58791,FALSE,NA,vorlaeufig
+SEE930159654734,Kraftwerk Werdohl Elverlingsen E2,Mark-E Aktiengesellschaft,Mineraloelprodukte,105,98,1975,58791,FALSE,NA,other
 SEE934529216348,BHKW,Nordzucker AG Werk Uelzen,Biomasse,1.6,1.5565,2005,29525,FALSE,NA,NA
 SEE963081865633,BES BEN,BES Bennewitz GmbH & Co. KG,Batteriespeicher,16.425,16.425,2018,04828,FALSE,NA,NA
 SEE964481657378,illwerke vkw Kopswerk I M3,EnBW Energie Baden-Württemberg AG,Wasser,96,96,1969,A-6793,FALSE,NA,NA
@@ -1189,7 +1189,7 @@ SEE964121468647,HDH_004_Industrieheizkraftwerk-Heidenheim_GM5,J. M. Voith SE & C
 SEE970137108491,HKW Karcherstraße (T2),SWK Stadtwerke Kaiserslautern Versorgungs-AG,Erdgas,9.2,9,1997,67655,FALSE,NA,NA
 SEE964448645769,BMKW Delitzsch,Danpower Energie Service GmbH,Biomasse,20,18.3,2004,04509,FALSE,NA,NA
 SEE990015251552,ABR990388771138,DS Smith Paper Deutschland GmbH,Erdgas,13.2,12.8,1975,37213,FALSE,NA,NA
-SEE991101635409,Motor 1,Biomethan Produktion Ottersberg GmbH,Biomasse,1.048,1.048,2005,28870,FALSE,NA,vorlaeufig
+SEE991101635409,Motor 1,Biomethan Produktion Ottersberg GmbH,Biomasse,1.048,1.048,2005,28870,FALSE,NA,other
 SEE992559962321,Müden Maschine 2,RWE Generation Hydro GmbH,Wasser,4.1,4.1,1965,56254,FALSE,NA,NA
 SEE992590425045,PSW Bleiloch PSS B,Vattenfall Wasserkraft GmbH,Pumpspeicher,40,39.9,1932,07907,FALSE,NA,NA
 SEE995000682977,Batterie Diespeck,VERBUND Energy4Business Germany GmbH,Batteriespeicher,20.7,20.7,2022,91456,FALSE,NA,NA
@@ -1274,7 +1274,7 @@ SEE963438570067,Gasmotoren-Heizkraftwerk Dresden-Reick - Aggregat VI,DREWAG - St
 SEE988114672156,Kaufering K(Ro)2,Uniper Kraftwerke GmbH,Wasser,6.1,5.567,1975,86916,FALSE,NA,NA
 SEE988182827533,Staudinger 4,Uniper Kraftwerke GmbH,Erdgas,660,580,1977,63538,FALSE,NA,reserve
 SEE988558018985,KesselH,Westag AG,Biomasse,9.18,9.18,2001,33378,FALSE,NA,NA
-SEE991807535867,KWK-Anlage Gasturbine 3,Delkeskamp Verpackungswerke GmbH,Erdgas,5,4.85,2000,49638,TRUE,2022,NA
+SEE991807535867,KWK-Anlage Gasturbine 3,Delkeskamp Verpackungswerke GmbH,Erdgas,5,4.85,2000,49638,TRUE,2022,other
 SEE995156555835,KW Ryburg-Schwörstadt M3,Kraftwerk Ryburg-Schwörstadt AG,Wasser,28.3,28.15,1931,79739,FALSE,NA,NA
 SEE996980679766,Kraftwerk Oberaudorf-Ebbs MS2,Österreichisch-Bayerische Kraftwerke AG,Wasser,30,30,1992,83080,FALSE,NA,NA
 SEE966481430050,W065-Gebäude 120 / BHKW Modul 05,Firma Mercedes-Benz AG Werk 050 HPC NC50 LN-Nr.: 17319765,Erdgas,4.3,4.253,2014,40476,FALSE,NA,NA
@@ -1358,7 +1358,7 @@ SEE992947793209,Dampfturbine,Kreis Weseler Abfallgesellschaft mbH & Co.KG,Abfall
 SEE994690933222,BHKW_CVK,Charité – Universitätsmedizin Berlin,Erdgas,2.679,2.64,2016,13353,FALSE,NA,NA
 SEE995613098226,Speicher Gelpertsricht,Solarpark Forsthof GmbH & Co. KG,Batteriespeicher,4,4,2026,92706,FALSE,NA,NA
 SEE918857857947,FHKW GT4,Technische Werke Ludwigshafen am Rhein,Erdgas,4.8,4.3893,1995,67063,FALSE,NA,NA
-SEE922908994215,bnBm GasKW BIB GT9,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE922908994215,bnBm GasKW BIB GT9,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE945038569870,Turbinengenerator4-SiemensT5471,Sappi Ehingen GmbH,Erdgas,4.725,3.4,1977,89584,FALSE,NA,NA
 SEE949717053087,KW Laufenburg Maschine 8,naturenergie holding AG,Wasser,10.6,10.442,1992,5080,FALSE,NA,NA
 SEE953611260939,BHKW-Sonnenwärme,Stadtwerke Greifswald GmbH,Erdgas,4.1803,4.1353,2022,17489,FALSE,NA,NA
@@ -1402,12 +1402,12 @@ SEE947895305424,BHKW Köpenick Gasturbine 2,BEW Berliner Energie und Wärme GmbH
 SEE949085992346,W050-TS_Mercedes-Benz Werk Sindelfingen HKW Turbine 2,Firma Mercedes-Benz AG Werk 050 HPC NC50 LN-Nr.: 17319765,Erdgas,18.116,17.21,1963,71063,FALSE,NA,NA
 SEE950536544908,Kraftwerk Feldkirchen MS1,VERBUND Innkraftwerke GmbH,Wasser,12.733,12.733,1970,83543,FALSE,NA,NA
 SEE960529046555,6MKA,PCK Raffinerie GmbH,Mineraloelprodukte,36,34.5,1994,16303,FALSE,NA,NA
-SEE999346426134,Kraftwerk Landesbergen Dampfturbine,Statkraft Markets GmbH,Erdgas,450,431,1973,31628,FALSE,NA,vorlaeufig
+SEE999346426134,Kraftwerk Landesbergen Dampfturbine,Statkraft Markets GmbH,Erdgas,450,431,1973,31628,FALSE,NA,other
 SEE965029367872,KW Silz - Maschine 2,TIWAG-Tiroler Wasserkraft AG,Pumpspeicher,250,250,1981,6424,FALSE,NA,NA
 SEE973793127974,KW Mittelsbüren Block 4,ArcelorMittal Bremen GmbH,Sonstige Energietraeger (nicht erneuerbar),240,160,1975,28237,FALSE,NA,NA
 SEE975217906967,GT4,ADM Hamburg Aktiengesellschaft,Erdgas,5.688,5.538,2013,21107,FALSE,NA,NA
 SEE983138549866,IKW Block 7,ArcelorMittal Eisenhüttenstadt GmbH,Sonstige Energietraeger (nicht erneuerbar),56,53.9,2013,15890,FALSE,NA,NA
-SEE931497805147,bnBm GasKW BIB GT10,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE931497805147,bnBm GasKW BIB GT10,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE934879768511,Linie 2 (Kessel 6_Turbine 2)_Komplex 04-01/04,SchwörerHaus KG,Biomasse,5.77,5.24,2001,72531,FALSE,NA,NA
 SEE935560628848,Straubing K1,Rhein-Main-Donau GmbH,Wasser,7.1667,7.1667,1994,94315,FALSE,NA,NA
 SEE940303116315,Turbosatz 5,EEW Energy from Waste Premnitz GmbH,Abfall,32.32,32.32,2021,14727,FALSE,NA,NA
@@ -1422,7 +1422,7 @@ SEE965350369514,ET HO 1,thyssenkrupp Steel Europe AG,Sonstige Energietraeger (ni
 SEE973513212348,Kraftwerk Passau-Ingling MS2,Österreichisch-Bayerische Kraftwerke AG,Wasser,21.6,21.6,1965,94036,FALSE,NA,NA
 SEE976945777003,KWK Baruth,Pfleiderer Baruth GmbH,Biomasse,10.205,9.7,2002,15837,FALSE,NA,NA
 SEE981876305560,TREA Leuna 1,MVV Umwelt Asset GmbH,Abfall,18.545,16.245,2005,06237,FALSE,NA,NA
-SEE992623649677,KWK-Anlage Gasturbine 4,Delkeskamp Verpackungswerke GmbH,Erdgas,4.36,4.229,2009,49638,TRUE,2022,NA
+SEE992623649677,KWK-Anlage Gasturbine 4,Delkeskamp Verpackungswerke GmbH,Erdgas,4.36,4.229,2009,49638,TRUE,2022,other
 SEE993205796611,"Biomethan BHKW Hannover Herrenhausen, Motor 4",BEH Bioenergie Hannover GmbH,Biomasse,4.5,4.5,2024,30419,FALSE,NA,NA
 SEE993583711350,Erdgas BHKW KLA Bottrop Ag. 4,Emschergenossenschaft,Erdgas,2.676,2.676,2021,46238,FALSE,NA,NA
 SEE996720450723,SWM HKW Sued GuD2 DT60,SWM Services GmbH,Erdgas,131.585,127.6,2004,81371,FALSE,NA,NA
@@ -1442,7 +1442,7 @@ SEE945148512650,PSW Goldisthal PSS A,Vattenfall Wasserkraft GmbH,Pumpspeicher,26
 SEE955085348786,Gasmotoren-Blockheizkraftwerk II (Generator 9),GLOBALFOUNDRIES Dresden Module One LLC & Co. KG,Erdgas,3.832,3.772,2004,01468,FALSE,NA,NA
 SEE964041814975,Kraftwerk Eberswalde GmbH (HoKaWe),Kraftwerk Eberswalde GmbH (HoKaWe),Biomasse,20,20,2006,16225,FALSE,NA,NA
 SEE966089822219,BHKW KW5 58,Kraftwerke Mainz-Wiesbaden AG,Erdgas,10.02,9.93,2020,55120,FALSE,NA,NA
-SEE960934136643,bnBm GasKW BIB GT2,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE960934136643,bnBm GasKW BIB GT2,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE941420464426,Zeltingen Maschine 3,RWE Generation Hydro GmbH,Wasser,3.4,3.4,1964,54492,FALSE,NA,NA
 SEE942956157011,Turbosatz 2,AVG Abfallentsorgungs- und Verwertungsgesellschaft Köln mbH,Abfall,31.76,18,2017,50735,FALSE,NA,NA
 SEE945462188876,LEV KWG G19,Currenta GmbH & Co. OHG,Erdgas,29,27.47,1971,51373,FALSE,NA,NA
@@ -1593,13 +1593,13 @@ SEE997982071411,Neef Maschine 2,RWE Generation Hydro GmbH,Wasser,4.1,4.1,1966,56
 SEE976352702957,trlyr 9,trlyr 9 GmbH & Co. KG,Batteriespeicher,17.25,17.25,2026,29614,FALSE,NA,NA
 SEE976533716001,Gersthofen M4,LEW Wasserkraft,Wasser,1.974,1.969,1901,86368,FALSE,NA,NA
 SEE977277909087,Mühltal F1,Uniper Kraftwerke GmbH,Wasser,3.74,3.74,2011,82064,FALSE,NA,NA
-SEE980016033738,Rheinhafen-Dampfkraftwerk RDK 7,EnBW Energie Baden-Württemberg AG,Steinkohle,536,517,1985,76189,FALSE,NA,NA
+SEE980016033738,Rheinhafen-Dampfkraftwerk RDK 7,EnBW Energie Baden-Württemberg AG,Steinkohle,536,517,1985,76189,FALSE,NA,other
 SEE980046698020,Turbine 5,Maxauer Papierfarbik GmbH,Waerme,57.3,54,2020,76187,FALSE,NA,NA
 SEE980337143772,WKW Reckingen M2,EnBW Energie Baden-Württemberg AG,Wasser,21,21,1941,79761,FALSE,NA,NA
 SEE955076814825,"Motor-Heizkraftwerk Chemnitz-Nord, Motor 7",eins energie in sachsen GmbH & Co. KG,Erdgas,12.65,12.538,2023,09114,FALSE,NA,NA
 SEE956441736957,Gasmotoren-Blockheizkraftwerk I (Generator 6),GLOBALFOUNDRIES Dresden Module Two LLC & Co. KG,Erdgas,3.884,3.879,1998,01468,FALSE,NA,NA
 SEE934353123843,Batterie Iphofen,VERBUND Energy4Business Germany GmbH,Batteriespeicher,20.7,20.7,2022,97346,FALSE,NA,NA
-SEE939426112649,Gersteinwerk I DT (I2),RWE Generation SE,Erdgas,355,355,1973,59368,FALSE,NA,vorlaeufig
+SEE939426112649,Gersteinwerk I DT (I2),RWE Generation SE,Erdgas,355,355,1973,59368,FALSE,NA,other
 SEE940779412058,KW Häusern MS A1,Schluchseewerk AG,Pumpspeicher,30,30,1931,79837,FALSE,NA,NA
 SEE948093740512,MHKW Mannheim Generator TE0,MVV Umwelt Asset GmbH,Abfall,8.85,4.26,2012,68169,FALSE,NA,NA
 SEE949306551550,BHKW,UKE Immobilien-Verwaltungs GmbH & Co. KG,Erdgas,1.999,1.999,2013,20251,FALSE,NA,NA
@@ -1870,7 +1870,7 @@ SEE970554561831,Kraftwerk HA DT2,K+S Minerals and Agriculture GmbH,Waerme,22.5,2
 SEE982798043462,ZF-FRD-W04-G32-Prüfstand-A01,ZF Friedrichshafen AG,Mineraloelprodukte,1.756,1.756,2022,88046,FALSE,NA,NA
 SEE982694984074,BHKW 1,Universitätsklinkum Freiburg und Bad Krozingen,Erdgas,2.028,1.999,2015,79106,FALSE,NA,NA
 SEE987807988154,Audorf GT,Uniper Kraftwerke GmbH,Mineraloelprodukte,90,90,2004,24783,FALSE,NA,NA
-SEE976107471893,bnBm GasKW BIB GT11,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,betriebsmittel
+SEE976107471893,bnBm GasKW BIB GT11,RWE Generation SE,Erdgas,34.8,34.4,2023,68647,FALSE,NA,reserve
 SEE976415135319,BHKW Kre,Cargill Deutschland GmbH,Erdgas,14.33,14,1996,47809,FALSE,NA,NA
 SEE977956291342,BHKW Ford Saarlouis Modul 1,Ford-Werke GmbH,Erdgas,4.404,4.322,2016,66740,FALSE,NA,NA
 SEE982367992610,Franken GT2,Uniper Kraftwerke GmbH,Erdgas,58,53,1975,90449,FALSE,NA,NA
@@ -1904,7 +1904,7 @@ SEE999735538103,Fankel Maschine 2,RWE Generation Hydro GmbH,Wasser,4.1,4.1,1963,
 SEE990635906900,W059-RD_Beb. 122/4,Firma Mercedes-Benz AG Werk 050 HPC NC50 LN-Nr.: 17319765,Mineraloelprodukte,7.862,7.862,2015,70327,FALSE,NA,NA
 SEE990811648037,KW Häusern MS B2,Schluchseewerk AG,Pumpspeicher,30,30,1932,79837,FALSE,NA,NA
 SEE992738364885,PSW Hohenwarte 2 PSS F,Vattenfall Wasserkraft GmbH,Pumpspeicher,40,39.7,1966,07338,FALSE,NA,NA
-SEE997526539162,Kraftwerk-Kirchlengern_GT2,Energieservice Westfalen Weser GmbH,Mineraloelprodukte,19.5,19,1973,32278,TRUE,2026,NA
+SEE997526539162,Kraftwerk-Kirchlengern_GT2,Energieservice Westfalen Weser GmbH,Mineraloelprodukte,19.5,19,1973,32278,TRUE,2026,other
 SEE965777272787,Walchenseekraftwerk E Pe1,Uniper Kraftwerke GmbH,Wasser,13,13,1924,82431,FALSE,NA,NA
 SEE987993663941,Querdel SKW Biomethan3,Querdel Energie GmbH,Biomasse,3.352,3.352,2023,48336,FALSE,NA,NA
 SEE990877363660,GTS1,Crespel & Deiters GmbH & Co. KG,Erdgas,1.14,1.088,1994,49479,FALSE,NA,NA
@@ -1930,14 +1930,14 @@ SEE991539102320,Dinslakener Holz-Energiezentrum CTE,DHE Dinslakener Holz-Energie
 SEE993970035267,BESS - Batteriespeicher,SchwörerHaus KG,Batteriespeicher,3.78,3.78,2024,72531,FALSE,NA,NA
 SEE994027750690,W050-TS_Mercedes-Benz Werk Sindelfingen HKW Turbine 3,Firma Mercedes-Benz AG Werk 050 HPC NC50 LN-Nr.: 17319765,Erdgas,5,4.75,1971,71063,FALSE,NA,NA
 SEE999181532861,HKWH Gasturbine 5,Stadtwerke Kiel AG,Erdgas,5.52,5.424,2005,24116,FALSE,NA,NA
-SEE900073920406,T5,NA,Steinkohle,21.8,20.365,1983,24534,TRUE,2021,NA
-SEE903181060330,BHKW - Hüttenfeld 18,NA,Erdgas,60,60,2012,51427,TRUE,2022,NA
+SEE900073920406,T5,NA,Steinkohle,21.8,20.365,1983,24534,TRUE,2021,other
+SEE903181060330,BHKW - Hüttenfeld 18,NA,Erdgas,60,60,2012,51427,TRUE,2022,other
 SEE904421343152,Weisweiler E,NA,Braunkohle,375,321,1965,52249,TRUE,2022,KVBG
 SEE905554171988,Hafen Block 6,NA,Steinkohle,330,303,1979,28237,TRUE,2021,KVBG
 SEE907162822238,Wilhelmshaven 1 DT,NA,Steinkohle,782,715,1976,26386,TRUE,2021,KVBG
-SEE910102553963,Gasturbinenanlage Castrop-Rauxel,NA,Erdgas,10.3,10,1992,44579,TRUE,2026,NA
-SEE918056935682,"Kraftwerk III, DT310",NA,Erdgas,35.45,35.45,1973,45772,TRUE,2025,NA
-SEE921472787742,illwerke vkw Vermuntwerk M3,NA,Wasser,30,30,1930,A-6794,TRUE,2026,NA
+SEE910102553963,Gasturbinenanlage Castrop-Rauxel,NA,Erdgas,10.3,10,1992,44579,TRUE,2026,other
+SEE918056935682,"Kraftwerk III, DT310",NA,Erdgas,35.45,35.45,1973,45772,TRUE,2025,other
+SEE921472787742,illwerke vkw Vermuntwerk M3,NA,Wasser,30,30,1930,A-6794,TRUE,2026,other
 SEE921706084241,GT22,NA,Mineraloelprodukte,30,29.4,2008,42275,TRUE,2023,EnWG
 SEE931736847297,Neurath D,NA,Braunkohle,647,607,1975,41517,TRUE,2024,KVBG
 SEE901120268069,"Kraftwerk I, GT11",NA,Steinkohle,18.4,18.4,1942,45772,TRUE,2024,KVBG
@@ -1953,32 +1953,32 @@ SEE959000487536,HKW West Block 1,NA,Steinkohle,153,138.5,1985,38440,TRUE,2024,KV
 SEE959837176825,S300 VT2,NA,Waerme,29,28.5,1964,67063,TRUE,2024,EnWG
 SEE901344829220,Bestandsanlage_HKW_Aalen,NA,Erdgas,23,15,1960,73432,TRUE,2021,EnWG
 SEE904968236689,Kraftwerk Farge,NA,Steinkohle,380,350,1969,28777,TRUE,2024,KVBG
-SEE920837459195,HKW Nord Generator B,NA,Steinkohle,68.2,61,1998,38440,TRUE,2024,NA
+SEE920837459195,HKW Nord Generator B,NA,Steinkohle,68.2,61,1998,38440,TRUE,2024,other
 SEE924647197780,Dortmund DT,NA,Erdgas,11.4,11.4,2013,44143,TRUE,2022,EnWG
-SEE935395375856,Generator 2,NA,Erdgas,12.56,11.56,1984,31249,TRUE,2022,NA
+SEE935395375856,Generator 2,NA,Erdgas,12.56,11.56,1984,31249,TRUE,2022,other
 SEE938923083674,"Kraftwerk I, T14",NA,Steinkohle,63.2,55.56,1971,45772,TRUE,2024,KVBG
-SEE939468630132,Heizkraftwerk Leipzig Nord DT83,NA,Waerme,45.6,44.414,1996,04105,TRUE,2021,NA
-SEE948546582201,IPH Strom VT2,NA,Erdgas,18.56,17.38,1983,65929,TRUE,2026,NA
-SEE950041295098,GTKW Wedel,NA,Mineraloelprodukte,55,51,1972,22880,TRUE,2025,NA
-SEE964729462818,Kraftwerk Jänschwalde Block F,NA,Braunkohle,535,500,1989,03185,TRUE,2024,NA
-SEE965779402670,MHKW Pirmasens Verbrennung,NA,Abfall,17.75,15,1999,66954,TRUE,2022,NA
-SEE901786750397,Niederaußem E,NA,Braunkohle,324,295,1970,50129,TRUE,2024,NA
-SEE907142597378,KWD Bestandsanlage,NA,Erdgas,49.189,48.279,2005,06130,TRUE,2020,NA
+SEE939468630132,Heizkraftwerk Leipzig Nord DT83,NA,Waerme,45.6,44.414,1996,04105,TRUE,2021,other
+SEE948546582201,IPH Strom VT2,NA,Erdgas,18.56,17.38,1983,65929,TRUE,2026,other
+SEE950041295098,GTKW Wedel,NA,Mineraloelprodukte,55,51,1972,22880,TRUE,2025,other
+SEE964729462818,Kraftwerk Jänschwalde Block F,NA,Braunkohle,535,500,1989,03185,TRUE,2024,other
+SEE965779402670,MHKW Pirmasens Verbrennung,NA,Abfall,17.75,15,1999,66954,TRUE,2022,other
+SEE901786750397,Niederaußem E,NA,Braunkohle,324,295,1970,50129,TRUE,2024,other
+SEE907142597378,KWD Bestandsanlage,NA,Erdgas,49.189,48.279,2005,06130,TRUE,2020,other
 SEE923577153439,"Kraftwerk I,  T15",NA,Steinkohle,76.1,68.4,1983,45772,TRUE,2024,KVBG
 SEE933685962403,Weisweiler F,NA,Braunkohle,361,321,1967,52249,TRUE,2025,KVBG
 SEE937128904463,ST_BHKW_T9,NA,Biomasse,19.47,17.523,2019,63811,TRUE,2024,EnWG
-SEE943690268513,Isar 2,NA,Kernenergie,1485,1410,1988,84051,TRUE,2023,NA
+SEE943690268513,Isar 2,NA,Kernenergie,1485,1410,1988,84051,TRUE,2023,other
 SEE945212899878,HKW Wilmersdorf Gasturbine 3,NA,Mineraloelprodukte,93,92,1977,14199,TRUE,2021,EnWG
 SEE952266131625,"Kraftwerk I, KT13",NA,Steinkohle,21,20.514,1949,45772,TRUE,2024,KVBG
 SEE963541517812,Irsching 3,NA,Mineraloelprodukte,440,415,1974,85088,TRUE,2024,EnWG
 SEE977258693776,Wilhelmshaven 1 ZT,NA,Steinkohle,140,140,1998,26386,TRUE,2021,KVBG
 SEE978327902850,Westfalen E,NA,Steinkohle,800,763.7,2014,59071,TRUE,2021,KVBG
-SEE917033307511,UER N230 VST4,NA,Erdgas,14.9,13.3,1967,47829,TRUE,2026,NA
+SEE917033307511,UER N230 VST4,NA,Erdgas,14.9,13.3,1967,47829,TRUE,2026,other
 SEE923082939436,"HKW Chemnitz Nord II, Block B",NA,Braunkohle,67,58.172,1988,09114,TRUE,2023,EnWG
-SEE925694194494,UPM Augsburg Gaskraftwerk,NA,Erdgas,31,29.5,1992,86153,TRUE,2023,NA
-SEE927528071629,Gundremmingen C,NA,Kernenergie,1344,1288,1984,89355,TRUE,2022,NA
+SEE925694194494,UPM Augsburg Gaskraftwerk,NA,Erdgas,31,29.5,1992,86153,TRUE,2023,other
+SEE927528071629,Gundremmingen C,NA,Kernenergie,1344,1288,1984,89355,TRUE,2022,other
 SEE934668342441,HKW - K6 DT2,NA,Steinkohle,19.2,17.4,1979,91052,TRUE,2020,EnWG
-SEE949123804273,Gasturbine 2 - GuD MPE,NA,Erdgas,14.25,14.05,2005,33699,TRUE,2021,NA
+SEE949123804273,Gasturbine 2 - GuD MPE,NA,Erdgas,14.25,14.05,2005,33699,TRUE,2021,other
 SEE953373967701,"Kraftwerk I, GT9",NA,Steinkohle,15.75,15.75,1941,45772,TRUE,2024,KVBG
 SEE968950464368,KW Hastedt Block 15,NA,Steinkohle,130,119,1989,28207,TRUE,2024,EnWG
 SEE973768834586,PSW Niederwartha PSS D,NA,Pumpspeicher,20,19.9,1958,01156,TRUE,2024,EnWG
@@ -1986,32 +1986,32 @@ SEE978389589440,Walsum 9,NA,Steinkohle,410,370,1988,47179,TRUE,2021,KVBG
 SEE907150117643,Neurath A,NA,Braunkohle,294,294,1972,41517,TRUE,2022,KVBG
 SEE907223904750,SWM HKW Sued GuD1 DT1,NA,Erdgas,82.7,79.7,1980,81371,TRUE,2024,EnWG
 SEE923485223774,Fenne MKV Gasturbine,NA,Mineraloelprodukte,35,34.86,1982,66333,TRUE,2025,EnWG
-SEE933174373390,PSW Hohenwarte 1 PSS A,NA,Pumpspeicher,30,29.9,1959,07338,TRUE,2024,NA
+SEE933174373390,PSW Hohenwarte 1 PSS A,NA,Pumpspeicher,30,29.9,1959,07338,TRUE,2024,other
 SEE933960350956,"HKW Chemnitz Nord II, Block C",NA,Braunkohle,100,92.332,1990,09114,TRUE,2024,EnWG
-SEE934361309352,"Kraftwerk III, GT312",NA,Erdgas,79,77.567,1974,45772,TRUE,2025,NA
+SEE934361309352,"Kraftwerk III, GT312",NA,Erdgas,79,77.567,1974,45772,TRUE,2025,other
 SEE934897209904,Wilhelmshaven GT,NA,Mineraloelprodukte,57,56,1976,26386,TRUE,2024,EnWG
 SEE974753539035,Turbine 6,NA,Steinkohle,29.7,26.9,1990,75175,TRUE,2022,EnWG
 SEE981220191160,HKW Oberkirch,NA,Steinkohle,20,18.5,1987,77704,TRUE,2024,KVBG
-SEE902840312209,S300 NKT,NA,Waerme,40,39,1964,67063,TRUE,2023,NA
-SEE907396256311,Solvay Rb TA8,NA,Waerme,28,28,1962,47495,TRUE,2019,NA
-SEE918337255669,Turbine 6,NA,Waerme,20,18,1969,76187,TRUE,2021,NA
+SEE902840312209,S300 NKT,NA,Waerme,40,39,1964,67063,TRUE,2023,other
+SEE907396256311,Solvay Rb TA8,NA,Waerme,28,28,1962,47495,TRUE,2019,other
+SEE918337255669,Turbine 6,NA,Waerme,20,18,1969,76187,TRUE,2021,other
 SEE923480721565,A855 GT1,NA,Erdgas,48,47,1992,67063,TRUE,2022,EnWG
-SEE930228090937,Niederaußem F,NA,Braunkohle,334,299,1971,50129,TRUE,2024,NA
+SEE930228090937,Niederaußem F,NA,Braunkohle,334,299,1971,50129,TRUE,2024,other
 SEE945161671891,HKW Moabit Gasturbine 7,NA,Mineraloelprodukte,17,17,1971,13353,TRUE,2020,EnWG
 SEE945959654273,"Kraftwerk II, T26",NA,Steinkohle,67.001,62.401,1966,45772,TRUE,2017,EnWG
 SEE956656118067,HKW Wilmersdorf Gasturbine 2,NA,Mineraloelprodukte,93,92,1977,14199,TRUE,2021,EnWG
-SEE957029086662,illwerke vkw Vermuntwerk M4,NA,Wasser,30,30,1930,A-6794,TRUE,2026,NA
-SEE984037976906,"Kraftwerk III, GT311",NA,Erdgas,62.56,61.127,1973,45772,TRUE,2025,NA
+SEE957029086662,illwerke vkw Vermuntwerk M4,NA,Wasser,30,30,1930,A-6794,TRUE,2026,other
+SEE984037976906,"Kraftwerk III, GT311",NA,Erdgas,62.56,61.127,1973,45772,TRUE,2025,other
 SEE989054024678,Scholven FWK,NA,Steinkohle,70,70,1985,45896,TRUE,2023,EnWG
 SEE937052769589,Heyden 4,NA,Steinkohle,920,875,1987,32469,TRUE,2024,KVBG
-SEE956973616802,LEV KWG G12,NA,Steinkohle,18,17.235,1958,51373,TRUE,2025,NA
+SEE956973616802,LEV KWG G12,NA,Steinkohle,18,17.235,1958,51373,TRUE,2025,other
 SEE962845122456,SWD KWF T4,NA,Biomasse,50,48.9,1955,40233,TRUE,2025,EnWG
 SEE963177319026,Turbine 4,NA,Erdgas,16.7,16,1980,75175,TRUE,2022,EnWG
 SEE963909310185,HKW Moabit Gasturbine 5,NA,Mineraloelprodukte,17,17,1971,13353,TRUE,2025,EnWG
 SEE969074173341,Ma 3,NA,Sonstige Energietraeger (nicht erneuerbar),40,35,1941,38239,TRUE,2025,EnWG
 SEE975094128629,HKW Mitte Kessel 12,NA,Erdgas,22.4,20,1971,38114,TRUE,2024,EnWG
-SEE983424047212,HKW GT,NA,Erdgas,25,24.5,1997,15236,TRUE,2022,NA
-SEE990357023541,illwerke vkw Vermuntwerk M5,NA,Wasser,37,37,1930,A-6794,TRUE,2026,NA
+SEE983424047212,HKW GT,NA,Erdgas,25,24.5,1997,15236,TRUE,2022,other
+SEE990357023541,illwerke vkw Vermuntwerk M5,NA,Wasser,37,37,1930,A-6794,TRUE,2026,other
 SEE991559435767,"Kraftwerk I, KT5",NA,Steinkohle,16,15.638,1940,45772,TRUE,2024,KVBG
 SEE992973663477,Heizkraftwerk Stuttgart-Münster GT 16,NA,Mineraloelprodukte,23.3,23.3,1974,70376,TRUE,2022,EnWG
 SEE964114029633,Kraftwerk Walheim Block 2,NA,Steinkohle,160,148,1967,74399,TRUE,2025,EnWG
@@ -2019,75 +2019,75 @@ SEE967478674402,HKW Wilmersdorf Gasturbine 1,NA,Mineraloelprodukte,93,92,1977,14
 SEE972367491114,PSW Niederwartha PSS C,NA,Pumpspeicher,20,19.9,1958,01156,TRUE,2024,EnWG
 SEE972461974179,Heizkraftwerk Hagen-Kabel H5,NA,Erdgas,124.5,121,1981,58099,TRUE,2025,EnWG
 SEE976414005279,Neurath E,NA,Braunkohle,645,604,1976,41517,TRUE,2024,KVBG
-SEE978971638464,Neurath C,NA,Braunkohle,316,292,1973,41517,TRUE,2024,NA
-SEE990438768378,Dampfturbine 8,NA,Steinkohle,35.9,32.9,1985,24939,TRUE,2024,NA
-SEE994549176695,EVA,NA,Grubengas,30,30,1984,49479,TRUE,2021,NA
-SEE997988564504,BKR Gasturbine,NA,Erdgas,11.4,11.344,2006,55543,TRUE,2024,NA
+SEE978971638464,Neurath C,NA,Braunkohle,316,292,1973,41517,TRUE,2024,other
+SEE990438768378,Dampfturbine 8,NA,Steinkohle,35.9,32.9,1985,24939,TRUE,2024,other
+SEE994549176695,EVA,NA,Grubengas,30,30,1984,49479,TRUE,2021,other
+SEE997988564504,BKR Gasturbine,NA,Erdgas,11.4,11.344,2006,55543,TRUE,2024,other
 SEE987407788451,Heizkraftwerk Hagen Kabel H4,NA,Erdgas,129.5,126,1981,58099,TRUE,2025,EnWG
 SEE907933719545,Kraftwerk Herrenhausen Block B,NA,Erdgas,120,110,1974,30419,TRUE,2021,EnWG
-SEE909323889876,Boehringer Ingelheim - 2336 - K8/T7,NA,Biomasse,12.672,11.922,1983,55218,TRUE,2024,NA
+SEE909323889876,Boehringer Ingelheim - 2336 - K8/T7,NA,Biomasse,12.672,11.922,1983,55218,TRUE,2024,other
 SEE917432813484,HKW West Block 2,NA,Steinkohle,153,138.5,1985,38440,TRUE,2024,KVBG
-SEE944567587799,Emsland A,NA,Kernenergie,1406,1336,1988,49811,TRUE,2023,NA
+SEE944567587799,Emsland A,NA,Kernenergie,1406,1336,1988,49811,TRUE,2023,other
 SEE946537967655,Hochdruckdampfturbine,NA,Braunkohle,17.8,16,1999,03052,TRUE,2022,EnWG
-SEE951462745445,Brokdorf,NA,Kernenergie,1480,1410,1986,25576,TRUE,2022,NA
-SEE985577062814,GKN II,NA,Kernenergie,1400,1310,1989,74382,TRUE,2023,NA
-SEE992750539261,Frimmersdorf P,NA,Braunkohle,333,284,1966,41517,TRUE,2021,NA
+SEE951462745445,Brokdorf,NA,Kernenergie,1480,1410,1986,25576,TRUE,2022,other
+SEE985577062814,GKN II,NA,Kernenergie,1400,1310,1989,74382,TRUE,2023,other
+SEE992750539261,Frimmersdorf P,NA,Braunkohle,333,284,1966,41517,TRUE,2021,other
 SEE994761683902,Dortmund GT,NA,Erdgas,14.5,14,2013,44143,TRUE,2022,EnWG
-SEE997842921603,EVE Premnitz,NA,Abfall,25,25,2009,14727,TRUE,2021,NA
+SEE997842921603,EVE Premnitz,NA,Abfall,25,25,2009,14727,TRUE,2021,other
 SEE999848168525,Moorburg Block B,NA,Steinkohle,860,800,2015,21079,TRUE,2021,KVBG
 SEE979012663285,Neurath B,NA,Braunkohle,318,294,1972,41517,TRUE,2022,KVBG
-SEE988668060393,Turbine 31,NA,Sonstige Energietraeger (nicht erneuerbar),33.6,33.6,1967,50769,TRUE,2026,NA
-SEE996231694999,Dampfturbine WSK Kuhheide 1,NA,Abfall,14,13.3,2011,16303,TRUE,2018,NA
-SEE998469801279,MVB Borsigstraße Holz,NA,Biomasse,20,18.2,2005,22113,TRUE,2023,NA
-SEE994506958166,PSW Hohenwarte 1 PSS B,NA,Pumpspeicher,30,29.9,1959,07338,TRUE,2024,NA
+SEE988668060393,Turbine 31,NA,Sonstige Energietraeger (nicht erneuerbar),33.6,33.6,1967,50769,TRUE,2026,other
+SEE996231694999,Dampfturbine WSK Kuhheide 1,NA,Abfall,14,13.3,2011,16303,TRUE,2018,other
+SEE998469801279,MVB Borsigstraße Holz,NA,Biomasse,20,18.2,2005,22113,TRUE,2023,other
+SEE994506958166,PSW Hohenwarte 1 PSS B,NA,Pumpspeicher,30,29.9,1959,07338,TRUE,2024,other
 SEE996990805407,HKW Mitte Kessel 1,NA,Steinkohle,49.4,44.5,1985,38114,TRUE,2024,EnWG
 SEE998945127831,Heizkraftwerk II,NA,Erdgas,26.8,26.38,1996,46145,TRUE,2020,EnWG
-SEE999431209765,Frimmersdorf Q,NA,Braunkohle,321,278,1970,41517,TRUE,2021,NA
+SEE999431209765,Frimmersdorf Q,NA,Braunkohle,321,278,1970,41517,TRUE,2021,other
 SEE966083015792,GT21,NA,Mineraloelprodukte,30,29.4,2008,42275,TRUE,2023,EnWG
 SEE967605837250,Niederaußem C,NA,Braunkohle,333,295,1965,50129,TRUE,2022,KVBG
 SEE970816213751,Ibbenbüren B,NA,Steinkohle,838,794,1985,49479,TRUE,2021,KVBG
 SEE972471937317,Moorburg Block A,NA,Steinkohle,860,800,2015,21079,TRUE,2021,KVBG
-SEE985047526785,Kraftwerk Jänschwalde Block E,NA,Braunkohle,535,500,1987,03185,TRUE,2024,NA
+SEE985047526785,Kraftwerk Jänschwalde Block E,NA,Braunkohle,535,500,1987,03185,TRUE,2024,other
 SEE992645841813,HKW Moabit Gasturbine 6,NA,Mineraloelprodukte,17,17,1971,13353,TRUE,2025,EnWG
 SEE993836152862,"Kraftwerk I, KT7",NA,Steinkohle,18,17.572,1941,45772,TRUE,2024,KVBG
 SEE999977738880,IKW Deuben,NA,Braunkohle,78,67,1936,06682,TRUE,2022,KVBG
-BNA0302,Frimmersdorf,NA,Braunkohle,146,129,1957,41517,TRUE,2011,NA
-BNA0303,Frimmersdorf,NA,Braunkohle,147,130,1957,41517,TRUE,2011,NA
-BNA0304,Frimmersdorf,NA,Braunkohle,143,124,1960,41517,TRUE,2011,NA
-BNA0414,Westfalen,NA,Steinkohle,160,152,1963,59071,TRUE,2011,NA
-BNA0415,Westfalen,NA,Steinkohle,160,152,1963,59071,TRUE,2011,NA
-BNA0011,Papierfabrik Albbruck,NA,Steinkohle,28,28,2009,79774,TRUE,2012,NA
-BNA1337a,Heizkraftwerk,NA,Erdgas,27.29,27,NA,63741,TRUE,2012,NA
-BNA0710,Niederaußem,NA,Braunkohle,140,125,1963,50129,TRUE,2012,NA
-BNA0711,Niederaußem,NA,Braunkohle,140,125,1963,50129,TRUE,2012,NA
-BNA0118,Heizkraftwerk Süd,NA,Erdgas,15.7,14.4,1969,53121,TRUE,2012,NA
-BNA0212,HKW II/B,NA,Steinkohle,144,133,1965,47053,TRUE,2012,NA
-BNA1021,Weisweiler,NA,Braunkohle,146,123,1955,52249,TRUE,2012,NA
-BNA1022,Weisweiler,NA,Braunkohle,155,135,1959,52249,TRUE,2012,NA
-BNA0269,HKW Flensburg,NA,Mineraloelprodukte,30,30,1974,24939,TRUE,2012,NA
-BNA0307,Frimmersdorf,NA,Braunkohle,144,128,1960,41517,TRUE,2012,NA
-BNA0308,Frimmersdorf,NA,Braunkohle,152,136,1962,41517,TRUE,2012,NA
-BNA0305,Frimmersdorf,NA,Braunkohle,146,130,1959,41517,TRUE,2012,NA
-BNA0306,Frimmersdorf,NA,Braunkohle,151,132,1960,41517,TRUE,2012,NA
-BNA0309,Frimmersdorf,NA,Braunkohle,153,135,1964,41517,TRUE,2012,NA
-BNA0310,Frimmersdorf,NA,Braunkohle,155,138,1962,41517,TRUE,2012,NA
-BNA0311,Frimmersdorf,NA,Braunkohle,147,131,1962,41517,TRUE,2012,NA
-BNA0312,Frimmersdorf,NA,Braunkohle,149,133,1964,41517,TRUE,2012,NA
-BNA0376,Staudinger,NA,Steinkohle,320,293,1970,63538,TRUE,2012,NA
-BNA0639,HKW Mannheim,NA,Abfall,9,5.56,1977,68169,TRUE,2012,NA
-BNA0812,Kraftwerk Veltheim,NA,Steinkohle,100,93,1965,32457,TRUE,2012,NA
-BNA0913,GuD Anlage Spreetal,NA,Erdgas,55,50,2009,2979,TRUE,2012,NA
+BNA0302,Frimmersdorf,NA,Braunkohle,146,129,1957,41517,TRUE,2011,other
+BNA0303,Frimmersdorf,NA,Braunkohle,147,130,1957,41517,TRUE,2011,other
+BNA0304,Frimmersdorf,NA,Braunkohle,143,124,1960,41517,TRUE,2011,other
+BNA0414,Westfalen,NA,Steinkohle,160,152,1963,59071,TRUE,2011,other
+BNA0415,Westfalen,NA,Steinkohle,160,152,1963,59071,TRUE,2011,other
+BNA0011,Papierfabrik Albbruck,NA,Steinkohle,28,28,2009,79774,TRUE,2012,other
+BNA1337a,Heizkraftwerk,NA,Erdgas,27.29,27,NA,63741,TRUE,2012,other
+BNA0710,Niederaußem,NA,Braunkohle,140,125,1963,50129,TRUE,2012,other
+BNA0711,Niederaußem,NA,Braunkohle,140,125,1963,50129,TRUE,2012,other
+BNA0118,Heizkraftwerk Süd,NA,Erdgas,15.7,14.4,1969,53121,TRUE,2012,other
+BNA0212,HKW II/B,NA,Steinkohle,144,133,1965,47053,TRUE,2012,other
+BNA1021,Weisweiler,NA,Braunkohle,146,123,1955,52249,TRUE,2012,other
+BNA1022,Weisweiler,NA,Braunkohle,155,135,1959,52249,TRUE,2012,other
+BNA0269,HKW Flensburg,NA,Mineraloelprodukte,30,30,1974,24939,TRUE,2012,other
+BNA0307,Frimmersdorf,NA,Braunkohle,144,128,1960,41517,TRUE,2012,other
+BNA0308,Frimmersdorf,NA,Braunkohle,152,136,1962,41517,TRUE,2012,other
+BNA0305,Frimmersdorf,NA,Braunkohle,146,130,1959,41517,TRUE,2012,other
+BNA0306,Frimmersdorf,NA,Braunkohle,151,132,1960,41517,TRUE,2012,other
+BNA0309,Frimmersdorf,NA,Braunkohle,153,135,1964,41517,TRUE,2012,other
+BNA0310,Frimmersdorf,NA,Braunkohle,155,138,1962,41517,TRUE,2012,other
+BNA0311,Frimmersdorf,NA,Braunkohle,147,131,1962,41517,TRUE,2012,other
+BNA0312,Frimmersdorf,NA,Braunkohle,149,133,1964,41517,TRUE,2012,other
+BNA0376,Staudinger,NA,Steinkohle,320,293,1970,63538,TRUE,2012,other
+BNA0639,HKW Mannheim,NA,Abfall,9,5.56,1977,68169,TRUE,2012,other
+BNA0812,Kraftwerk Veltheim,NA,Steinkohle,100,93,1965,32457,TRUE,2012,other
+BNA0913,GuD Anlage Spreetal,NA,Erdgas,55,50,2009,2979,TRUE,2012,other
 BNA0680,Mumsdorf,NA,Braunkohle,72,60,1968,4613,TRUE,2013,EnWG
-BNA0059a,HKW Kassel,NA,Erdgas,13.2,12.2,1961,34225,TRUE,2013,NA
-BNA0143,KW Mittelsbüren,NA,Sonstige Energietraeger (nicht erneuerbar),110,110,1974,28237,TRUE,2013,NA
-BNA0187,Datteln,NA,Steinkohle,95,95,1964,45711,TRUE,2013,NA
-BNA0188,Datteln,NA,Steinkohle,95,95,1964,45711,TRUE,2013,NA
-BNA0189,Datteln,NA,Steinkohle,95,113,1969,45711,TRUE,2013,NA
-BNA0375,Staudinger,NA,Steinkohle,270,249,1965,63538,TRUE,2013,NA
-BNA0448,Shamrock,NA,Steinkohle,162,132,1957,44653,TRUE,2013,NA
-BNA0638,HKW Mannheim,NA,Abfall,4.5,2.78,1966,68169,TRUE,2013,NA
-BNA1275,Kraftwerk Weinheim,NA,Erdgas,21,21,2005,69469,TRUE,2013,NA
-BNA1276,Kraftwerk Weinheim,NA,Erdgas,21,21,1982,69469,TRUE,2013,NA
+BNA0059a,HKW Kassel,NA,Erdgas,13.2,12.2,1961,34225,TRUE,2013,other
+BNA0143,KW Mittelsbüren,NA,Sonstige Energietraeger (nicht erneuerbar),110,110,1974,28237,TRUE,2013,other
+BNA0187,Datteln,NA,Steinkohle,95,95,1964,45711,TRUE,2013,other
+BNA0188,Datteln,NA,Steinkohle,95,95,1964,45711,TRUE,2013,other
+BNA0189,Datteln,NA,Steinkohle,95,113,1969,45711,TRUE,2013,other
+BNA0375,Staudinger,NA,Steinkohle,270,249,1965,63538,TRUE,2013,other
+BNA0448,Shamrock,NA,Steinkohle,162,132,1957,44653,TRUE,2013,other
+BNA0638,HKW Mannheim,NA,Abfall,4.5,2.78,1966,68169,TRUE,2013,other
+BNA1275,Kraftwerk Weinheim,NA,Erdgas,21,21,2005,69469,TRUE,2013,other
+BNA1276,Kraftwerk Weinheim,NA,Erdgas,21,21,1982,69469,TRUE,2013,other
 BNA0203,Knepper,NA,Steinkohle,370,345,1971,44357,TRUE,2014,EnWG
 BNA0215,KW Walsum,NA,Steinkohle,150,129,1959,47179,TRUE,2014,EnWG
 BNA0333,Scholven,NA,Steinkohle,370,345,1970,45896,TRUE,2014,EnWG
@@ -2096,8 +2096,8 @@ BNA0335,Scholven,NA,Steinkohle,740,676,1979,45896,TRUE,2014,EnWG
 BNA0447,KW Herne,NA,Steinkohle,150,133,1963,44653,TRUE,2014,EnWG
 BNA0918a,Dow Stade,NA,Erdgas,193,190,1972,21683,TRUE,2014,EnWG
 BNA1035,Kraftwerk Werdohl-Elverlingsen,NA,Steinkohle,200,186,1971,58791,TRUE,2014,EnWG
-BNA1338,Spitzenkraftwerk,NA,Mineraloelprodukte,19.6,19,1978,94469,TRUE,2014,NA
-BNA0933,Heizkraftwerk Stuttgart-Gaisburg,NA,Erdgas,60,55,1973,70376,TRUE,2014,NA
+BNA1338,Spitzenkraftwerk,NA,Mineraloelprodukte,19.6,19,1978,94469,TRUE,2014,other
+BNA0933,Heizkraftwerk Stuttgart-Gaisburg,NA,Erdgas,60,55,1973,70376,TRUE,2014,other
 BNA0099,Gasturbinenkraftwerk Bielefeld Ummeln,NA,Erdgas,55,55,1975,33649,TRUE,2015,EnWG
 BNA0355,Grafenrheinfeld,NA,Kernenergie,1345,1275,1982,97506,TRUE,2015,EnWG
 BNA0490b,Goldenberg,NA,Braunkohle,45,45,1993,50354,TRUE,2015,EnWG
@@ -2108,7 +2108,7 @@ BNA0682,Freimann GT 2,NA,Erdgas,81,80,1975,80807,TRUE,2015,EnWG
 BNA0813,Kraftwerk Veltheim,NA,Steinkohle,320,303,1970,32457,TRUE,2015,EnWG
 BNA0810,Kraftwerk Veltheim,NA,Erdgas,65,65,1974,32457,TRUE,2015,EnWG
 BNA0811,Kraftwerk Veltheim,NA,Erdgas,340,335,1975,32457,TRUE,2015,EnWG
-BNA0922a,GuD-Ikw Staßfurt,NA,Erdgas,9,9,1996,39418,TRUE,2015,NA
+BNA0922a,GuD-Ikw Staßfurt,NA,Erdgas,9,9,1996,39418,TRUE,2015,other
 BNA0080,Lichterfelde,NA,Erdgas,150,144,1973,12207,TRUE,2016,EnWG
 BNA0140,KW Hastedt,NA,Erdgas,163,155,1972,28207,TRUE,2016,EnWG
 BNA0145,KW Hafen,NA,Steinkohle,145,127,1968,28237,TRUE,2016,EnWG
@@ -2120,9 +2120,9 @@ BNA0735,Thyrow,NA,Erdgas,38,37.5,1989,15806,TRUE,2016,EnWG
 BNA0736,Thyrow,NA,Erdgas,38,37.5,1989,15806,TRUE,2016,EnWG
 BNA0737,Thyrow,NA,Erdgas,38,37.5,1989,15806,TRUE,2016,EnWG
 BNA0799,Heizkraftwerk Pforzheim GmbH,NA,Erdgas,12.8,11.3,1969,75175,TRUE,2016,EnWG
-BNA0413b,Westfalen,NA,Steinkohle,800,765,2014,59071,TRUE,2016,NA
-BNA1225,PWG,NA,Erdgas,5.5,5.3,1989,82380,TRUE,2016,NA
-BNA1226,PWG,NA,Erdgas,5.5,5.3,1987,82380,TRUE,2016,NA
+BNA0413b,Westfalen,NA,Steinkohle,800,765,2014,59071,TRUE,2016,other
+BNA1225,PWG,NA,Erdgas,5.5,5.3,1989,82380,TRUE,2016,other
+BNA1226,PWG,NA,Erdgas,5.5,5.3,1987,82380,TRUE,2016,other
 BNA0161,Brunsbüttel,NA,Mineraloelprodukte,64,63.5,1973,25541,TRUE,2017,EnWG
 BNA0162,Brunsbüttel,NA,Mineraloelprodukte,64,63.5,1973,25541,TRUE,2017,EnWG
 BNA0163,Brunsbüttel,NA,Mineraloelprodukte,64,63.5,1973,25541,TRUE,2017,EnWG
@@ -2134,9 +2134,9 @@ BNA0989,KW West,NA,Steinkohle,356,318,1971,46562,TRUE,2017,EnWG
 BNA0990,KW West,NA,Steinkohle,356,322,1971,46562,TRUE,2017,EnWG
 BNA0991,KW Voerde,NA,Steinkohle,761,695,1982,46562,TRUE,2017,EnWG
 BNA0992,KW Voerde,NA,Steinkohle,761,695,1985,46562,TRUE,2017,EnWG
-BNA1127,GHD,NA,Erdgas,6.8,6.7,1997,84130,TRUE,2017,NA
-BNA1128,GHD,NA,Erdgas,6.8,6.7,1997,84130,TRUE,2017,NA
-BNA0381,Kernkraft Gundremmingen,NA,Kernenergie,1344,1284,1984,89355,TRUE,2018,NA
+BNA1127,GHD,NA,Erdgas,6.8,6.7,1997,84130,TRUE,2017,other
+BNA1128,GHD,NA,Erdgas,6.8,6.7,1997,84130,TRUE,2017,other
+BNA0381,Kernkraft Gundremmingen,NA,Kernenergie,1344,1284,1984,89355,TRUE,2018,other
 BNA0076,Lichterfelde,NA,Erdgas,150,144,1974,12207,TRUE,2018,EnWG
 BNA0083,Wilmersdorf,NA,Mineraloelprodukte,300,92,1977,14199,TRUE,2018,EnWG
 BNA0110,Bochum,NA,Erdgas,21,20.7,2004,44799,TRUE,2018,EnWG
@@ -2150,9 +2150,9 @@ BNA1200,GuD-Kraftwerk,NA,Erdgas,17.5,17.2,2005,68305,TRUE,2018,EnWG
 BNA0934,Heizkraftwerk Stuttgart-Gaisburg,NA,Steinkohle,22.6,22.6,2009,70376,TRUE,2018,EnWG
 BNA1037,Kraftwerk Werdohl-Elverlingsen,NA,Steinkohle,330,310,1982,58791,TRUE,2018,EnWG
 BNA1041,Gersteinwerk,NA,Erdgas,55,55,1973,59368,TRUE,2018,EnWG
-BNA0012d,Werkskraftwerk Sappi Alfeld,NA,Mineraloelprodukte,2.8,2.8,1994,31061,TRUE,2018,NA
-BNA0255,HKW Iderhoffstraße,NA,Erdgas,12,11,1996,99085,TRUE,2018,NA
-BNA1294,EEV,NA,Mineraloelprodukte,39.2,38,1994,21107,TRUE,2018,NA
+BNA0012d,Werkskraftwerk Sappi Alfeld,NA,Mineraloelprodukte,2.8,2.8,1994,31061,TRUE,2018,other
+BNA0255,HKW Iderhoffstraße,NA,Erdgas,12,11,1996,99085,TRUE,2018,other
+BNA1294,EEV,NA,Mineraloelprodukte,39.2,38,1994,21107,TRUE,2018,other
 BNA0075,Lichterfelde,NA,Erdgas,150,144,1972,12207,TRUE,2019,EnWG
 BNA0082,Reuter,NA,Steinkohle,132,124,1969,13599,TRUE,2019,EnWG
 BNA0178,HKW Chemnitz  Nord II,NA,Erdgas,67,57.2,1986,9114,TRUE,2019,EnWG
@@ -2162,7 +2162,7 @@ BNA0526,Gemeinschaftskraftwerk Kiel,NA,Steinkohle,350,323,1970,24149,TRUE,2019,E
 BNA0753,HKW 2,NA,Erdgas,25,24.5,1996,46147,TRUE,2019,EnWG
 BNA1046a,Gersteinwerk,NA,Steinkohle,665.5,614,1984,59368,TRUE,2019,EnWG
 BNA1084,HKW Elberfeld,NA,Steinkohle,102,85,1992,42117,TRUE,2019,EnWG
-BNA0802,Kernkraftwerk Philippsburg 2,NA,Kernenergie,1468,1402,1985,76661,TRUE,2020,NA
+BNA0802,Kernkraftwerk Philippsburg 2,NA,Kernenergie,1468,1402,1985,76661,TRUE,2020,other
 BNA0705,Niederaußem D,NA,Braunkohle,320,297,1968,50129,TRUE,2021,KVBG
 BNA0439,Buschhaus,NA,Braunkohle,390,352,1985,38350,TRUE,2020,KVBG
 BNA1183,Heizkraftwerk Merheim,NA,Erdgas,17.4,15.8,2001,51109,TRUE,2020,KVBG
