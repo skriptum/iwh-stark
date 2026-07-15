@@ -1,0 +1,88 @@
+# Aufbau Liste
+
+Kombinieren der verschiedenen Informationen
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+df_KWL <- read_csv("../data/processed/01_KWL_clean.csv")
+df_PLZ <- read_csv("../data/processed/02_foerdergebiete.csv")
+```
+
+KWL filtern nach den Regionen
+```{r}
+df <- df_KWL %>% inner_join(df_PLZ, by = "plz", multiple="first")
+```
+
+Kompensation?
+```{r}
+df <- df %>%
+  mutate(jahr_stillegung = case_when(
+    # aus der Originalanlage
+    # name == "Niederaußem D" ~ 2020,
+    # name == "Niederaußem C" ~ 2020,
+    # name == "Neurath A" ~ 2022,
+    # name == "Neurath B" ~ 2021,
+    # name == "Neurath D" ~ 2024,
+    # name == "Neurath E" ~ 2024,
+    # name == "Weisweiler E" ~ 2021,
+    # name == "Weisweiler F" ~ 2025,
+    # name == "Fab Frechen" ~ 2022,
+    
+    # nur die zukünftigen aus Anlage 2 
+    name == "Weisweiler H" ~ 2029,
+    name == "Weisweiler G" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A B" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A C" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A D" ~ 2028,
+    name == "Boxberg Block N" ~ 2029,
+    name == "Boxberg Block P" ~ 2029,
+    name == "Boxberg Block R" ~ 2038,
+    name == "Boxberg Block Q" ~ 2038,
+    name == "Neurath F" ~ 2030,
+    name == "Neurath G" ~ 2030,
+    name == "Niederaußem K" ~ 2029,
+    name == "Niederaußem G" ~ 2033,
+    name == "Niederaußem H" ~ 2030,
+    name == "Schkopau A" ~ 2034,
+    name == "Schkopau B" ~ 2034,
+    name == "Schkopau A+B Bahngenerator" ~ 2034,
+    name == "Kraftwerk Lippendorf Block R" ~ 2035,
+    name == "Kraftwerk Lippendorf Block R" ~ 2035,
+    name == "Kraftwerk Schwarze Pumpe Block A" ~ 2038,
+    name == "Kraftwerk Schwarze Pumpe Block B" ~ 2038,
+    TRUE ~ jahr_stillegung
+    ),
+    stillegung_type = case_when(
+      name %in% c("Weisweiler H", "Weisweiler G", "Jänschwalde A", "Jänschwalde B", "Jänschwalde C", "Jänschwalde D", "Boxberg Block N", "Boxberg Block P", "Boxberg Block R", "Boxberg Block Q", "Neurath F", "Neurath G", "Niederaußem K", "Niederaußem G", "Niederaußem H", "Schkopau A", "Schkopau B", "Schkopau A+B Bahngenerator", "Kraftwerk Lippendorf Block R", "Kraftwerk Schwarze Pumpe Block A", "Kraftwerk Schwarze Pumpe Block B") ~ "KVBG",
+      TRUE ~ stillegung_type
+      )
+    )
+```
+
+```{r}
+write_csv(df, "../data/processed/03_KWL.csv")
+```
+
+
+Ein schneller Plot, wie viel KW-Kappa durch KVBG stillgelegt wird bis 2040
+```{r}
+df %>%
+  filter(stillegung_type=="KVBG") %>%
+  select(leistung_brutto, jahr_stillegung) %>%
+  group_by(jahr_stillegung) %>%
+  summarise(total = sum(leistung_brutto)) %>%
+  ungroup() %>%
+  mutate(
+    cum = cumsum(total),
+    kappa = sum(total) - cum
+    ) %>%
+  ggplot(aes(x=jahr_stillegung, y=kappa)) +
+  geom_line() 
+```
+
+

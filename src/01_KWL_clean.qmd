@@ -1,0 +1,65 @@
+# Kraftwerksliste Cleaning
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+```{r}
+df <- read_excel("../data/raw/kraftwerksliste.xlsx", sheet="Gesamtkraftwerksliste", skip=7)
+```
+
+```{r}
+df%>% 
+  # count types
+  count(Kraftwerksstatus)
+```
+
+
+```{r}
+df_cleaned <- df %>%
+  reframe(
+    nr_MASTR = `EinheitMastrNummer`,
+    name = `Anzeigename`,
+    betreiber = `Anlagenbetreiber`,
+    energietraeger = `Energietraeger`,
+    leistung_brutto = `Bruttoleistung_MW`,
+    leistung_netto = `Nettonennleistung_MW`,
+    jahr_inbetriebnahme = `Jahr_Inbetriebnahme`,
+    plz = `Postleitzahl`,
+    
+    # Stillegung und Gründe
+    stillgelegt = if_else(is.na(`Jahr_Stilllegung**`), FALSE, TRUE),
+    jahr_stillegung = `Jahr_Stilllegung**`,
+    stillegung_type = case_when(
+      Kraftwerksstatus == "InBetrieb" ~ NA_character_,
+      Kraftwerksstatus == "endgültig stillgelegt nach § 13b EnWG" ~ "EnWG", 
+      Kraftwerksstatus == "endgültig stillgelegt nach KVBG" ~ "KVBG",
+      Kraftwerksstatus == "zeitl. gestreckte Stilllegung aufgrund § 50 KVBG" ~ "KVBG",
+      Kraftwerksstatus == "Netzreserve aufgrund KVBG" ~ "KVBG",
+      Kraftwerksstatus == "Netzreserve aufgrund § 13b EnWG" ~ "reserve",
+      Kraftwerksstatus == "Kapazitätsreserve aufgrund von § 13e EnWG" ~ "reserve",
+      Kraftwerksstatus == "vorläufig Stillgelegt" ~ "other",
+      Kraftwerksstatus == "besonderes netztechnisches Betriebsmittel" ~ "reserve",
+      Kraftwerksstatus == "endgültig stillgelegt ohne § 13b EnWG oder KVBG" ~ "other",
+      TRUE ~ "other"
+    )
+  ) %>%
+  filter(!is.na(nr_MASTR)) # alle aggregierten Kategorien
+```
+
+Descriptive
+```{r}
+psych::describe(df_cleaned)
+```
+
+Bei vielen Anlagen fehlt der Betreiber...
+```{r}
+df %>%
+  filter(is.na(Anlagenbetreiber))
+```
+
+```{r}
+write_csv(df_cleaned, "../data/processed/01_KWL_clean.csv")
+```
+

@@ -44,11 +44,15 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 |                     |                                                         |        |
 | jahr_inbetriebnahme | Jahr der Inbetriebname des KW                           | KWL    |
 | stillgelegt         | `true / false`                                          |        |
-| stillegung_type     | `EnWG / KVBG / ohne / KVBG_gestreckt / reserve / other` | KWL    |
-| jahr_stillegung     | wenn `stillgelegt=true`                                 | KWL    |
-| entschädigung_kvbg  | `true / false`                                          | KVBG   |
+| stillegung_type     | siehe Erklärung                                         | KWL    |
+| jahr_stillegung     | wenn `stillgelegt=true`, auch mit Jahren in der Zukunft | KWL    |
 
-Erklärung zu `stillegung_type`: Diese Variable erklärt, aus welchem Grund das KW stillgelegt wurde, bspw nach KVBG etc
+ `stillegung_type` = Grund für die Stillegung
+
+- KVBG = beinhaltet auch KW, die in die Reserve nach KVBG geschickt werden (Da sie effektiv nicht mehr produzieren)
+- EnWG = Stillegung nach §13 EnWG
+- "reserve" = nach ENWG (Netz bzw Kapaittätsreservere), oder [besonderes netztechniches Betriebsmittel](https://de.wikipedia.org/wiki/Besondere_netztechnische_Betriebsmittel)
+- 
 
 
 
@@ -56,12 +60,12 @@ Erklärung zu `stillegung_type`: Diese Variable erklärt, aus welchem Grund das 
 
 | Variable | Beschreibung                                                 | Quelle |
 | -------- | ------------------------------------------------------------ | ------ |
-| nr_MASTR | Nr im MASTR |        |
-| anlagenbetreiber    | Betreiber des Kraftwerks (unvollständig!)               | KWL    |
-| anzeigename         | Name des Kraftwerks (unvollständig!)                    | KWL    |
-| energietraeger      | Erdgas, Kohle etc                                       | KWL    |
-| bruttoleistung      | Bruttoleistung in Megawatt                              | KWL    |
-| nettoleistung       | Nettoleistung in Megawatt                               | KWL    |
+| nr_MASTR | Nr im MASTR | MASTR |
+| anlagenbetreiber    | Betreiber des Kraftwerks (unvollständig!)               | MASTR |
+| anzeigename         | Name des Kraftwerks (unvollständig!)                    | MASTR |
+| energietraeger      | Erdgas, Kohle etc                                       | MASTR |
+| bruttoleistung      | Bruttoleistung in Megawatt                              | MASTR |
+| nettoleistung       | Nettoleistung in Megawatt                               | MASTR |
 | region   | `Rheinisches Revier`, `Mitteldeutsches Revier`, ...          | INVKG  |
 | tagebau  | `true/false`: ob die Analge auf ehemaligen Tagebaugebiet ist | LBKT |
 | plz                 | Postleitzahl                                            | MASTR  |

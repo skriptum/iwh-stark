@@ -1,0 +1,131 @@
+# Regionen
+
+Zuordnung: Welche PLZ gehören zu welchen Revieren / Regionen nach KVBG
+- §2 Regionen (Rheinisches Revier etc)
+- §11, 12 Regionen (Steinkohlekraftwerke, Altenburger Land etc)
+
+Liste: https://www.vdivde-it.de/sites/default/files/document/Hinweisblatt-F%C3%B6rdergebiete_0.pdf
+
+## Importe
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+df_plz <- read_csv("../data/raw/zuordnung_plz_ort.csv")
+```
+
+## Fördergebiete
+
+```{r}
+foerdergebiete <- tribble(
+  ~Bundesland,              ~Landkreis,                    ~Paragraph,  
+  "Brandenburg",             "Landkreis Elbe-Elster",                "§2",    
+  "Brandenburg",             "Landkreis Oberspreewald-Lausitz",      "§2",
+  "Brandenburg",             "Landkreis Dahme-Spreewald",            "§2",
+  "Brandenburg",             "Landkreis Spree-Neiße",                "§2",
+  "Brandenburg",             "kreisfreie Stadt Cottbus - Chóśebuz",  "§2",
+  "Sachsen",                  "Landkreis Bautzen",                    "§2",
+  "Sachsen",                  "Landkreis Görlitz",                    "§2",
+  "Sachsen",                  "Landkreis Leipzig",                    "§2",
+  "Sachsen",                  "Stadt Leipzig",                        "§2",
+  "Sachsen",                  "Landkreis Nordsachsen",                "§2",
+  "Nordrhein-Westfalen",      "Rhein-Kreis Neuss",                    "§2",
+  "Nordrhein-Westfalen",      "Kreis Düren",                          "§2",
+  "Nordrhein-Westfalen",      "Rhein-Erft-Kreis",                     "§2",
+  "Nordrhein-Westfalen",      "Städteregion Aachen",                  "§2",
+  "Nordrhein-Westfalen",      "Kreis Heinsberg",                      "§2",
+  "Nordrhein-Westfalen",      "Kreis Euskirchen",                     "§2",
+  "Nordrhein-Westfalen",      "Stadt Mönchengladbach",                "§2",
+  "Sachsen-Anhalt",           "Burgenlandkreis",                      "§2",
+  "Sachsen-Anhalt",           "Saalekreis",                           "§2",
+  "Sachsen-Anhalt",           "kreisfreie Stadt Halle (Saale)",       "§2",
+  "Sachsen-Anhalt",           "Landkreis Mansfeld-Südharz",           "§2",
+  "Sachsen-Anhalt",           "Landkreis Anhalt-Bitterfeld",          "§2",
+  "Thüringen",                "Landkreis Altenburger Land",           "§11/12",
+  "Niedersachsen",            "Landkreis Helmstedt",                  "§11/12",
+  "Niedersachsen",            "Stadt Wilhelmshaven",                  "§11/12",
+  "Nordrhein-Westfalen",      "Kreis Unna",                           "§11/12",
+  "Nordrhein-Westfalen",      "Stadt Hamm",                           "§11/12",
+  "Nordrhein-Westfalen",      "Stadt Herne",                          "§11/12",
+  "Nordrhein-Westfalen",      "Stadt Duisburg",                       "§11/12",
+  "Nordrhein-Westfalen",      "Stadt Gelsenkirchen",                  "§11/12",
+  "Mecklenburg-Vorpommern",   "Landkreis Rostock",                    "§11/12",
+  "Mecklenburg-Vorpommern",   "Stadt Rostock",                        "§11/12",
+  "Saarland",                 "Landkreis Saarlouis",                  "§11/12",
+  "Saarland",                 "Regionalverband Saarbrücken",          "§11/12"
+)
+```
+
+```{r}
+foerdergebiete <- foerdergebiete %>%
+  mutate(Revier = case_when(
+    # --- §2 Braunkohle: Lausitzer Revier ---
+    Landkreis %in% c("Landkreis Elbe-Elster", "Landkreis Oberspreewald-Lausitz",
+                      "Landkreis Dahme-Spreewald", "Landkreis Spree-Neiße",
+                      "kreisfreie Stadt Cottbus - Chóśebuz",
+                      "Landkreis Bautzen", "Landkreis Görlitz") ~ "Lausitzer Braunkohlerevier",
+
+    # --- §2 Braunkohle: Mitteldeutsches Revier ---
+    Landkreis %in% c("Landkreis Leipzig", "Stadt Leipzig", "Landkreis Nordsachsen",
+                      "Burgenlandkreis", "Saalekreis", "kreisfreie Stadt Halle (Saale)",
+                      "Landkreis Mansfeld-Südharz", "Landkreis Anhalt-Bitterfeld") ~ "Mitteldeutsches Braunkohlerevier",
+
+    # --- §2 Braunkohle: Rheinisches Revier ---
+    Landkreis %in% c("Rhein-Kreis Neuss", "Kreis Düren", "Rhein-Erft-Kreis",
+                      "Städteregion Aachen", "Kreis Heinsberg", "Kreis Euskirchen",
+                      "Stadt Mönchengladbach") ~ "Rheinisches Braunkohlerevier",
+    # --- §11 / 12: Steinkohle (alle)
+    Landkreis %in% c("Landkreis Altenburger Land", "Landkreis Helmstedt",
+                      "Stadt Wilhelmshaven", "Kreis Unna", "Stadt Hamm",
+                      "Stadt Herne", "Stadt Duisburg", "Stadt Gelsenkirchen",
+                      "Landkreis Rostock", "Stadt Rostock", "Landkreis Saarlouis",
+                      "Regionalverband Saarbrücken") ~ "Steinkohlenbergbaugebiete"
+  ))  
+```
+
+
+Jetzt wird gefiltert
+```{r}
+df_landkreise <- df_plz %>%
+  filter(!is.na(landkreis)) %>%
+  filter(landkreis %in% foerdergebiete$Landkreis)
+```
+
+Städte wurden nicht gefunden, weil sie keinen zugeordneten Landkreis haben. 
+```{r}
+foerdergebiete <- foerdergebiete %>%
+  mutate(Landkreis = str_remove(Landkreis, "^(kreisfreie Stadt|Stadt)\\s+")) # in der PL lkiste ohne diese
+
+df_staedte <- df_plz %>%
+  filter(is.na(landkreis)) %>%
+  filter(ort %in% foerdergebiete$Landkreis) %>%
+  mutate(landkreis = ort)
+```
+
+Beides zusammenfügen
+```{r}
+df_filtered <- bind_rows(df_landkreise, df_staedte)
+```
+
+Kurzer Check ob zu allen Orten was gefunden wurde
+```{r}
+check <- foerdergebiete %>%
+  mutate(gefunden = Landkreis %in% df_filtered$landkreis)
+
+check %>% filter(!gefunden)
+```
+Sieht gut aus, also speichern
+
+```{r}
+df_filtered <- df_filtered %>%
+  select(ort, landkreis, plz) %>%
+  left_join(foerdergebiete, by = c("landkreis" = "Landkreis")) 
+```
+
+
+```{r}
+write_csv(df_filtered, "../data/processed/02_foerdergebiete.csv")
+```
+
