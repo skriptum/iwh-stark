@@ -21,3 +21,5 @@ db.download(data = ["wind", "solar", "storage", "combustion", "biomass"])
 #%%
 db.to_csv(tables = ["wind", "solar", "storage", "combustion", "biomass"])
 
+
+# %%

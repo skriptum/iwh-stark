@@ -121,7 +121,8 @@ Sieht gut aus, also speichern
 ```{r}
 df_filtered <- df_filtered %>%
   select(ort, landkreis, plz) %>%
-  left_join(foerdergebiete, by = c("landkreis" = "Landkreis")) 
+  left_join(foerdergebiete, by = c("landkreis" = "Landkreis")) %>%
+  select("plz", "Paragraph", "Revier")
 ```
 
 

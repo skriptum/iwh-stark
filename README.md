@@ -9,7 +9,7 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 - Welche Stein-/Braunkohlekraftwerke werden in den Revieren abgeschaltet?
   - Wie viele Beschäftigte haben dort gearbeitet?
   - Welche wurden im Rahmen des KVBG kompensiert?
-- Was entsteht an neuen Kraftwerken in den Revieren (Gas / Wind / PV)?
+- Was entsteht an neuen Kraftwerken in den Revieren (Gas / Wind / PV / Biomasse)?
   - welche davon auf dem Gebiet ehemaliger Tagebaue / Kraftwerke?
 
 
@@ -24,6 +24,8 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 - PLZ-Zuordnung zu Ort / BL (PLZ): [Postleitzahl.net](https://www.postleitzahl.net/plz-downloads)
 - Kompensation für Kraftwerke (KVBG): [Anlage 2 KVBG](https://www.buzer.de/Anlage_2_KVBG.htm)
 - Fördergebiete / Reviere (INVKG): [§2 / §11 / §12 InvKG](https://www.vdivde-it.de/sites/default/files/document/Hinweisblatt-F%c3%b6rdergebiete_0.pdf)
+
+
 
 
 
@@ -49,10 +51,11 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 
  `stillegung_type` = Grund für die Stillegung
 
-- KVBG = beinhaltet auch KW, die in die Reserve nach KVBG geschickt werden (Da sie effektiv nicht mehr produzieren)
-- EnWG = Stillegung nach §13 EnWG
+- "KVBG" = sowohl solche aus Anlage 2; dynamische Auscrheibungen bei BNA, als auch KVBG-Reserve
+- "EnWG" = Stillegung nach §13 EnWG
 - "reserve" = nach ENWG (Netz bzw Kapaittätsreservere), oder [besonderes netztechniches Betriebsmittel](https://de.wikipedia.org/wiki/Besondere_netztechnische_Betriebsmittel)
-- 
+- "other" = ohne Angabe von Gründen oder vorläufig
+- "NA" = noch in Betrieb
 
 
 

@@ -1,32 +1,48 @@
 # Kraftwerksliste Cleaning
 
+## Import
+
 ```{r}
 library(tidyverse)
 library(readxl)
 ```
 
 ```{r}
-df <- read_excel("../data/raw/kraftwerksliste.xlsx", sheet="Gesamtkraftwerksliste", skip=7)
+df_raw <- read_excel("../data/raw/kraftwerksliste.xlsx", sheet="Gesamtkraftwerksliste", skip=7)
 ```
 
+## Cleaning
+
+Selektion von Spalten und 
+
 ```{r}
-df%>% 
+df_raw%>% 
   # count types
   count(Kraftwerksstatus)
 ```
 
+```{r}
+colnames(df_raw)
+```
+
 
 ```{r}
-df_cleaned <- df %>%
+df <- df_raw %>%
   reframe(
     nr_MASTR = `EinheitMastrNummer`,
     name = `Anzeigename`,
     betreiber = `Anlagenbetreiber`,
     energietraeger = `Energietraeger`,
+    brennstoff = Hauptbrennstoff,
     leistung_brutto = `Bruttoleistung_MW`,
     leistung_netto = `Nettonennleistung_MW`,
     jahr_inbetriebnahme = `Jahr_Inbetriebnahme`,
+    einspeisung = Volleinspeisung_Teileinspeisung,
     plz = `Postleitzahl`,
+    ort = Ort,
+    strasse = Strasse,
+    hausnummer = Hausnummer,
+    bundesland = Bundesland,
     
     # Stillegung und Gründe
     stillgelegt = if_else(is.na(`Jahr_Stilllegung**`), FALSE, TRUE),
@@ -48,18 +64,443 @@ df_cleaned <- df %>%
   filter(!is.na(nr_MASTR)) # alle aggregierten Kategorien
 ```
 
-Descriptive
+
+### Stillegung für Zukunft (aus KVBG Anlage)
+
 ```{r}
-psych::describe(df_cleaned)
+df <- df %>%
+  mutate(jahr_stillegung = case_when(
+    # aus der Originalanlage
+    # name == "Niederaußem D" ~ 2020,
+    # name == "Niederaußem C" ~ 2020,
+    # name == "Neurath A" ~ 2022,
+    # name == "Neurath B" ~ 2021,
+    # name == "Neurath D" ~ 2024,
+    # name == "Neurath E" ~ 2024,
+    # name == "Weisweiler E" ~ 2021,
+    # name == "Weisweiler F" ~ 2025,
+    # name == "Fab Frechen" ~ 2022,
+    
+    # nur die zukünftigen aus Anlage 2 
+    name == "Weisweiler H" ~ 2029,
+    name == "Weisweiler G" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A B" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A C" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block A D" ~ 2028,
+    name == "Boxberg Block N" ~ 2029,
+    name == "Boxberg Block P" ~ 2029,
+    name == "Boxberg Block R" ~ 2038,
+    name == "Boxberg Block Q" ~ 2038,
+    name == "Neurath F" ~ 2030,
+    name == "Neurath G" ~ 2030,
+    name == "Niederaußem K" ~ 2029,
+    name == "Niederaußem G" ~ 2033,
+    name == "Niederaußem H" ~ 2030,
+    name == "Schkopau A" ~ 2034,
+    name == "Schkopau B" ~ 2034,
+    name == "Schkopau A+B Bahngenerator" ~ 2034,
+    name == "Kraftwerk Lippendorf Block R" ~ 2035,
+    name == "Kraftwerk Lippendorf Block R" ~ 2035,
+    name == "Kraftwerk Schwarze Pumpe Block A" ~ 2038,
+    name == "Kraftwerk Schwarze Pumpe Block B" ~ 2038,
+    TRUE ~ jahr_stillegung
+    ),
+    stillegung_type = case_when(
+      name %in% c("Weisweiler H", "Weisweiler G", "Jänschwalde A", "Jänschwalde B", "Jänschwalde C", "Jänschwalde D", "Boxberg Block N", "Boxberg Block P", "Boxberg Block R", "Boxberg Block Q", "Neurath F", "Neurath G", "Niederaußem K", "Niederaußem G", "Niederaußem H", "Schkopau A", "Schkopau B", "Schkopau A+B Bahngenerator", "Kraftwerk Lippendorf Block R", "Kraftwerk Schwarze Pumpe Block A", "Kraftwerk Schwarze Pumpe Block B") ~ "KVBG",
+      TRUE ~ stillegung_type
+      )
+    )
 ```
 
-Bei vielen Anlagen fehlt der Betreiber...
+### BNA Nummern
+
+```{r}
+df %>% filter(str_starts(nr_MASTR,"BNA")) %>%
+  arrange(desc(jahr_stillegung))
+```
+
+alle mit BNA-nr: 
+- stillgelegt vor 2021 (vor MASTR)
+- außer: Frechen Brikettfabrik
+
+```{r}
+df %>% 
+  filter(name=="Fab Frechen") %>%
+  select(nr_MASTR, name, betreiber, energietraeger, jahr_stillegung, leistung_brutto, einspeisung)
+```
+
+zu Frechen: aus [Wikipedia](https://de.wikipedia.org/wiki/Kohleveredlungsbetrieb_Frechen)
+
+- original KW wurde irgendwann stillgelegt (nach KVBG Anlage 2 entschädigt)
+- eine Maschine für den Eigenverbrauch der Fabrik läuft noch weiter
+
+FRAGE: BNA-Nummern alle droppen?
+
+### Ausländische KW
+
+Alle Reihen ohne Bundesland = sitzend im Ausland
+
 ```{r}
 df %>%
-  filter(is.na(Anlagenbetreiber))
+  filter(is.na(bundesland))
+```
+
+### NA
+
+Viele der BNA Nr haben keine aktualisierten Daten mehr -> rauslöschen
+```{r}
+df %>% 
+  filter(!str_starts(nr_MASTR,"BNA")) %>% #230->121
+  # filter(bundesland %in% c("NordreinWestphalen", "Brandenburg", "Sachsen", "SachsenAnhalt")) %>% #121-12
+  
+  filter(is.na(betreiber)) %>%
+  arrange(desc(leistung_brutto)) %>%
+  pull("name")
+```
+
+Einfügen von Daten
+
+```{r}
+operator_lookup <- c(
+  # -- in Reihenfolge von Liste 2 --
+  "Isar 2" = "PreussenElektra",
+  "Brokdorf" = "PreussenElektra",
+  "Emsland A" = "RWE Power AG",
+  "GKN II" = "EnBW Energie Baden-Württemberg AG",
+  "Heyden 4" = "Uniper Kraftwerke GmbH",
+  "Moorburg Block B" = "Vattenfall GmbH",
+  "Moorburg Block A" = "Vattenfall GmbH",
+  "Ibbenbüren B" = "RWE Generation SE", 
+  "EVA" = "RWE Generation SE", # Energieversorgungsanlage von Ibbenbüren bergwerk
+  "Westfalen E" = "RWE Generation SE",
+  "Wilhelmshaven 1 DT" = "Uniper Kraftwerke GmbH",
+  "Wilhelmshaven 1 ZT" = "Uniper Kraftwerke GmbH",
+  "Wilhelmshaven GT" = "Uniper Kraftwerke GmbH",
+  "KWM Block 3" = "EPH",
+  "Neurath A" = "RWE Power AG",
+  "Neurath B" = "RWE Power AG",
+  "Neurath C" = "RWE Power AG",
+  "Neurath D" = "RWE Power AG",
+  "Neurath E" = "RWE Power AG",
+  "Kraftwerk Jänschwalde Block E" = "Lausitz Energie Kraftwerke AG",
+  "Kraftwerk Jänschwalde Block F" = "Lausitz Energie Kraftwerke AG",
+  "Irsching 3" = "Gemeinschaftskraftwerk Irsching GmbH",
+  "Walsum 9" = "STEAG Power GmbH",
+  "Kraftwerk Farge" = "Onyx Kraftwerk Farge GmbH & Co. KGaA",
+  "Weisweiler E" = "RWE Power AG",
+  "Weisweiler F" = "RWE Power AG",
+  "Niederaußem E" = "RWE Power AG",
+  "Niederaußem F" = "RWE Power AG",
+  "Niederaußem C" = "RWE Power AG",
+  "Hafen Block 6" = "swb Erzeugung AG & Co. KG",
+  "Frimmersdorf Q" = "RWE Power AG",
+  "Frimmersdorf P" = "RWE Power AG",
+  "Kraftwerk Marbach MAR 3 DT" = "EnBW Energie Baden-Württemberg AG",
+  "Kraftwerk Marbach GT 2" = "EnBW Energie Baden-Württemberg AG",
+  "Kraftwerk Walheim Block 2" = "EnBW Energie Baden-Württemberg AG",
+  "Kraftwerk Walheim Block 1" = "EnBW Energie Baden-Württemberg AG",
+  "HKW West Block 1" = "VW Kraftwerk GmbH",
+  "HKW West Block 2" = "VW Kraftwerk GmbH",
+  "HKW Reuter Dampfturbine C" = "BEW Berliner Energie und Wärme GmbH",
+  "KW Hastedt Block 15" = "swb Erzeugung AG & Co. KG",
+  "Heizkraftwerk Hagen Kabel H4" = "Mark-E Aktiengesellschaft",
+  "Heizkraftwerk Hagen-Kabel H5" = "Mark-E Aktiengesellschaft",
+  "Kraftwerk Herrenhausen Block B" = "enercity AG",
+  "HKW Chemnitz Nord II, Block C" = "eins energie in sachsen GmbH & Co. KG",
+  "HKW Chemnitz Nord II, Block B" = "eins energie in sachsen GmbH & Co. KG",
+  "HKW Wilmersdorf Gasturbine 1" = "BEW Berliner Energie und Wärme GmbH",
+  "HKW Wilmersdorf Gasturbine 2" = "BEW Berliner Energie und Wärme GmbH",
+  "HKW Wilmersdorf Gasturbine 3" = "BEW Berliner Energie und Wärme GmbH",
+  "SWM HKW Sued GuD1 DT1" = "SWM Services GmbH",
+  "Kraftwerk III, GT312" = "Evonik Operations GmbH",
+  "Kraftwerk III, GT311" = "Evonik Operations GmbH",
+  "Kraftwerk III, DT310" = "Evonik Operations GmbH",
+  "Kraftwerk II, T26" = "Evonik Operations GmbH",     # gematcht auf "Kraftwerk II, T261"
+  "Kraftwerk I,  T15" = "Evonik Operations GmbH",      # via starts_with("Kraftwerk I")
+  "Kraftwerk I, T14" = "Evonik Operations GmbH",
+  "Kraftwerk I, KT13" = "Evonik Operations GmbH",
+  "Kraftwerk I, GT11" = "Evonik Operations GmbH",
+  "Kraftwerk I, KT7" = "Evonik Operations GmbH",
+  "Kraftwerk I, KT5" = "Evonik Operations GmbH",
+  "Kraftwerk I, GT9" = "Evonik Operations GmbH",
+  "IKW Deuben" = "MIBRAG GmbH",
+  "Scholven FWK" = "Uniper Kraftwerke GmbH",
+  "HKW Nord Generator B" = "VW Kraftwerk GmbH",
+  "HKW Charlottenburg Gasturbine 6" = "BEW Berliner Energie und Wärme GmbH",
+  "BHKW - Hüttenfeld 18" = "WEG Hüttenfeld 18",
+  "GTKW Wedel" = "Hamburger Energiewerke GmbH",
+  "SWD KWF T4" = "Stadtwerke Düsseldorf AG",
+  "HKW Mitte Kessel 1" = "Braunschweiger Versorgungs-AG & Co. KG",
+  "HKW Mitte Kessel 12" = "Braunschweiger Versorgungs-AG & Co. KG",
+  "KWD Bestandsanlage" = "EVH GmbH",
+  "A855 GT1" = "BASF SE",
+  "S300 VT2" = "BASF SE",
+  "S300 NKT" = "BASF SE",                              # gematcht auf "S300 NKT1"
+  "Heizkraftwerk Leipzig Nord DT83" = "Stadtwerke Leipzig GmbH",
+  "Ma 3" = "Salzgitter Flachstahl GmbH",
+  "illwerke vkw Vermuntwerk M3" = "EnBW Energie Baden-Württemberg AG",
+  "illwerke vkw Vermuntwerk M4" = "EnBW Energie Baden-Württemberg AG",
+  "illwerke vkw Vermuntwerk M5" = "EnBW Energie Baden-Württemberg AG",
+  "Dampfturbine 8" = "Stadtwerke Flensburg",
+  "Fenne MKV Gasturbine" = "STEAG Power GmbH",
+  "Turbine 31" = "INEOS Manufacturing Deutschland",
+  "Gundremmingen C" = "RWE Power AG",
+  "UPM Augsburg Gaskraftwerk" = "UPM GmbH",
+  "GT22" = "WSW Energie & Wasser AG",
+  "GT21" = "WSW Energie & Wasser AG",
+  "PSW Hohenwarte 1 PSS A" = "Vattenfall Wasserkraft GmbH",
+  "PSW Hohenwarte 1 PSS B" = "Vattenfall Wasserkraft GmbH",
+  "Solvay Rb TA8" = "Solvay GmbH",
+  "Heizkraftwerk II" = "Energieversorgung Oberhausen",
+  "HKW GT" = "Stadtwerke Frankfurt (Oder) GmbH",
+  "EVE Premnitz" = "EEW Energy from Waste Premnitz GmbH",
+  "Heizkraftwerk Stuttgart-Münster GT 16" = "EnBW Energie Baden-Württemberg AG",
+  "Bestandsanlage_HKW_Aalen" = "Palm Power GmbH & Co. KG",
+  "T5" = "SWN Stadtwerke Neumünster GmbH",
+  "PSW Niederwartha PSS D" = "Vattenfall Wasserkraft GmbH",
+  "PSW Niederwartha PSS C" = "Vattenfall Wasserkraft GmbH",
+  "HKW Oberkirch" = "Koehler Oberkirch GmbH",
+  "MVB Borsigstraße Holz" = "ZRE Zentrum für Ressourcen und Energie GmbH",
+  "ST_BHKW_T9" = "Sappi Stockstadt GmbH",
+  "HKW - K6 DT2" = "Erlanger Stadtwerke AG",
+  "IPH Strom VT2" = "Infraserv GmbH & Co. Höchst KG",
+  "Turbine 7" = "Enertec Hameln GmbH",
+  "LEV KWG G12" = "Currenta GmbH & Co. OHG",
+  "Hochdruckdampfturbine" = "Stadtwerke Cottbus GmbH",
+  "Rauchgasturbine" = "Stadtwerke Cottbus GmbH",
+  "MHKW Pirmasens Verbrennung" = "EEW Energy from Waste Saarbrücken GmbH",
+  "HKW Moabit Gasturbine 7" = "BEW Berliner Energie und Wärme GmbH",
+  "HKW Moabit Gasturbine 5" = "BEW Berliner Energie und Wärme GmbH",
+  "HKW Moabit Gasturbine 6" = "BEW Berliner Energie und Wärme GmbH",
+  "UER N230 VST4" = "Currenta GmbH & Co. OHG",
+  "Dortmund GT" = "RWE Generation SE",
+  "Dortmund DT" = "RWE Generation SE",
+  "Gasturbine 2 - GuD MPE" = "Mitsubishi HiTec Paper Europe GmbH",
+  "Dampfturbine WSK Kuhheide 1" = "LEIPA Georg Leinfelder GmbH",
+  "Boehringer Ingelheim - 2336 - K8/T7" = "Boehringer Ingelheim Pharma GmbH&Co.KG",
+  "Generator 2" = "Nordzucker",
+  "BKR Gasturbine" = "Michelin Reifenwerke AG",
+  "Gasturbinenanlage Castrop-Rauxel" = "Rain Carbon Germany GmbH"
+)
+
+# Duplikate
+operator_lookup2 <- c(
+  "SEE974753539035" = "SWP Stadtwerke Pforzheim", #Turbine 6 (1)
+  "SEE963177319026" = "SWP Stadtwerke Pforzheim", # Turbine 4 dazu
+  "SEE918337255669" = "Maxauer Papierfarbik GmbH" # Turbine 6 (2)
+)
 ```
 
 ```{r}
-write_csv(df_cleaned, "../data/processed/01_KWL_clean.csv")
+df <- df %>%
+  filter(!str_starts(nr_MASTR,"BNA")) %>%
+  mutate(
+    betreiber = if_else(is.na(betreiber), operator_lookup[name], betreiber), # nach Namen matchen
+    betreiber = if_else(is.na(betreiber), operator_lookup2[nr_MASTR], betreiber) # oder nach der MASTR-Nr
+  ) 
+
+df %>% filter(is.na(betreiber))
+```
+## Kraftwerksaggregate
+
+Kraftwerke zusammensetzen, nach exaktem Adressmatch
+
+
+
+## Aggregate von Unternehmen
+
+```{r}
+df %>%
+  select(betreiber) %>%
+  unique() 
+```
+
+
+- EPH: LEAG, Mibrag
+- RWE
+- Vattenfall
+- VW
+- Uniper: 
+- Evonik: Syneqt GmbH
+
+```{r}
+group_lookup <- c(
+  # RWE
+  "RWE Power AG" = "RWE",
+  "RWE Generation SE" = "RWE",
+  "RWE Supply & Trading GmbH" = "RWE",
+  "RWE Generation Hydro GmbH" = "RWE",
+  "RWE Battery Solutions GmbH" = "RWE",
+
+  # EnBW
+  "EnBW Energie Baden-Württemberg AG" = "EnBW",
+  "EnBW Contracting GmbH" = "EnBW",
+  "naturenergie holding AG" = "EnBW",
+  "naturenergie hochrhein AG" = "EnBW",
+
+  # Vattenfall
+  "Vattenfall GmbH" = "Vattenfall",
+  "Vattenfall Wasserkraft GmbH" = "Vattenfall",
+
+  # Uniper
+  "Uniper Kraftwerke GmbH" = "Uniper",
+  "Uniper Systemstabilität GmbH" = "Uniper",
+  "Gemeinschaftskraftwerk Irsching GmbH" = "Uniper",
+  "Datteln 4 a.s & Co. KG" = "Uniper",
+
+  # STEAG / Iqony
+  "STEAG Power GmbH" = "STEAG/Iqony",
+  "Iqony Battery System" = "STEAG/Iqony",
+  
+  # EPH
+  "EPH" = "EPH",
+  "Lausitz Energie Kraftwerke AG" = "EPH",
+  "MIBRAG GmbH" ~ "EPH",
+  "MIBRAG Kraftwerk Lippendorf GmbH" ~ "EPH",
+  "Saale Energie GmbH" = "EPH",
+
+  # Onyx Power
+  "Onyx Kraftwerk Farge GmbH & Co. KGaA" = "Onyx Power",
+  "Onyx Kraftwerk Zolling GmbH &Co. KGaA" = "Onyx Power",
+  "Onyx Kraftwerk Wilhelmshaven GmbH & Co. KG" = "Onyx Power",
+
+  # VW-Konzern
+  "Volkswagen AG" = "Volkswagen Group",
+  "Volkswagen Sachsen GmbH" = "Volkswagen Group",
+  "VW Kraftwerk GmbH" = "Volkswagen Group",
+  "Dr. Ing. h.c. F. Porsche AG" = "Volkswagen Group",
+  "AUDI" = "Volkswagen Group",
+
+  # BASF
+  "BASF SE" = "BASF",
+  "BASF InfraService & Solutions Lausitz GmbH" = "BASF",
+
+  # Dillinger / Saarstahl
+  "AG der Dillinger Hüttenwerke" = "Dillinger/Saarstahl",
+  "ROGESA Roheisengesellschaft Saar mbH" = "Dillinger/Saarstahl",
+
+  # Smurfit Westrock
+  "Smurfit Westrock Herzberg Solid Board GmbH" = "Smurfit Westrock",
+  "Smurfit Westrock Zülpich Paper GmbH" = "Smurfit Westrock",
+  "Smurfit Westrock Hoya Paper & Board GmbH" = "Smurfit Westrock",
+  "Smurfit Westrock Wrexen Paper & Board GmbH" = "Smurfit Westrock",
+
+  # Mercer International
+  "Mercer Timber Products GmbH" = "Mercer International",
+  "Mercer Torgau GmbH & Co. KG" = "Mercer International",
+  "Mercer Stendal GmbH" = "Mercer International",
+  "Mercer Rosenthal GmbH" = "Mercer International",
+
+  # Sappi
+  "Sappi Alfeld" = "Sappi",
+  "Sappi Ehingen GmbH" = "Sappi",
+  "Sappi Stockstadt GmbH" = "Sappi",
+
+  # Pfleiderer
+  "Pfleiderer Gütersloh GmbH" = "Pfleiderer",
+  "Pfleiderer Neumarkt GmbH" = "Pfleiderer",
+  "Pfleiderer Baruth GmbH" = "Pfleiderer",
+
+  # Koehler
+  "Koehler Kehl GmbH" = "Koehler",
+  "Koehler Oberkirch GmbH" = "Koehler",
+
+  # Papierfabrik Adolf Jass
+  "Papierfabrik Adolf Jass GmbH & Co. KG" = "Papierfabrik Adolf Jass",
+  "Papierfabrik Adolf Jass Schwarza GmbH" = "Papierfabrik Adolf Jass",
+
+  # Nordzucker
+  "Nordzucker AG Werk Nordstemmen" = "Nordzucker",
+  "Nordzucker AG Werk Uelzen" = "Nordzucker",
+  "Nordzucker, Werk Klein Wanzleben" = "Nordzucker",
+  "Nordzucker AG Werk Schladen" = "Nordzucker",
+  "Nordzucker" = "Nordzucker",
+
+  # ENGIE
+  "ENGIE Deutschland Erneuerbare GmbH" = "ENGIE",
+  "ENGIE Deutschland GmbH" = "ENGIE",
+
+  # GLOBALFOUNDRIES
+  "GLOBALFOUNDRIES Dresden Module Two LLC & Co. KG" = "GLOBALFOUNDRIES",
+  "GLOBALFOUNDRIES Dresden Module One LLC & Co. KG" = "GLOBALFOUNDRIES",
+
+  # Progroup
+  "Progroup Power 1 GmbH" = "Progroup",
+  "Progroup Power 2 GmbH" = "Progroup",
+
+  # Danpower
+  "Danpower Energie Service GmbH" = "Danpower",
+  "Danpower GmbH" = "Danpower",
+  "Danpower New Energy GmbH" = "Danpower",
+
+  # EEW Energy from Waste
+  "EEW Energy from Waste Helmstedt GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Großräschen GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Stavenhagen GmbH & Co KG" = "EEW Energy from Waste",
+  "EEW Energy from Waste Stapelfeld GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Saarbrücken GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Saarbrücken GmbH  AHKW-Neunkirchen" = "EEW Energy from Waste",
+  "EEW Energy from Waste Hannover GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Premnitz GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Göppingen" = "EEW Energy from Waste",
+
+  # essity
+  "essity Operations Mainz-Kostheim GmbH" = "essity",
+  "Essity Operations Mannheim GmbH" = "essity",
+
+  # Boehringer Ingelheim
+  "Boehringer Ingelheim - 2336 - K8/T7" = "Boehringer Ingelheim",
+  "Boehringer Ingelheim Pharma GmbH&Co.KG" = "Boehringer Ingelheim",
+
+  # JUNIZ (Batteriespeicher)
+  "SMAREG 9 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 8 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 6 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 4 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 7 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 5 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 3 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 12 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 1" = "JUNIZ",
+
+  # terralayr (Batteriespeicher)
+  "trlyr2 GmbH" = "terralayr",
+  "trlyr 4 GmbH & Co. KG" = "terralayr",
+  "trlyr 8 GmbH & Co. KG" = "terralayr",
+  "trlyr 9 GmbH & Co. KG" = "terralayr",
+  "trlyr 3 GmbH & Co. KG" = "terralayr",
+  "trlyr 5 GmbH & Co. KG" = "terralayr",
+
+  # Münch Energie (Batteriespeicher)
+  "Münch visiontec GmbH & Co. KG" = "Münch Energie",
+  "Münch NextGen Storage GmbH" = "Münch Energie",
+  "Münch EnerStore GmbH" = "Münch Energie",
+  "Münch VoltDepot GmbH" = "Münch Energie",
+  "Münch SmartCharge Systems GmbH" = "Münch Energie",
+  "Münch NatureDepot GmbH" = "Münch Energie"
+)
+```
+
+```{r}
+df %>%
+  mutate(
+    konzerngruppe = if_else(betreiber %in% names(group_lookup), group_lookup[betreiber], NA_character_)
+  )
+```
+
+
+
+### Descriptive
+
+Einfache Statistiken zum Datensatz
+```{r}
+psych::describe(df)
+```
+
+## Speichern
+
+```{r}
+write_csv(df, "../data/processed/01_KWL_clean.csv")
 ```
 

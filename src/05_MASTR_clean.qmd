@@ -2,7 +2,64 @@
 
 Die sehr messy Daten aus dem MASTR Download cleanen
 
-```{r}
+## Daten laden
 
+```{r}
+library(tidyverse)
 ```
+
+Einmal reinschauen
+```{r}
+df_wind <- read_csv(paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_","wind","_raw.csv"),n_max=50000)
+```
+
+
+
+Der Pfad für die MASTR-Datensätze ändert sich mit jedem neuen Runterladen, hier in der dataversion das aktuelle Datum eintragen! 
+```{r}
+mastr_reader <- function(source) {
+  dataversion <- "2026-07-15"
+  
+  file <- paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_",source,"_raw.csv")
+  
+  cols <- c(
+    "EinheitMastrNummer", "Einheittyp", "Bruttoleistung", # nur Bruttoleistung ist für alle verfügbar, keine Netto
+    "EinheitBetriebsstatus", "Inbetriebnahmedatum", "GeplantesInbetriebnahmedatum", "Einspeisungsart",
+    "Bundesland", "Landkreis", "Postleitzahl", "Laengengrad", "Breitengrad" # Geodaten
+  )
+  if (source == "wind") {
+    cols <- append(cols, c("NameWindpark", "GenMastrNummer"))
+  } else if (source == "solar") {
+    cols <- append(cols, c("AnzahlModule", "ArtDerSolaranlage", "NameStromerzeugungseinheit"))
+  } else if (source == "biomasse") {
+    cols <- append(cols, c("NameStromerzeugungseinheit", "BiogasGaserzeugungskapazität"))
+  }
+  
+  df <- read_csv(file = file, col_select = cols, n_max=50000)
+  return(df)
+}
+```
+
+```{r}
+wind <- mastr_reader("wind")
+biomass <- mastr_reader("biomass")
+solar <- mastr_reader("solar")
+```
+
+## Custom cleaning 
+
+```{r}
+wind %>%
+  # co
+```
+
+
+## Filtern nach Regionen
+
+```{r}
+df_plz <- read_csv("../data/processed/02_foerdergebiete.csv")
+```
+
+
+
 
