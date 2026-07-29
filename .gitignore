@@ -1,7 +1,7 @@
 .DS_Store
 venv/
 data/mastr/
-!data/mastr/data/dataversion-2026-07-15
 pdfs/
 .vscode
 IWH.code-workspace
+.Rproj.user
