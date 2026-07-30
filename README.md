@@ -5,10 +5,11 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 **Fragen**:
 
 - Welche Stein-/Braunkohlekraftwerke werden in den Revieren abgeschaltet?
-  - Wie viele Beschäftigte haben dort gearbeitet?
   - Welche wurden im Rahmen des KVBG kompensiert?
 - Was entsteht an neuen Kraftwerken in den Revieren (Gas / Wind / PV / Biomasse)?
-  - welche davon auf dem Gebiet ehemaliger Tagebaue / Kraftwerke?
+  - optional: welche davon auf dem Gebiet ehemaliger Tagebaue / Kraftwerke?
+
+
 
 **Datenquellen**
 
@@ -19,7 +20,13 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 - Kompensation für Kraftwerke (KVBG): [Anlage 2 KVBG](https://www.buzer.de/Anlage_2_KVBG.htm)
 - Fördergebiete / Reviere (INVKG): [§2 / §11 / §12 InvKG](https://www.vdivde-it.de/sites/default/files/document/Hinweisblatt-F%c3%b6rdergebiete_0.pdf)
 
-**Datensatz 1**: AbbauKW
+
+
+
+
+## Datensätze
+
+#### Datensatz 1: Stromerzeugungseinheiten
 
 | Variable | Beschreibung / Kommentar | Quelle |
 |--------------|--------------------------------------------|--------------|
@@ -33,11 +40,15 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 | kreis | Landkreis | PLZ |
 | bundesland | Bundesland | PLZ |
 | region | `Rheinisches Revier`, `Mitteldeutsches Revier`, ... | INVKG |
-|  |  |  |
+| Paragraph | Region nach welchem Paragraph (&2, &11 etc) | INVKG |
 | jahr_inbetriebnahme | Jahr der Inbetriebname des KW | KWL |
-| stillgelegt | `true / false` |  |
+| stillgelegt | `true / false` | KWL |
 | stillegung_type | siehe Erklärung | KWL |
 | jahr_stillegung | wenn `stillgelegt=true`, auch mit Jahren in der Zukunft | KWL |
+| nr_betreiber | die MASTR-Betreiber Nummer | MASTR |
+| nr_KW | die Kraftwerksnummer aus dem MASTR | MASTR |
+| laenge | Längengrad | MASTR |
+| breite | Breitengrad | MASTR |
 
 `stillegung_type` = Grund für die Stillegung
 
@@ -47,18 +58,48 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 - "other" = ohne Angabe von Gründen oder vorläufig
 - "NA" = noch in Betrieb
 
-**Datensatz 2**: AufbauKW
 
-| Variable | Beschreibung | Quelle |
-|-----------|--------------------------------------------------|-----------|
-| nr_MASTR | Nr im MASTR | MASTR |
-| anlagenbetreiber | Betreiber des Kraftwerks (unvollständig!) | MASTR |
-| anzeigename | Name des Kraftwerks (unvollständig!) | MASTR |
-| energietraeger | Erdgas, Kohle etc | MASTR |
-| bruttoleistung | Bruttoleistung in Megawatt | MASTR |
-| nettoleistung | Nettoleistung in Megawatt | MASTR |
-| region | `Rheinisches Revier`, `Mitteldeutsches Revier`, ... | INVKG |
-| tagebau | `true/false`: ob die Analge auf ehemaligen Tagebaugebiet ist | LBKT |
-| plz | Postleitzahl | MASTR |
-| kreis | Landkreis | PLZ |
-| bundesland | Bundesland | PLZ |
+
+#### Datensatz 2: Kraftwerke
+
+|                       |                     |      |
+| --------------------- | ------------------- | ---- |
+| name_KW               |                     |      |
+| nr_KW                 |                     |      |
+| nr_betreiber          |                     |      |
+| name_betreiber        |                     |      |
+| verknuepfte_einheiten |                     |      |
+| stillgelegt           | spätester Zeitpunkt |      |
+
+#### Datensatz 3: Betreiber
+
+|                |      |                 |
+| -------------- | ---- | --------------- |
+| name_betreiber |      |                 |
+| adresse        |      |                 |
+| plz            |      |                 |
+| rechtsform     |      |                 |
+| konzerngruppe  |      | Eigens erstellt |
+| verknuepfte_KW |      |                 |
+
+
+
+## Projektstruktur
+
+
+
+Code
+
+.Rproj
+
+.code-workspace
+
+
+
+## Reproduktion
+
+
+
+Renv
+
+Venv
