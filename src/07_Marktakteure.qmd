@@ -1,0 +1,52 @@
+## Marktakteure
+
+```{r}
+library(tidyverse)
+```
+
+
+
+Wieder eine sehr große Datei
+```{r}
+dataversion = "2026-07-30"
+path = paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_","market_actors","_raw.csv")
+
+actors <- duckplyr::read_csv_duckdb(path, prudence="lavish")
+# actors <- read_csv(path, n_max=100000)
+```
+
+```{r}
+df_actors <- actors %>%
+  filter(
+    Marktfunktion == "Anlagenbetreiber",
+    Personenart ==  "Organisation (Unternehmen, Personengesellschaft, juristische Person, Behörde, Verband)"
+    ) %>%
+  reframe(
+    nr_betreiber = MastrNummer,
+    betrieb_name = Firmenname,
+    betrieb_rechtsform = Rechtsform,
+    betrieb_strasse = Strasse,
+    betrieb_hausnummer = Hausnummer,
+    betrieb_ort = Ort,
+    betrieb_plz = Postleitzahl,
+    betrieb_web = Webseite
+  )
+```
+
+
+```{r}
+df_KW <- read_csv("../data/processed/05_KW_aggregate.csv")
+```
+
+```{r}
+df <- df_KW %>%
+  left_join(df_actors, by = "nr_betreiber")
+```
+
+
+
+```{r}
+df %>%
+  filter(is.na(nr_betreiber))
+```
+
