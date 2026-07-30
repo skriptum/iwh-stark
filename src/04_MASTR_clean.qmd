@@ -187,9 +187,11 @@ df_wind <- wind %>%
     energietraeger = if_else(is.na(Seelage), "Windenergie an Land", "Windenergie auf See"),
     nr_KW = NA,
   )  %>%
-  select(-Seelage) #%>%
-  # filter(leistung_brutto > 10000)
+  select(-Seelage) 
+  # filter(leistung_brutto > 10000) 
 ```
+
+Da Windparks erst aggregiert die benötigte Mindestgröße erreichen, nehmen wir erst einmal alle Datenunkte mit und aggregieren im nächsten Schritt.
 
 ## Solar
 
@@ -353,7 +355,7 @@ cols_combined <- c(
 
 df <- data.frame()
 
-for (d in list(df_combustion, df_biomass, df_solar, df_wind, df_storage, df_hydro)) {
+for (d in list(df_combustion, df_biomass, df_solar,  df_storage, df_hydro)) { # ohne Wind, da sowieso nicht in KWL
   d <- d %>% select(any_of(cols_combined))
   df <- rbind(df, d)
 }
