@@ -1,0 +1,367 @@
+# MASTR Clean
+
+Aufgabe dieses Skripts: die sehr messy Daten aus dem MASTR Download cleanen. 
+
+# Daten laden
+
+```{r}
+library(tidyverse)
+```
+
+Einmal reinschauen
+
+- Dataversion: Datum des letzten Runterladens aus dem MASTR; anpassen wenn erneut runtergeladen
+- source: eins von "solar", "wind", etc
+
+```{r}
+dataversion <- "2026-07-20"
+source <- "combustion"
+mastr_test <- read_csv(
+  paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_",source,"_raw.csv"),
+  show_col_types = F, n_max=10000 # Wichtig, manche Dateien sind SEHR GROß!
+  )
+
+head(mastr_test)
+```
+
+Jetzt eine Funktion, um das für alle Arten zu vereinfachen
+```{r}
+mastr_reader <- function(source) {
+  dataversion <- "2026-07-20" # aktuelle Daten download
+  
+  file <- paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_",source,"_raw.csv")
+  
+  cols <- c(
+    "EinheitMastrNummer",  # der Identifikator
+    "Einheittyp", # b "Solareinheit" 
+    "Bruttoleistung", # nur Bruttoleistung ist für alle verfügbar, keine Netto
+    "Inbetriebnahmedatum", 
+    "GeplantesInbetriebnahmedatum", # falls es noch in Planung ist
+    "DatumEndgueltigeStilllegung", # oder schon nicht mehr aktiv ist 
+    "EinheitBetriebsstatus", # In betrieb, planung, stillgelegt
+    "Einspeisungsart", # Teil oder Voll
+    "AnlagenbetreiberMastrNummer", # Nr des Betreibers
+    "NameStromerzeugungseinheit",
+    
+    # alle möglichen Standortdaten
+    "Bundesland", "Landkreis", "Ort", "Strasse", 
+    "Hausnummer",  "Postleitzahl", "Laengengrad", "Breitengrad"
+  )
+  
+  # Für jeden Einheittyp gibt es außerdem ein paar spezifischere Spalten
+  if (source == "wind") { 
+    cols <- append(cols, c(
+      "NameWindpark",  # Windkraft: Windpark zum Sammeln aller WEA,
+      "VerknuepfteEinheit", 
+      "Seelage" # and Land oder See
+      ))
+  } else if (source == "solar_duck") {
+    cols <- append(cols, c(
+      "AnzahlModule", # Solareinheiten: sind bereits zusammengefasst
+      "ArtDerSolaranlage",
+      "VerknuepfteEinheit"))
+  } else if (source == "biomass") {
+    cols <- append(cols, c(
+      "Hauptbrennstoff", 
+      "KwkMastrNummer",
+      "BiogasGaserzeugungskapazitaet" # erzeugen teilweise auch Gas, vielleicht interessant
+      )) 
+  } else if (source == "combustion") {
+    # Verbrennungsanlagen sind in Blöcke aufgespalten, aber haben eigenen KW-ID
+    cols <- append(cols, c(
+      "KwkMastrNummer", "NameKraftwerk",  
+      "NameKraftwerksblock", 
+      "Hauptbrennstoff", "VerknuepfteEinheiten_kwk"
+  ))} else if (source == "hydro") {
+    cols <- append(cols, c(
+      "NameKraftwerk", # Wasser: auch aufgespalten in Turbinen
+      "ArtDerWasserkraftanlage", # Laufwasser, Speicherwasser, etc sein
+      "VerknuepfteEinheit")
+      )
+  } else if (source == "storage_duck") {
+    cols <- append(cols, c(
+      "Technologie", #  Technologie = Pumpspeicher, Lithium
+      "AnschlussAnHoechstOderHochSpannung", #  Anschluss = obs HAusspeicher oder Netzspeicher sind
+      "VerknuepfteEinheit"))
+  }
+  
+  df <- read_csv(file = file, col_select = cols, n_max=200000, show_col_types = FALSE)
+  
+  df <- df %>%
+    mutate( 
+      # vereinfachen des Datums, beinhaltet dann auch zukünftige Datums
+      jahr_inbetriebnahme = case_when( 
+        !is.na(Inbetriebnahmedatum) ~ year(Inbetriebnahmedatum),
+        is.na(Inbetriebnahmedatum) ~ year(GeplantesInbetriebnahmedatum),
+      ),
+      # Einfacherer Filter, Planung kann immer noch über zukunftiges datum angezeigt werden
+      stillgelegt = if_else(EinheitBetriebsstatus == "Endgültig stillgelegt",T,F),
+      jahr_stillgelegt = year(DatumEndgueltigeStilllegung),
+      .after = "Bruttoleistung"
+    )  
+    
+  # und dann wiedergeben den DF
+  return(df)
+}
+```
+
+Bisher sind die Namen der Tabelle noch super messy, und nicht besonders eingängig. Also definieren wir eine Lookup-Vektor, um sie einheitlich alle umzubenennen.
+```{r}
+  lookup <- c(
+    nr_MASTR = "EinheitMastrNummer",
+    nr_betreiber = "AnlagenbetreiberMastrNummer",
+    energie_type = "Einheittyp",
+    verknuepfte_einheiten = "VerknuepfteEinheiten",
+    name = "NameStromerzeugungseinheit",
+    einspeisung = "Einspeisungsart",
+    leistung_brutto = "Bruttoleistung",
+    plz = "Postleitzahl",
+    landkreis = "Landkreis",
+    ort = "Ort",
+    strasse = "Strasse",
+    hausnummer = "Hausnummer",
+    bundesland = "Bundesland",
+    laenge = "Laengengrad",
+    breite = "Breitengrad",
+    # defined already in mastr_reader()
+    jahr_inbetriebnahme = "jahr_inbetriebnahme",
+    jahr_stillgelegt = "jahr_stillgelegt",
+    stillgelegt = "stillgelegt"
+  )
+```
+
+Jetzt werden wir für jeden Einheittyp (Verbrennung, Solar etc) ein paar einzelne spezifische Cleaning machen. Manche müssen beispielsweise noch auf Kraftwerksebene aggregiert werden, und kleine Anlagen rausgefiltert werden
+
+Unser Ziel: eine Tabelle mit Kraftwerken aller möglichen Arten, über 10 MW (aggregierte Leistung), inklusive BetreiberID und verknuepfter Einheiten.
+
+# Cleaning
+
+## Combustion
+
+Mithilfe der neuen Funktionen einlesen
+```{r}
+combustion <- mastr_reader("combustion")
+```
+
+Anschließend erweitern des allgemeinen Lookup-Vectors durch Verbrennungspezifische Spalten
+```{r}
+lookup_combustion <- append(lookup, c(
+    name_KW = "NameKraftwerk", # bspw. "Jänschwalde"
+    nr_KW = "KwkMastrNummer", # nur bei Verbrennungsanlagen gibt es diese
+    energietraeger = "Hauptbrennstoff", # Gas, Öl, Steinkohle ...
+    verknuepfte_einheiten = "VerknuepfteEinheiten_kwk" # welche weiteren Blöcke / Gasturbinen
+    ))
+```
+
+Filtern + cleanen des Ausgangsdatensatzes
+```{r}
+df_combustion <- combustion %>%
+  rename(any_of(lookup_combustion)) %>% # umbennen der Spalten
+  select(any_of(names(lookup_combustion))) %>% # und wir brauchen auch nur diese Spalten
+  filter(leistung_brutto > 10000)
+```
+
+Das ganze werden wir jetzt für jede Art der Stromerzeugung wiederholen
+
+## Wind
+
+Wie gehabt:
+```{r}
+wind <- mastr_reader("wind")
+```
+
+```{r}
+lookup_wind <- append(lookup, c(
+  name_KW = "NameWindpark",
+  verknuepfte_einheiten = "VerknuepfteEinheit",
+  energietraeger = "energietraeger",
+  Seelage = "Seelage"
+))
+```
+
+```{r}
+df_wind <- wind %>% 
+  rename(any_of(lookup_wind)) %>%
+  select(any_of(names(lookup_wind))) %>%
+  mutate(
+    energietraeger = if_else(is.na(Seelage), "Windenergie an Land", "Windenergie auf See"),
+    nr_KW = NA,
+  )  %>%
+  select(-Seelage) #%>%
+  # filter(leistung_brutto > 10000)
+```
+
+## Solar
+
+```{r}
+lookup_solar <- append(lookup, c(
+  "energietraeger" = "ArtDerSolaranlage",
+  "anzahl_einheiten" = "AnzahlModule" #. Solaranlagen sind bereits aggregiert (zum Glück)
+))
+```
+
+Der Solardatensatz ist riesig (6GB und mehr). Die Datei ist damit sehr schwer handhabbar. Bevor man damit arbeiten kann, also einmal als Datenbank (DuckDB) einlesen, und die kleinen Anlagen rausfiltern. Danach kann man dann einfacher damit arbeiten. 
+
+Es reicht, das einmal laufen zu lassen. Die gespeicherte Datei wird dann wieder eingelesen
+```{r}
+# dataversion <- "2026-07-20" # aktuelle Version
+# 
+# solar_duck <- duckplyr::read_csv_duckdb(
+#     paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_","solar","_raw.csv")
+#     ) %>%
+#   # filter the columns
+#   select(-Einsatzverantwortlicher) %>%
+#   filter(Bruttoleistung > 10000) %>% # Kleine Anlagen rausfiltern 
+#   as_tibble() %>%
+#   # am gleichen Ort speichern, mit leicht abgewandeltem Namen
+#   write_csv(
+#     paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_","solar_duck","_raw.csv")
+#   )
+```
+
+```{r}
+solar <- mastr_reader("solar_duck") # anderer Dateiname!
+```
+
+
+```{r}
+df_solar <- solar %>%
+  rename(any_of(lookup_solar)) %>%
+  select(any_of(names(lookup_solar))) %>%
+  filter(leistung_brutto > 10000) %>%  # doppelt hält besser
+  mutate(
+    name_KW = NA,
+    nr_KW = NA
+  )
+```
+
+## Storage
+
+```{r}
+lookup_storage <- append(lookup, c(
+    energietraeger = "Technologie", # Batterie, Pump, Druckluft
+    verknuepfte_einheiten = "VerknuepfteEinheit"
+    ))
+```
+
+```{r}
+dataversion <- "2026-07-20" # aktuelle Version
+
+storage_duck <- duckplyr::read_csv_duckdb(
+    paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_","storage","_raw.csv")
+    ) %>%
+  # filter the columns
+  filter(
+    # AnschlussAnHoechstOderHochSpannung == T, # viele Fehler bei diesem Filter!
+    Bruttoleistung > 1000,
+    ) %>%
+  as_tibble()
+
+write_csv(
+  storage_duck,
+  paste0("../data/mastr/data/dataversion-",dataversion,"/bnetza_mastr_","storage_duck","_raw.csv")
+  )
+```
+
+
+```{r}
+storage <- mastr_reader("storage_duck")
+```
+
+
+```{r}
+df_storage <- storage %>%
+  filter(
+    Bruttoleistung > 1000 # mit einer gewissen Mindestgröße
+  ) %>%
+  rename(any_of(lookup_storage)) %>%
+  select(any_of(names(lookup_storage))) %>%
+  mutate(
+    name_KW = NA,
+    nr_KW = NA
+  )
+```
+
+## Biomasse
+
+```{r}
+biomass <- mastr_reader("biomass")
+```
+
+```{r}
+lookup_biomass <- append(lookup, c(
+    energietraeger = "Hauptbrennstoff",
+    nr_KW = "KwkMastrNummer"
+  ))
+```
+
+```{r}
+df_biomass <- biomass %>%
+  rename(any_of(lookup_biomass)) %>%
+  select(any_of(names(lookup_biomass))) %>%
+  filter(leistung_brutto > 1000) %>%
+  mutate(
+    name_KW = name,
+  )
+```
+
+
+## Hydro
+
+```{r}
+hydro <- mastr_reader("hydro")
+```
+
+```{r}
+lookup_hydro <- append(lookup, c(
+  name_KW = "NameKraftwerk",
+  energietraeger = "ArtDerWasserkraftanlage",
+  verknuepfte_einheiten = "VerknuepfteEinheit",
+  nr_KW = "KwkMastrNummer"
+))
+```
+
+```{r}
+df_hydro <- hydro %>%
+  rename(any_of(lookup_hydro)) %>%
+  select(any_of(names(lookup_hydro))) %>%
+  mutate(nr_KW=NA) %>%
+  filter(leistung_brutto > 1000)
+```
+
+
+# Speichern
+
+```{r}
+path = "../data/processed/04_"
+
+write_csv(df_biomass, paste0(path, "biomass", ".csv"))
+write_csv(df_wind, paste0(path, "wind", ".csv"))
+write_csv(df_combustion, paste0(path, "combustion", ".csv"))
+write_csv(df_solar, paste0(path, "solar", ".csv"))
+write_csv(df_storage, paste0(path, "storage", ".csv"))
+write_csv(df_hydro, paste0(path, "hydro", ".csv"))
+```
+
+Derzeit haben alle Datensätze noch unterschiedliche Spalten. Wir brauchen aber einmal einen großen, um ihn mit der KWL zu vereinen.
+
+```{r}
+cols_combined <- c(
+  "nr_MASTR", "nr_betreiber", "energie_type", "name", "einspeisung", 
+  "laenge", "breite", "energietraeger", "nr_KW", "name_KW", "leistung_brutto"
+  )
+
+df <- data.frame()
+
+for (d in list(df_combustion, df_biomass, df_solar, df_wind, df_storage, df_hydro)) {
+  d <- d %>% select(any_of(cols_combined))
+  df <- rbind(df, d)
+}
+
+write_csv(df, paste0(path, "combined", ".csv"))
+```
+
+
+
+
+

@@ -1,0 +1,235 @@
+# Aggregieren
+
+## Importe
+
+```{r}
+library(tidyverse)
+```
+
+```{r message=F}
+path <- "../data/processed/04_"
+df_combustion <- read_csv(paste0(path, "combustion", ".csv"))
+df_storage <- read_csv(paste0(path, "storage", ".csv"))
+df_hydro <- read_csv(paste0(path, "hydro", ".csv"))
+df_solar <- read_csv(paste0(path, "solar", ".csv"))
+df_biomass <- read_csv(paste0(path, "biomass", ".csv"))
+df_wind <- read_csv(paste0(path, "wind", ".csv"))
+```
+
+
+Jetzt wird aggregiert: 
+- Identifizierung eines KW über die Kraftwerksnummer
+- Summieren der Bruttoleistungen
+
+```{r}
+lookup_KW <- c(
+  "nr_betreiber", "energie_type", "verknuepfte_einheiten", "anzahl_einheiten",
+  "leistung_brutto", "name_KW", "energietraeger", "stillgelegt", "jahr_inbetriebnahme", "nr_KW"
+)
+```
+
+## Verbrennung
+
+Es gibt leider sehr viel KW, die keine Nummer haben und trotzdem derzeit noch feuern...
+Aber das müssen wir später wieder mithilfe der KWL herausfinden
+```{r}
+df_combustion %>%
+    filter(is.na(nr_betreiber), leistung_brutto > 10000, stillgelegt == F)
+```
+
+```{r}
+KW_combustion <- df_combustion %>%
+  group_by(name_KW) %>% 
+  # filter(!is.na(name_KW)) %>%
+  summarise( 
+    # in allen variablen, die erste nicht-NA Wert nehmen, den es gibt
+    
+    anzahl_einheiten = n(), # Counter für die Anzahl Blöcke
+    verknuepfte_einheiten = paste(nr_MASTR, collapse=", "), # Liste der Blöcke
+    leistung_brutto = sum(leistung_brutto), # Summe der Leistung aller Blöcke
+    stillgelegt = sum(stillgelegt) / anzahl_einheiten,
+    jahr_inbetriebnahme = min(jahr_inbetriebnahme),
+    
+    across(!c(leistung_brutto, verknuepfte_einheiten, anzahl_einheiten, stillgelegt, jahr_inbetriebnahme),~first(na.omit(.x))),
+    ) %>%
+  # nur KW mit mehr als einem Block
+  ungroup() %>%
+  filter(
+    anzahl_einheiten > 0,
+    leistung_brutto > 10000
+     )  %>%
+  # # # manche haben kein KW-Name, dann den Namen eines Blocks näherungsweise nehmen
+  mutate(name_KW = if_else(is.na(name_KW), paste(name, "[BLOCK]" ), name_KW)) %>%
+  select(any_of(lookup_KW))
+```
+
+## Wind
+
+NUr ältere Windparks haben keine Betreibernummer mehr
+```{r}
+df_wind %>%
+  filter(is.na(nr_betreiber), stillgelegt == F)
+```
+
+
+Einzelne schwarze Schafe:
+```{r}
+df_wind <- df_wind %>% mutate(
+  name_KW = if_else(
+    name_KW ==  "\"ENOVA Windpark Boldecker Land  Betriebs GmbH ＆ Co. KG\"",
+    "ENOVA Windpark Boldecker Land Betriebs GmbH ＆ Co. KG",
+    name_KW
+  )) 
+```
+
+Die Spalte "verknuepfte_einheiten" fasst bei Windparks nicht alle zusammen, also gehen wir über die Namen.
+
+```{r}
+KW_wind <- df_wind %>%
+  filter(
+    !is.na(name_KW), # WEA ohne dazugehörigen Windpark = rausfiltern
+    stillgelegt == F
+    ) %>% 
+  group_by(name_KW) %>%
+  summarise(
+    anzahl_einheiten = n(), # Counter für die Anzahl Blöcke
+    leistung_brutto = sum(leistung_brutto), # Summe der Leistung aller Blöcke
+    verknuepfte_einheiten = paste(nr_MASTR, collapse = ", "),
+    stillgelegt = sum(stillgelegt) / anzahl_einheiten,
+    jahr_inbetriebnahme = min(jahr_inbetriebnahme),
+    
+    across(!c(leistung_brutto, verknuepfte_einheiten, anzahl_einheiten, stillgelegt, jahr_inbetriebnahme),~first(na.omit(.x))),
+    
+  ) %>%
+  filter(leistung_brutto > 10000) %>%
+  arrange(desc(leistung_brutto)) %>%
+  select(any_of(lookup_KW))
+```
+
+## Solar
+
+Solarkraftwerke sind bereits zusammengefasst, also gibt es dort keine Aggregation
+
+Es gibt einen Solarpark ohne Betreibernummer, den filtern wir raus.
+```{r}
+df_solar %>% filter(is.na(nr_betreiber))
+```
+
+```{r}
+df_solar <- df_solar %>% 
+  mutate(
+    nr_betreiber = if_else(is.na(nr_betreiber), "ABR958515820081", nr_betreiber)
+  )
+```
+
+
+```{r}
+KW_solar <- df_solar %>%
+  mutate(
+    name_KW = name,
+    verknuepfte_einheiten = NA
+  ) %>%
+  select(any_of(lookup_KW)) %>%
+  filter(is.na(nr_betreiber))
+```
+
+
+
+
+## Hydro
+
+Wasseranlagen aggregieren sich am einfachsen über die verknuepften Einheiten:
+
+```{r}
+KW_hydro <- df_hydro %>%
+  group_by(verknuepfte_einheiten) %>%
+  reframe(
+    leistung_brutto = sum(leistung_brutto),
+    anzahl_einheiten = n(),
+    # verknuepfte_einheiten = list(nr_MASTR),
+    stillgelegt = sum(stillgelegt) / anzahl_einheiten,
+    jahr_inbetriebnahme = min(jahr_inbetriebnahme),
+    name = hutils::longest_prefix(name),
+    
+    across(!c(leistung_brutto,  anzahl_einheiten, stillgelegt, jahr_inbetriebnahme, name),~first(na.omit(.x))),
+  )  %>%
+  filter(leistung_brutto > 10000) %>%
+  mutate(
+    # manche KW haben keine Namen, also ein zusammenschnitt aus den namen der einzelnen Turbinen
+    name_KW = if_else(is.na(name_KW), name, name_KW),
+  ) %>%
+  arrange(desc(leistung_brutto)) %>%
+  select(any_of(lookup_KW)) 
+```
+
+## Storage
+
+Die verschiedenen Speichereinheiten, aggregieren wir hier mithilfe der Koordinaten. Diese sind bspw. bei Punpspeicherkraftwerken immer gleich ()
+
+```{r}
+KW_storage = df_storage %>%
+  group_by(laenge, breite) %>%
+  summarise(
+    leistung_brutto = sum(leistung_brutto, na.rm = TRUE),
+    name_KW = hutils::longest_prefix(name),
+    anzahl_einheiten = n(),
+    stillgelegt = sum(stillgelegt) / anzahl_einheiten,
+    jahr_inbetriebnahme = min(jahr_inbetriebnahme),
+    
+    across(!c(leistung_brutto,  anzahl_einheiten, stillgelegt, jahr_inbetriebnahme,name_KW),~first(na.omit(.x))),
+  ) %>%
+  ungroup() %>%
+  filter(leistung_brutto > 10000) %>%
+  select(all_of(lookup_KW))
+```
+
+
+## Biomass
+
+```{r}
+df_biomass %>% filter(is.na(name_KW), leistung_brutto > 1000)
+```
+```{r}
+KW_biomass <- df_biomass %>%
+  group_by(name_KW) %>%
+  summarise(
+    leistung_brutto = sum(leistung_brutto),
+    anzahl_einheiten = n(),
+    anzahl_einheiten = n(),
+    stillgelegt = sum(stillgelegt) / anzahl_einheiten,
+    jahr_inbetriebnahme = min(jahr_inbetriebnahme),
+    verknuepfte_einheiten = paste(nr_MASTR, collapse= ", "),
+    
+    across(!c(leistung_brutto,  anzahl_einheiten, stillgelegt, jahr_inbetriebnahme),~first(na.omit(.x))),
+  ) %>%
+  filter(leistung_brutto> 10000) %>%
+  select(all_of(lookup_KW))
+```
+
+Einzelne fehlende Betreiber, aber sind alle schon stillgelegt (und außerdem nicht relevant für jegliche KVBG Versorger... ) -> so lassen
+```{r}
+KW_biomass %>% filter(is.na(nr_betreiber))
+```
+
+
+
+# Speichern
+
+```{r}
+df <- rbind(
+  KW_combustion,
+  KW_hydro,
+  KW_solar,
+  KW_wind,
+  KW_hydro,
+  KW_storage,
+  KW_biomass
+)
+```
+
+```{r}
+write.csv(df, "../data/processed/05_KW_aggregate.csv")
+```
+
+
+
