@@ -1,0 +1,35 @@
+# MASTR Downloader 
+
+Dieses Skript lädt das Marktstammdatenregister (MaStR) herunter und speichert die Daten in einer CSV-Datei. Zum Glück gibt es bereits ein Package auf PyPI, welches den Großteil der Arbeit erledigt: open-MASTR
+
+- lädt nach Bedarf einzelne Tabellen oder die gesamte Datenbank des MASTR herunter
+- reinigt die messy XML Tabellen in halbwegs ordentlichem Maß
+- exportiert sie als csv
+
+mehr dazu: https://github.com/OpenEnergyPlatform/open-MaStR (c) Rainer-Lemoine-Institut, OFFIS, fortiss
+
+```{python}
+from open_mastr import Mastr
+from sqlalchemy import create_engine
+import os
+```
+
+Wir wollen die Datenbank nicht irgendwo auf dem Computer, sondern in unserem Projekt. Also einmal den Speicherort anpassen.
+```{python}
+sqlite_engine = create_engine("sqlite:///../data/mastr/mastr.db", echo=False) 
+os.environ["OUTPUT_PATH"] = "../data/mastr/"
+db = Mastr(engine=sqlite_engine) # Initiierung
+```
+
+Jetz der große Schritt, dauert ca **45 min** (je nach Internetgeschwindigkeit).
+Für jede Art der Erzeugung müssen die Daten einzeln geladen werden!
+
+```{python}
+db.download(data = ["wind", "solar", "storage", "combustion", "biomass", "hydro", "market"])
+```
+
+Jetz noch speichern aller Tabellen als CSV, die Weiterverarbeitung machen wir im nächsten Schritt.
+
+```{python}
+db.to_csv(tables = ["wind", "solar", "storage", "combustion", "biomass", "hydro", "market_actors"])
+```

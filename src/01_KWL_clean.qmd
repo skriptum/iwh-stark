@@ -85,9 +85,9 @@ df <- df %>%
     name == "Weisweiler H" ~ 2029,
     name == "Weisweiler G" ~ 2028,
     name == "Kraftwerk Jänschwalde Block A" ~ 2028,
-    name == "Kraftwerk Jänschwalde Block A B" ~ 2028,
-    name == "Kraftwerk Jänschwalde Block A C" ~ 2028,
-    name == "Kraftwerk Jänschwalde Block A D" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block B" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block C" ~ 2028,
+    name == "Kraftwerk Jänschwalde Block D" ~ 2028,
     name == "Boxberg Block N" ~ 2029,
     name == "Boxberg Block P" ~ 2029,
     name == "Boxberg Block R" ~ 2038,
@@ -146,7 +146,7 @@ df %>%
   filter(is.na(bundesland))
 ```
 
-### NA
+### NA entfernen
 
 Viele der BNA Nr haben keine aktualisierten Daten mehr -> rauslöschen
 ```{r}
@@ -302,27 +302,12 @@ df <- df %>%
 
 df %>% filter(is.na(betreiber))
 ```
-## Kraftwerksaggregate
-
-Kraftwerke zusammensetzen, nach exaktem Adressmatch
 
 
-
-## Aggregate von Unternehmen
-
-```{r}
-df %>%
-  select(betreiber) %>%
-  unique() 
-```
+## Aggregate von KOnzernsparten
 
 
-- EPH: LEAG, Mibrag
-- RWE
-- Vattenfall
-- VW
-- Uniper: 
-- Evonik: Syneqt GmbH
+e.g EPH: LEAG, Mibrag, ...
 
 ```{r}
 group_lookup <- c(
@@ -356,8 +341,8 @@ group_lookup <- c(
   # EPH
   "EPH" = "EPH",
   "Lausitz Energie Kraftwerke AG" = "EPH",
-  "MIBRAG GmbH" ~ "EPH",
-  "MIBRAG Kraftwerk Lippendorf GmbH" ~ "EPH",
+  "MIBRAG GmbH" = "EPH",
+  "MIBRAG Kraftwerk Lippendorf GmbH" = "EPH",
   "Saale Energie GmbH" = "EPH",
 
   # Onyx Power
@@ -371,6 +356,12 @@ group_lookup <- c(
   "VW Kraftwerk GmbH" = "Volkswagen Group",
   "Dr. Ing. h.c. F. Porsche AG" = "Volkswagen Group",
   "AUDI" = "Volkswagen Group",
+  
+  # EON (eigentich eher NEtzbetreiber, aber hat ein paar Speicher und Reste)
+  "envia THERM GmbH" = "EON",
+  "Bayernwerk Natur GmbH" = "EON",
+  "E.ON Energy Solutions GmbH" = "EON",
+  "PreussenElektra" = "EON",
 
   # BASF
   "BASF SE" = "BASF",
@@ -483,8 +474,7 @@ group_lookup <- c(
 ```
 
 ```{r}
-df %>%
-  mutate(
+df <- df %>% mutate(
     konzerngruppe = if_else(betreiber %in% names(group_lookup), group_lookup[betreiber], NA_character_)
   )
 ```
