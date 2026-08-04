@@ -15,15 +15,23 @@ actors <- duckplyr::read_csv_duckdb(path, prudence="lavish")
 # actors <- read_csv(path, n_max=100000)
 ```
 
+Wir brauchen nur die Betreiber, die auch in unserer großen Liste drin sind.
+```{r}
+df_KW <- read_csv("../data/processed/06_KW_cleaned.csv")
+df_KWL <- read_csv("../data/processed/01_KWL_clean.csv")
+```
+
+Jetzt filtern wir den Datensatz, verkleinern ihn, und benennen die Spalten neu.
 ```{r}
 df_actors <- actors %>%
   filter(
     Marktfunktion == "Anlagenbetreiber",
-    Personenart ==  "Organisation (Unternehmen, Personengesellschaft, juristische Person, Behörde, Verband)"
+    Personenart ==  "Organisation (Unternehmen, Personengesellschaft, juristische Person, Behörde, Verband)",
+    MastrNummer %in% df_KW$nr_betreiber
     ) %>%
   reframe(
     nr_betreiber = MastrNummer,
-    betrieb_name = Firmenname,
+    name_betreiber = Firmenname,
     betrieb_rechtsform = Rechtsform,
     betrieb_strasse = Strasse,
     betrieb_hausnummer = Hausnummer,
@@ -34,19 +42,225 @@ df_actors <- actors %>%
 ```
 
 
+## Aggregate von KOnzernsparten
+
+
+e.g EPH: LEAG, Mibrag, ...
+
 ```{r}
-df_KW <- read_csv("../data/processed/05_KW_aggregate.csv")
+group_lookup <- c(
+  # RWE
+  "RWE Power AG" = "RWE",
+  "RWE Generation SE" = "RWE",
+  "RWE Supply ＆ Trading GmbH" = "RWE",
+  "RWE Generation Hydro GmbH" = "RWE",
+  "RWE Sommerland Windparkbetriebsgesellschaft mbH" = "RWE",
+  "RWE Green Gecco Windparks GmbH" = "RWE",
+  "RWE Windpark Bedburg GmbH ＆ Co. KG" = "RWE", # alter Tagebau
+  "RWE indeland Windpark Eschweiler GmbH ＆ Co KG" = "RWE", # Tagebau
+  "RWE Wind Onshore & PV Deutschland GmbH" = "RWE",
+  "RWE Evendorf Windparkbetriebsgesellschaft mbH" = "RWE",
+  "RWE Windpark Garzweiler GmbH ＆ Co. KG" = "RWE", # tagebau
+  "RWE Renewables Europe ＆ Australia GmbH" = "RWE", 
+  "RWE Windpark Bedburg A44n GmbH & Co. KG" = "RWE", # tagebau
+  "RWE Kaskasi GmbH" = "RWE", 
+  "RWE Renewables Zweite Beteiligungs GmbH" = "RWE",
+  "RWE Battery Solutions GmbH" = "RWE",
+  "RWE Neuland Erneuerbare Energien GmbH ＆ Co. KG" = "RWE",
+  "RWE Renewables PV Schönau GmbH" =  "RWE",
+
+  # EnBW
+  "EnBW Energie Baden-Württemberg AG" = "EnBW",
+  "naturenergie holding AG" = "EnBW",
+  "naturenergie hochrhein AG" = "EnBW",
+    # davon Windparks
+  "EnBW Baltic 2 GmbH ＆ Co. KG" = "EnBW",
+  "EnBW Windkraftprojekte GmbH" = "EnBW",
+  "EnBW Windpark Aalen-Waldhausen GmbH" = "EnBW",
+  "EnBW Baltic 1 GmbH ＆ Co. KG" = "EnBW",
+  "EnBW Windpark Buchholz III GmbH" = "EnBW",
+  "EnBW Onshore Portfolio GmbH" = "EnBW",
+  "EnBW Albatros GmbH ＆ Co. KG" = "EnBW",
+  "EnBW Hohe See GmbH ＆ Co. KG" = "EnBW",
+  "EnBW WindInvest GmbH ＆ Co. KG" = "EnBW",
+  "EnBW He Dreiht GmbH ＆ Co. KG" = "EnBW",
+  "EnBW OnshoreInvest GmbH ＆ Co. KG" = "EnBW",
+  "EnBW Solar GmbH" = "EnBW",
+  "EnBW Solarpark Weesow-Willmersdorf GmbH" = "EnBW",
+  "EnBW Solarpark Gottesgabe GmbH" = "EnBW",
+  "EnBW SunInvest GmbH ＆ Co. KG"= "EnBW",
+  "EnBW Solar Langenenslingen GmbH ＆ Co. KG"= "EnBW",
+  "EnBW Solarpark Gickelfeld GmbH ＆ Co. KG"= "EnBW",
+  "EnBW Solarpark Lauenhagen GmbH ＆ Co. KG"= "EnBW",
+  
+  # Vattenfall
+  "Vattenfall Heizkraftwerk Moorburg GmbH" = "Vattenfall",
+  "Vattenfall Wasserkraft GmbH" = "Vattenfall",
+  "Vattenfall Wasserkraft GmbH" = "Vattenfall",
+  "Vattenfall Wind Mettenheim GmbH" = "Vattenfall",
+  "Vattenfall wiwi consult Erneuerbare Energie Südwest GmbH" = "Vattenfall",
+
+  # Uniper
+  "Uniper Kraftwerke GmbH" = "Uniper",
+  "Gemeinschaftskraftwerk Irsching GmbH" = "Uniper",
+  "Datteln 4 a.s ＆ Co. KG" = "Uniper",
+
+  # STEAG / Iqony
+  "STEAG Power GmbH" = "STEAG/Iqony",
+  "Iqony Battery System" = "STEAG/Iqony",
+  "Iqony 2. Battery System GmbH" = "STEAG/Iqony",
+  
+  # EPH
+  "Lausitz Energie Kraftwerke AG" = "EPH",
+  "MIBRAG GmbH" = "EPH",
+  "MIBRAG Kraftwerk Lippendorf GmbH" = "EPH",
+  "Saale Energie GmbH" = "EPH",
+  "LEAG Clean Power GmbH" = "EPH",
+  "LEWP Forst Briesnig 2 GmbH ＆ Co. KG" = "EPH", #tagebau
+  "LEWP Cottbus Ost GmbH ＆ Co. KG" = "EPH", # tagebau
+  "LEPV Boxberg GmbH ＆ Co. KG" = "EPH", # tagebau
+  "LEPV Jänschwalde GmbH ＆ Co.KG" = "EPH", # tagebau
+  "LEPV Energiepark Bohrau GmbH ＆ Co. KG" = "EPH", # tagebau
+
+  # Onyx Power
+  "Onyx Kraftwerk Farge GmbH ＆ Co. KGaA" = "Onyx Power",
+  "Onyx Kraftwerk Zolling GmbH ＆Co. KGaA" = "Onyx Power",
+  "Onyx Kraftwerk Wilhelmshaven GmbH ＆ Co. KG" = "Onyx Power",
+  "Onyx Wärmekraftwerk Zolling" = "Onyx Power",
+
+  # VW-Konzern
+  "Volkswagen AG" = "Volkswagen Group",
+  "Volkswagen Sachsen GmbH" = "Volkswagen Group",
+  "VW Kraftwerk GmbH" = "Volkswagen Group",
+  "Dr. Ing. h.c. F. Porsche AG" = "Volkswagen Group",
+  "AUDI" = "Volkswagen Group",
+  
+  # EON (eigentich eher NEtzbetreiber, aber hat ein paar Speicher und Reste)
+  "envia THERM GmbH" = "EON",
+  "Bayernwerk Natur GmbH" = "EON",
+  "E.ON Energy Solutions GmbH" = "EON",
+  "PreussenElektra" = "EON",
+
+  # BASF
+  "BASF SE" = "BASF",
+  "BASF InfraService ＆ Solutions Lausitz GmbH" = "BASF",
+
+
+  # Smurfit Westrock
+  "Smurfit Westrock Herzberg Solid Board GmbH" = "Smurfit Westrock",
+  "Smurfit Westrock Zülpich Paper GmbH" = "Smurfit Westrock",
+  "Smurfit Westrock Wrexen Paper ＆ Board GmbH" = "Smurfit Westrock",
+
+  # Mercer International
+  "Mercer Timber Products GmbH" = "Mercer International",
+  "Mercer Stendal GmbH" = "Mercer International",
+  "Mercer Rosenthal GmbH" = "Mercer International",
+
+  # Sappi
+  "Sappi Alfeld" = "Sappi",
+  "Sappi Ehingen GmbH" = "Sappi",
+  "Sappi Stockstadt GmbH" = "Sappi",
+
+  # Pfleiderer
+  "Pfleiderer Gütersloh GmbH" = "Pfleiderer",
+  "Pfleiderer Neumarkt GmbH" = "Pfleiderer",
+  "Pfleiderer Baruth GmbH" = "Pfleiderer",
+
+  # Nordzucker
+  "Nordzucker AG Werk Nordstemmen" = "Nordzucker",
+  "Nordzucker AG Werk Uelzen" = "Nordzucker",
+  "Nordzucker, Werk Klein Wanzleben" = "Nordzucker",
+  "Nordzucker AG Werk Schladen" = "Nordzucker",
+  "Nordzucker" = "Nordzucker",
+
+  # ENGIE
+  "ENGIE Deutschland Erneuerbare GmbH" = "ENGIE",
+  "ENGIE Deutschland GmbH" = "ENGIE",
+  "ENGIE Windpark Karstädt Repowering GmbH" = "ENGIE",
+  "ENGIE Windpark Peckelsheim GmbH" = "ENGIE",
+  "ENGIE Windpark Portfolio 2 GmbH" = "ENGIE",
+  "ENGIE Windpark Querstedt-Badingen Repowering GmbH" = "ENGIE",
+  "ENGIE Windpark Schkortleben GmbH ＆ Co. KG" = "ENGIE",
+  "ENGIE WSW Windpark Helmstadt GmbH ＆ Co.KG" = "ENGIE",
+
+  # GLOBALFOUNDRIES
+  "GLOBALFOUNDRIES Dresden Module One LLC ＆ Co. KG" = "GLOBALFOUNDRIES",
+  "GLOBALFOUNDRIES Dresden Module Two LLC ＆ Co. KG" = "GLOBALFOUNDRIES",
+
+  # Progroup
+  "Progroup Power 1 GmbH" = "Progroup",
+  "Progroup Power 2 GmbH" = "Progroup",
+
+  # Danpower
+  "Danpower Energie Service GmbH" = "Danpower",
+  "Danpower GmbH" = "Danpower",
+  "Danpower New Energy GmbH" = "Danpower",
+
+  # EEW Energy from Waste
+  "EEW Energy from Waste Helmstedt GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Großräschen GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Stavenhagen GmbH ＆ Co KG" = "EEW Energy from Waste",
+  "EEW Energy from Waste Stapelfeld GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Saarbrücken GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Saarbrücken GmbH  AHKW-Neunkirchen" = "EEW Energy from Waste",
+  "EEW Energy from Waste Hannover GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Premnitz GmbH" = "EEW Energy from Waste",
+  "EEW Energy from Waste Göppingen" = "EEW Energy from Waste",
+
+  # essity
+  "essity Operations Mainz-Kostheim GmbH" = "essity",
+  "Essity Operations Mannheim GmbH" = "essity",
+
+  # JUNIZ (Batteriespeicher)
+  "SMAREG 9 GmbH ＆ Co. KG" = "JUNIZ",
+  "SMAREG 8 GmbH ＆ Co. KG" = "JUNIZ",
+  "SMAREG 6 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 4 GmbH ＆ Co. KG" = "JUNIZ",
+  "SMAREG 7 GmbH ＆ Co. KG" = "JUNIZ",
+  "SMAREG 5 GmbH ＆ Co. KG" = "JUNIZ",
+  "SMAREG 3 GmbH ＆ Co. KG" = "JUNIZ",
+  "SMAREG 12 GmbH & Co. KG" = "JUNIZ",
+  "SMAREG 1" = "JUNIZ",
+
+  # terralayr (Batteriespeicher)
+  "trlyr2 GmbH" = "terralayr",
+  "trlyr 4 GmbH ＆ Co. KG" = "terralayr",
+  "trlyr 8 GmbH ＆ Co. KG" = "terralayr",
+  "trlyr 9 GmbH ＆ Co. KG" = "terralayr",
+  "trlyr 3 GmbH ＆ Co. KG" = "terralayr",
+  "trlyr 5 GmbH ＆ Co. KG" = "terralayr",
+  "trlyr 31 GmbH ＆ Co. KG" = "terralayr",
+
+  # Münch Energie (Batteriespeicher)
+  "Münch EnerStore GmbH" = "Münch Energie",
+  "Münch SmartCharge Systems GmbH" = "Münch Energie",
+  "Münch NatureDepot GmbH" = "Münch Energie"
+)
 ```
 
 ```{r}
-df <- df_KW %>%
-  left_join(df_actors, by = "nr_betreiber")
+df_actors <- df_actors %>% mutate(
+    konzerngruppe = if_else(name_betreiber %in% names(group_lookup), group_lookup[name_betreiber], NA_character_)
+  )
+```
+
+
+## Speichern
+
+```{r}
+df_KW <- df_KW %>% 
+  left_join(
+    df_actors %>% select(nr_betreiber, name_betreiber, konzerngruppe), by="nr_betreiber", 
+  ) %>% 
+  arrange(desc(leistung_brutto))
 ```
 
 
 
 ```{r}
-df %>%
-  filter(is.na(nr_betreiber))
+path = "../data/processed/"
+write_csv(df_actors, paste0(path, "07_Akteure.csv"))
+write_csv(df_KW, paste0(path, "07_KW.csv"))
 ```
+
 
