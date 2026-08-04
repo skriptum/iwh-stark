@@ -1,0 +1,7 @@
+nr_MASTR,nr_betreiber,energie_type,name,einspeisung,leistung_brutto,plz,landkreis,ort,strasse,hausnummer,bundesland,laenge,breite,jahr_inbetriebnahme,jahr_stillgelegt,stillgelegt,name_KW,energietraeger,nr_KW
+SEE930752846949,ABR955740229108,Kernenergie,Grohnde,Volleinspeisung,1430000,31860,Hameln-Pyrmont,Emmerthal,Kraftwerksgelände,NA,Niedersachsen,9.413333,52.0352,1984,2021,TRUE,Grohnde,Druckwasserreaktor,SEE930752846949
+SEE951462745445,NA,Kernenergie,Brokdorf,NA,1480000,25576,Steinburg,Brokdorf,Osterende,NA,Schleswig-Holstein,9.34472,53.85083,1986,2021,TRUE,Brokdorf,Druckwasserreaktor,SEE951462745445
+SEE943690268513,NA,Kernenergie,Isar 2,NA,1485000,84051,Landshut,Essenbach,Dammstraße,NA,Bayern,12.29315,48.6056,1988,2023,TRUE,Isar 2,Druckwasserreaktor,SEE943690268513
+SEE927528071629,NA,Kernenergie,Gundremmingen C,NA,1344000,89355,Günzburg,Gundremmingen,Dr.-August-Weckesser-Straße,1,Bayern,10.404743,48.513566,1984,2021,TRUE,Kernkraftwerk Gundremmingen,NA,SEE927528071629
+SEE944567587799,NA,Kernenergie,Emsland A,NA,1406000,49811,Emsland,Lingen,Am Hilgenberg,2,Niedersachsen,7.32414,52.472897,1988,2023,TRUE,Kernkraftwerk Emsland,NA,SEE944567587799
+SEE985577062814,NA,Kernenergie,GKN II,Volleinspeisung,1400000,74382,Heilbronn,Neckarwestheim,Im Steinbruch,NA,Baden-Württemberg,9.176408,49.040019,1989,2023,TRUE,Gemeinschaftskernkraftwerk Neckarwestheim II,Druckwasserreaktor,SEE985577062814

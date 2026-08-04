@@ -9,7 +9,7 @@ library(tidyverse)
 ```
 
 ```{r message=F}
-path = "../data/processed"
+path = "../data/intermediate"
 df_PLZ <- read_csv(paste0(path, "/02_foerdergebiete.csv"))
 df_KW <- read_csv(paste0(path, "/05_KW_aggregate.csv"))
 df_KWL <- read_csv(paste0(path, "/01_KWL_clean.csv"))
@@ -135,6 +135,6 @@ Manche Einheiten sind immer noch nicht drin, aber alle davon sind unter 10MW und
 ## Saving
 
 ```{r}
-write_csv(df_KW, "../data/processed/06_KW_cleaned.csv")
+write_csv(df_KW, "../data/intermediate/06_KW_cleaned.csv")
 ```
 

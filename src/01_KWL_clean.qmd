@@ -315,6 +315,6 @@ psych::describe(df)
 ## Speichern
 
 ```{r}
-write_csv(df, "../data/processed/01_KWL_clean.csv")
+write_csv(df, "../data/intermediate/01_KWL_clean.csv")
 ```
 

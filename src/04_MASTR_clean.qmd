@@ -169,7 +169,7 @@ df_combustion <- combustion %>%
 Wir wollen außerdem aus der Kraftwerksliste den Grund der Stillegung (KVBG, ENWG) haben
 
 ```{r}
-df_KWL <- read_csv("../data/processed/01_KWL_clean.csv")
+df_KWL <- read_csv("../data/intermediate/01_KWL_clean.csv")
 ```
 
 ```{r}
@@ -387,7 +387,7 @@ df_nuclear <- nuclear %>%
 # Speichern
 
 ```{r}
-path = "../data/processed/04_"
+path = "../data/intermediate/04_"
 
 write_csv(df_biomass, paste0(path, "biomass", ".csv"))
 write_csv(df_wind, paste0(path, "wind", ".csv"))
@@ -420,7 +420,10 @@ for (d in list(df_combustion, df_biomass, df_solar,  df_storage, df_hydro, df_wi
   df <- rbind(df, d)
 }
 
+# speichern als Intermediate Produkt
 write_csv(df, paste0(path, "combined", ".csv"))
+# noch einmal als Finale Datei, da wir es nicht weiter verarbeiten
+write_csv(df, "../data/final/Einheiten.csv")
 ```
 
 

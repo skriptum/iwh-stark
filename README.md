@@ -15,14 +15,14 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 
 **Inhaltsverzeichnis**
 
- * [Datenquellen](#datenquellen)
- * [Datensätze](#datensätze)
-       - [Kraftwerke.csv](#kraftwerkecsv)
-       - [Betreiber.csv](#betreibercsv)
-       - [Einheiten.csv](#einheitencsv)
- * [Projektstruktur](#projektstruktur)
-    + [Reproduktion](#reproduktion)
-    + [Codedateien](#codedateien)
+- [Datenquellen](#datenquellen)
+- [Datensätze](#datensätze)
+  - [Kraftwerke.csv](#kraftwerkecsv)
+  - [Betreiber.csv](#betreibercsv)
+  - [Einheiten.csv](#einheitencsv)
+- [Projektstruktur](#projektstruktur)
+  - [Reproduktion](#reproduktion)
+  - [Codedateien](#codedateien)
 
 
 
@@ -213,17 +213,20 @@ Geokoordinaten sind insbesondere für einzelne Windräder relevant, da sie im gl
 
 ## Projektstruktur
 
-Filetree der Dateien mit Kommentaren:
+Kurze Erklärung zur Bedeutung der eizelnen Dateien / Ordner.
 
 ```
 ├── README.md                   # Diese Datei
-├── data                   
+├── data  
+│   ├── final                   # Finale Datensätze
+│   │   ├── Betreiber.csv
+│   │   ├── ...
+│   ├── intermediate            # Zwischenstände etc.
+│   │   ├── 01_KWL_clean.csv
+│   │   ├── ...
 │   ├── mastr                   # Marktstammdatenregister
 │   │   ├── data                   # CSV Datensätze
 │   │   └── mastr.db               # SQLite Datenbank
-│   ├── processed               # Bereits verarbeitete daten
-│   │   ├── 01_KWL_clean.csv
-│   │   ├── ...
 │   └── raw                     # Rohdaten
 │       ├── Kraftwerksliste.xlsx
 │       ├── ...
@@ -261,4 +264,6 @@ Problem ist: dass sich das MASTR noch öfter ändern wird vermutlich. Irgendwann
 
 
 ### Codedateien
+
+Der gesamte Code ist in Quarto-Dateien geschrieben (mehr dazu [hier](https://quarto.org/)). Die grundlegende Idee ist es, Code mit Text zu kombinieren, damit der Ablauf besser verständlich ist. RStudio erkennt Quarto Dateien automatisch und hebt die Codeblocks hervor. 
 

@@ -6,7 +6,7 @@ library(tidyverse)
 
 
 ```{r}
-path = "../data/processed/"
+path = "../data/intermediate/"
 df_KW <- read.csv(paste0(path, "07_KW.csv"))
 
 df_KWL <- read_csv(paste0(path, "01_KWL_clean.csv"))

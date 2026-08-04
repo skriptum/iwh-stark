@@ -127,6 +127,6 @@ df_filtered <- df_filtered %>%
 
 
 ```{r}
-write_csv(df_filtered, "../data/processed/02_foerdergebiete.csv")
+write_csv(df_filtered, "../data/intermediate/02_foerdergebiete.csv")
 ```
 

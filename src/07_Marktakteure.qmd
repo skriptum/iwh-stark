@@ -17,8 +17,8 @@ actors <- duckplyr::read_csv_duckdb(path, prudence="lavish")
 
 Wir brauchen nur die Betreiber, die auch in unserer großen Liste drin sind.
 ```{r}
-df_KW <- read_csv("../data/processed/06_KW_cleaned.csv")
-df_KWL <- read_csv("../data/processed/01_KWL_clean.csv")
+df_KW <- read_csv("../data/intermediate/06_KW_cleaned.csv")
+df_KWL <- read_csv("../data/intermediate/01_KWL_clean.csv")
 ```
 
 Jetzt filtern wir den Datensatz, verkleinern ihn, und benennen die Spalten neu.
@@ -258,9 +258,13 @@ df_KW <- df_KW %>%
 
 
 ```{r}
-path = "../data/processed/"
+path = "../data/intermediate/"
 write_csv(df_actors, paste0(path, "07_Akteure.csv"))
 write_csv(df_KW, paste0(path, "07_KW.csv"))
+
+# auch noch einmal als Finale Dateien
+write_csv(df_actors, "../data/final/Betreiber.csv")
+write_csv(df_KW, "../data/final/Kraftwerke.csv")
 ```
 
 

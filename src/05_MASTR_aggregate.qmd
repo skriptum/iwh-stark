@@ -7,7 +7,7 @@ library(tidyverse)
 ```
 
 ```{r message=F}
-path <- "../data/processed/04_"
+path <- "../data/intermediate/04_"
 df_combustion <- read_csv(paste0(path, "combustion", ".csv"))
 df_storage <- read_csv(paste0(path, "storage", ".csv"))
 df_hydro <- read_csv(paste0(path, "hydro", ".csv"))
@@ -301,7 +301,7 @@ df <- rbind(
 ```
 
 ```{r}
-write.csv(df, "../data/processed/05_KW_aggregate.csv", row.names = FALSE)
+write.csv(df, "../data/intermediate/05_KW_aggregate.csv", row.names = FALSE)
 ```
 
 
