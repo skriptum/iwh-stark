@@ -1,0 +1,44 @@
+# Runner
+
+Alle Codeskripte auf einmal laufen lassen.
+
+```{r}
+library(quarto)
+```
+
+
+Dedicated Runner to catch errors and clean up afterwards (quarto creates a lot of unneeded files running a QMD file)
+```{r}
+quarto_runner <- function(file_name) {
+  tryCatch({ # Try to run the code
+    print(paste0("Running: ", file_name))
+    # run the code
+    quarto_render(
+      input = paste0(file_name,".qmd"),
+      output_file = "NULL",
+      quiet = T
+    )
+    # remove the output file 
+    unlink(paste0("NULL.html"))
+    # remove the associated folder
+    unlink(paste0(file_name, "_files"), recursive = TRUE, force = TRUE)
+  }, error = function(e) { # Catch any errors during running
+    print(paste0("ERROR: the code did not run, take a look at the file and fix it from there"))
+  }
+  )
+}
+```
+
+
+```{r message=F}
+quarto_runner("01_KWL_clean")
+quarto_runner("02_PLZ_clean")
+quarto_runner("03_MASTR_download")
+quarto_runner("04_MASTR_clean")
+quarto_runner("05_MASTR_aggregate")
+quarto_runner("06_KWL_MASTR_merge")
+quarto_runner("07_Marktakteure")
+```
+
+
+

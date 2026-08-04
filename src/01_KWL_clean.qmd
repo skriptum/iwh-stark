@@ -135,7 +135,7 @@ zu Frechen: aus [Wikipedia](https://de.wikipedia.org/wiki/Kohleveredlungsbetrieb
 - original KW wurde irgendwann stillgelegt (nach KVBG Anlage 2 entschädigt)
 - eine Maschine für den Eigenverbrauch der Fabrik läuft noch weiter
 
-FRAGE: BNA-Nummern alle droppen?
+
 
 ### Ausländische KW
 
@@ -177,7 +177,7 @@ operator_lookup <- c(
   "Wilhelmshaven 1 DT" = "Uniper Kraftwerke GmbH",
   "Wilhelmshaven 1 ZT" = "Uniper Kraftwerke GmbH",
   "Wilhelmshaven GT" = "Uniper Kraftwerke GmbH",
-  "KWM Block 3" = "EPH",
+  "KWM Block 3" = "EPH", # Mehrum
   "Neurath A" = "RWE Power AG",
   "Neurath B" = "RWE Power AG",
   "Neurath C" = "RWE Power AG",
@@ -301,182 +301,6 @@ df <- df %>%
   ) 
 
 df %>% filter(is.na(betreiber))
-```
-
-
-## Aggregate von KOnzernsparten
-
-
-e.g EPH: LEAG, Mibrag, ...
-
-```{r}
-group_lookup <- c(
-  # RWE
-  "RWE Power AG" = "RWE",
-  "RWE Generation SE" = "RWE",
-  "RWE Supply & Trading GmbH" = "RWE",
-  "RWE Generation Hydro GmbH" = "RWE",
-  "RWE Battery Solutions GmbH" = "RWE",
-
-  # EnBW
-  "EnBW Energie Baden-Württemberg AG" = "EnBW",
-  "EnBW Contracting GmbH" = "EnBW",
-  "naturenergie holding AG" = "EnBW",
-  "naturenergie hochrhein AG" = "EnBW",
-
-  # Vattenfall
-  "Vattenfall GmbH" = "Vattenfall",
-  "Vattenfall Wasserkraft GmbH" = "Vattenfall",
-
-  # Uniper
-  "Uniper Kraftwerke GmbH" = "Uniper",
-  "Uniper Systemstabilität GmbH" = "Uniper",
-  "Gemeinschaftskraftwerk Irsching GmbH" = "Uniper",
-  "Datteln 4 a.s & Co. KG" = "Uniper",
-
-  # STEAG / Iqony
-  "STEAG Power GmbH" = "STEAG/Iqony",
-  "Iqony Battery System" = "STEAG/Iqony",
-  
-  # EPH
-  "EPH" = "EPH",
-  "Lausitz Energie Kraftwerke AG" = "EPH",
-  "MIBRAG GmbH" = "EPH",
-  "MIBRAG Kraftwerk Lippendorf GmbH" = "EPH",
-  "Saale Energie GmbH" = "EPH",
-
-  # Onyx Power
-  "Onyx Kraftwerk Farge GmbH & Co. KGaA" = "Onyx Power",
-  "Onyx Kraftwerk Zolling GmbH &Co. KGaA" = "Onyx Power",
-  "Onyx Kraftwerk Wilhelmshaven GmbH & Co. KG" = "Onyx Power",
-
-  # VW-Konzern
-  "Volkswagen AG" = "Volkswagen Group",
-  "Volkswagen Sachsen GmbH" = "Volkswagen Group",
-  "VW Kraftwerk GmbH" = "Volkswagen Group",
-  "Dr. Ing. h.c. F. Porsche AG" = "Volkswagen Group",
-  "AUDI" = "Volkswagen Group",
-  
-  # EON (eigentich eher NEtzbetreiber, aber hat ein paar Speicher und Reste)
-  "envia THERM GmbH" = "EON",
-  "Bayernwerk Natur GmbH" = "EON",
-  "E.ON Energy Solutions GmbH" = "EON",
-  "PreussenElektra" = "EON",
-
-  # BASF
-  "BASF SE" = "BASF",
-  "BASF InfraService & Solutions Lausitz GmbH" = "BASF",
-
-  # Dillinger / Saarstahl
-  "AG der Dillinger Hüttenwerke" = "Dillinger/Saarstahl",
-  "ROGESA Roheisengesellschaft Saar mbH" = "Dillinger/Saarstahl",
-
-  # Smurfit Westrock
-  "Smurfit Westrock Herzberg Solid Board GmbH" = "Smurfit Westrock",
-  "Smurfit Westrock Zülpich Paper GmbH" = "Smurfit Westrock",
-  "Smurfit Westrock Hoya Paper & Board GmbH" = "Smurfit Westrock",
-  "Smurfit Westrock Wrexen Paper & Board GmbH" = "Smurfit Westrock",
-
-  # Mercer International
-  "Mercer Timber Products GmbH" = "Mercer International",
-  "Mercer Torgau GmbH & Co. KG" = "Mercer International",
-  "Mercer Stendal GmbH" = "Mercer International",
-  "Mercer Rosenthal GmbH" = "Mercer International",
-
-  # Sappi
-  "Sappi Alfeld" = "Sappi",
-  "Sappi Ehingen GmbH" = "Sappi",
-  "Sappi Stockstadt GmbH" = "Sappi",
-
-  # Pfleiderer
-  "Pfleiderer Gütersloh GmbH" = "Pfleiderer",
-  "Pfleiderer Neumarkt GmbH" = "Pfleiderer",
-  "Pfleiderer Baruth GmbH" = "Pfleiderer",
-
-  # Koehler
-  "Koehler Kehl GmbH" = "Koehler",
-  "Koehler Oberkirch GmbH" = "Koehler",
-
-  # Papierfabrik Adolf Jass
-  "Papierfabrik Adolf Jass GmbH & Co. KG" = "Papierfabrik Adolf Jass",
-  "Papierfabrik Adolf Jass Schwarza GmbH" = "Papierfabrik Adolf Jass",
-
-  # Nordzucker
-  "Nordzucker AG Werk Nordstemmen" = "Nordzucker",
-  "Nordzucker AG Werk Uelzen" = "Nordzucker",
-  "Nordzucker, Werk Klein Wanzleben" = "Nordzucker",
-  "Nordzucker AG Werk Schladen" = "Nordzucker",
-  "Nordzucker" = "Nordzucker",
-
-  # ENGIE
-  "ENGIE Deutschland Erneuerbare GmbH" = "ENGIE",
-  "ENGIE Deutschland GmbH" = "ENGIE",
-
-  # GLOBALFOUNDRIES
-  "GLOBALFOUNDRIES Dresden Module Two LLC & Co. KG" = "GLOBALFOUNDRIES",
-  "GLOBALFOUNDRIES Dresden Module One LLC & Co. KG" = "GLOBALFOUNDRIES",
-
-  # Progroup
-  "Progroup Power 1 GmbH" = "Progroup",
-  "Progroup Power 2 GmbH" = "Progroup",
-
-  # Danpower
-  "Danpower Energie Service GmbH" = "Danpower",
-  "Danpower GmbH" = "Danpower",
-  "Danpower New Energy GmbH" = "Danpower",
-
-  # EEW Energy from Waste
-  "EEW Energy from Waste Helmstedt GmbH" = "EEW Energy from Waste",
-  "EEW Energy from Waste Großräschen GmbH" = "EEW Energy from Waste",
-  "EEW Energy from Waste Stavenhagen GmbH & Co KG" = "EEW Energy from Waste",
-  "EEW Energy from Waste Stapelfeld GmbH" = "EEW Energy from Waste",
-  "EEW Energy from Waste Saarbrücken GmbH" = "EEW Energy from Waste",
-  "EEW Energy from Waste Saarbrücken GmbH  AHKW-Neunkirchen" = "EEW Energy from Waste",
-  "EEW Energy from Waste Hannover GmbH" = "EEW Energy from Waste",
-  "EEW Energy from Waste Premnitz GmbH" = "EEW Energy from Waste",
-  "EEW Energy from Waste Göppingen" = "EEW Energy from Waste",
-
-  # essity
-  "essity Operations Mainz-Kostheim GmbH" = "essity",
-  "Essity Operations Mannheim GmbH" = "essity",
-
-  # Boehringer Ingelheim
-  "Boehringer Ingelheim - 2336 - K8/T7" = "Boehringer Ingelheim",
-  "Boehringer Ingelheim Pharma GmbH&Co.KG" = "Boehringer Ingelheim",
-
-  # JUNIZ (Batteriespeicher)
-  "SMAREG 9 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 8 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 6 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 4 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 7 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 5 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 3 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 12 GmbH & Co. KG" = "JUNIZ",
-  "SMAREG 1" = "JUNIZ",
-
-  # terralayr (Batteriespeicher)
-  "trlyr2 GmbH" = "terralayr",
-  "trlyr 4 GmbH & Co. KG" = "terralayr",
-  "trlyr 8 GmbH & Co. KG" = "terralayr",
-  "trlyr 9 GmbH & Co. KG" = "terralayr",
-  "trlyr 3 GmbH & Co. KG" = "terralayr",
-  "trlyr 5 GmbH & Co. KG" = "terralayr",
-
-  # Münch Energie (Batteriespeicher)
-  "Münch visiontec GmbH & Co. KG" = "Münch Energie",
-  "Münch NextGen Storage GmbH" = "Münch Energie",
-  "Münch EnerStore GmbH" = "Münch Energie",
-  "Münch VoltDepot GmbH" = "Münch Energie",
-  "Münch SmartCharge Systems GmbH" = "Münch Energie",
-  "Münch NatureDepot GmbH" = "Münch Energie"
-)
-```
-
-```{r}
-df <- df %>% mutate(
-    konzerngruppe = if_else(betreiber %in% names(group_lookup), group_lookup[betreiber], NA_character_)
-  )
 ```
 
 

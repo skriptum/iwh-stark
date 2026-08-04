@@ -25,11 +25,11 @@ Jetz der große Schritt, dauert ca **45 min** (je nach Internetgeschwindigkeit).
 Für jede Art der Erzeugung müssen die Daten einzeln geladen werden!
 
 ```{python}
-db.download(data = ["wind", "solar", "storage", "combustion", "biomass", "hydro", "market"])
+db.download(data = ["wind", "solar", "storage", "combustion", "biomass", "hydro", "market", "nuclear"])
 ```
 
 Jetz noch speichern aller Tabellen als CSV, die Weiterverarbeitung machen wir im nächsten Schritt.
 
 ```{python}
-db.to_csv(tables = ["wind", "solar", "storage", "combustion", "biomass", "hydro", "market_actors"])
+db.to_csv(tables = ["wind", "solar", "storage", "combustion", "biomass", "hydro", "market_actors", "nuclear"])
 ```

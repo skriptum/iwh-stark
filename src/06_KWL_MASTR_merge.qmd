@@ -10,10 +10,10 @@ library(tidyverse)
 
 ```{r message=F}
 path = "../data/processed"
-df_KWL <- read_csv(paste0(path, "/01_KWL_clean.csv"))
 df_PLZ <- read_csv(paste0(path, "/02_foerdergebiete.csv"))
 df_KW <- read_csv(paste0(path, "/05_KW_aggregate.csv"))
-df_comb <- read_csv(paste0(path, "/04_combined.csv"))
+df_KWL <- read_csv(paste0(path, "/01_KWL_clean.csv"))
+df_SEE <- read_csv(paste0(path, "/04_combined.csv"))  
 ```
 
 
@@ -21,50 +21,120 @@ df_comb <- read_csv(paste0(path, "/04_combined.csv"))
 
 KWL filtern nach den Regionen
 ```{r}
-df <- df_KWL %>% 
+df_KW <- df_KW %>% 
   left_join(df_PLZ, by = "plz", multiple="first") %>%
   mutate(KVBG_gebiet = if_else(
     is.na(Paragraph), F, T
   ), .before=Paragraph )
 ```
 
-## MASTR
+## MASTR Translator
 
+In der Original-KWL habbe ich bereits viele fehlende Betreiber eingetragen. Diese Daten kombinieren wir jetzt mit den Betreibernummern aus dem MASTR. 
 ```{r}
-df_mastr <- df_comb %>%
-  select(nr_MASTR, nr_betreiber, nr_KW, breite, laenge)
+df_betreiber <- df_KWL %>%
+  select(nr_MASTR, betreiber) %>%
+  inner_join(
+    df_SEE %>% select(nr_MASTR, nr_betreiber),
+    by= "nr_MASTR"
+  ) %>%
+  select(-nr_MASTR) %>%
+  filter(!is.na(nr_betreiber), !is.na(betreiber)) %>%
+  distinct()
+
+vec_betreiber <- setNames(df_betreiber$nr_betreiber, df_betreiber$betreiber)
 ```
 
+Herauskommt eine Liste an Betreibernamen und ihrer Nummer. Jetzt verknüpfen wir die alte KWL mit unserem Datensatz und sorgen dann automatisch dafür, dass die fehlenden eine Betreibernummer erhalten.
 
 ```{r}
-df <- df %>%
-  left_join(df_mastr, by = "nr_MASTR")
+df_KW <- df_KW %>%
+  left_join(df_KWL %>% select(nr_MASTR, betreiber), by=c(verknuepfte_einheiten = "nr_MASTR")) %>%
+  mutate(
+    nr_betreiber = if_else(
+      is.na(nr_betreiber) & !is.na(betreiber),
+      vec_betreiber[betreiber],
+      nr_betreiber
+    )
+  ) 
 ```
 
+```{r}
+df_KW %>%
+  filter(is.na(nr_betreiber)) %>%
+  arrange(desc(leistung_brutto)) %>%
+  select(c(name_KW, verknuepfte_einheiten, ort))
+```
+
+Einige fehlen noch, diese jetzt händisch nachtragen
+```{r}
+vec_betreiber_2 <- c(
+  "SEE907162822238, SEE977258693776" = "ABR914764874992", # Wilhelmshaven = Uniper
+  "SEE972471937317" = "ABR989720041336", # Moorburg Block A = Vattenfall
+  "SEE999848168525" = "ABR989720041336", # Moorburg Block B = Vattenfall
+  "SEE904194792843" = "ABR967895852209", # Kraftwerk Mehrum = LEAG / EPH
+  "SEE992750539261, SEE999431209765" = "ABR999859507658", # Frimmersdorf = RWE Power
+  "SEE904968236689" = "ABR951728908805", # Kraftwerk Farge von ONYX,
+  "SEE959000487536, SEE917432813484" = "ABR907617485391", # HKW West = SW Karlsruhe
+  "SEE987407788451, SEE972461974179" = "ABR940486198085", # Wilmersdorf = Mark-E AG
+  "SEE987407788451" = "ABR940486198085", # HWK Hagen Kabel 4 = Mark E
+  "SEE938923083674, SEE923577153439, SEE991559435767, SEE993836152862, SEE953373967701, SEE901120268069, SEE952266131625" = "ABR908946607690", # Kraftwerk Marl I = Evonik
+  "SEE984037976906, SEE934361309352, SEE918056935682" = "ABR908946607690", # Kraftwerk Marl III = Evonik
+  "SEE923082939436, SEE933960350956" = "ABR948749059999", # HKW Chemnitz Nord = eins energie
+  "SEE933174373390, SEE994506958166" = "ABR988666610835", # PSW Hohenwarte = Vattenfall Wasserkraft
+  "SEE963177319026, SEE950005518836" = "ABR926412045777", # Kombiblock der SW Pforzheim 
+  "SEE972367491114, SEE973768834586" = "ABR988666610835", # PSW Niederwertha = Vattenfall Wasser
+  "SEE957709110953" = NA, # Ausland
+  "SEE980378557088" = NA, # vertraulich im Online MASTR
+  "SEE924647197780, SEE994761683902" = "ABR907042335667", # Dortmund HKW = RWE Generation
+  "SEE992041330157, SEE992950044022, SEE946001068260, SEE983724570465" = "ABR955348431156",  # BHKW Nürnberg = N-ergie
+  "SEE943101874623, SEE963023008050, SEE969748285110" = "ABR915465753951", # HKW Bohrhüge = Stadtwerke Suhl
+  "SEE997988564504" = "ABR991299138126", # Gasturbine von Michelin
+  "SEE910102553963" = "ABR996014057713", # Gaskraftwerk der Rain Carbon Germany in Castrop Rauxel
+  "SEE939643255969, SEE947637179443" = NA, # irgendwas in Salzwedel
+  "SEE912104836396, SEE979428644236, SEE982775144076" = "ABR948836388698", # HKW Salinenstraße = SW Schwäbisch Hall
+  "SEE939597247393, SEE921888721163, SEE903508467828, SEE932929596862, SEE951279779923" = "ABR907152889371", # BHKW Hauffstraße = Fair Energie
+  "SEE916437209445" = "ABR928200421176", # Boehringer Ingelheim
+  "SEE967478674402, SEE956656118067, SEE945212899878" = "ABR946446968408" # HKW Wilmersdorf = BEW Berlin
+)
+```
+
+```{r}
+df_KW <- df_KW %>%
+  mutate(nr_betreiber = if_else(
+    is.na(nr_betreiber),
+    vec_betreiber_2[verknuepfte_einheiten],
+    nr_betreiber
+  )) %>%
+  select(-betreiber) # leftover from KWL
+```
+
+```{r}
+df_KW %>%
+  filter(is.na(nr_betreiber))
+```
+3, für die keine weiteren Informationen auffindbar sind.
 
 
+```{r}
+alle_verknuepften_ids <- df_KW$verknuepfte_einheiten %>%
+  na.omit() %>%
+  strsplit(",\\s*") %>%
+  unlist() %>%
+  unique()
+
+missing <- df_KWL %>%
+  filter(!nr_MASTR %in% alle_verknuepften_ids)
+
+missing_SEE <- df_SEE %>%
+  filter(nr_MASTR %in% missing$nr_MASTR)
+```
+
+Manche Einheiten sind immer noch nicht drin, aber alle davon sind unter 10MW und haben keine Identifikatoren, die es erlauben weitere KW zu verknüpfen.
 
 ## Saving
 
-
-
 ```{r}
-write_csv(df, "../data/processed/03_KWL.csv")
+write_csv(df_KW, "../data/processed/06_KW_cleaned.csv")
 ```
 
-Ein schneller Plot, wie viel KW-Kappa durch KVBG stillgelegt wird bis 2040
-
-```{r}
-df %>%
-  # filter(stillegung_type=="KVBG") %>%
-  select(leistung_brutto, jahr_stillegung) %>%
-  group_by(jahr_stillegung) %>%
-  summarise(total = sum(leistung_brutto)) %>%
-  ungroup() %>%
-  mutate(
-    cum = cumsum(total),
-    kappa = sum(total) - cum
-    ) %>%
-  ggplot(aes(x=jahr_stillegung, y=kappa)) +
-  geom_line() 
-```
