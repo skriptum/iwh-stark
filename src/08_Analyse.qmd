@@ -1,0 +1,53 @@
+# Analyse
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+path = "../data/processed/"
+df_KW <- read.csv(paste0(path, "07_KW.csv"))
+
+df_KWL <- read_csv(paste0(path, "01_KWL_clean.csv"))
+df_actors <- read_csv(paste0(path, "07_Akteure.csv"))
+df_SEE <- read_csv(paste0(path, "04_combined.csv"))
+```
+
+# LEAG
+
+```{r}
+df_KW %>%
+  filter(konzerngruppe == "EPH") %>%
+  group_by(energietraeger) %>%
+  summarise(total_leistung = sum(leistung_brutto * (1-stillgelegt)))
+```
+
+```{r}
+jahre <- 2015:2040
+
+df_KW %>%
+  filter(konzerngruppe == "EPH") %>%
+  select(nr_KW, name_KW, energietraeger, leistung_brutto, 
+         jahr_inbetriebnahme, jahr_stillgelegt, stillgelegt) %>%
+  filter(!is.na(jahr_inbetriebnahme)) %>%
+  crossing(jahr = jahre) %>%
+  filter(
+    jahr_inbetriebnahme <= jahr,
+    is.na(jahr_stillgelegt) | jahr_stillgelegt >= jahr   # Achtung: jetzt >= statt >, damit das Stilllegungsjahr selbst noch drin bleibt
+  ) %>%
+  mutate(
+    anteil = if_else(
+      !is.na(jahr_stillgelegt) & jahr_stillgelegt == jahr,
+      1-stillgelegt,        # im Stilllegungsjahr: nur der anteilige Faktor
+      1                   # sonst: volle Kapazität
+    ),
+    leistung_effektiv = leistung_brutto * anteil
+  ) %>%
+  group_by(jahr, energietraeger) %>%
+  summarise(leistung_MW = sum(leistung_effektiv, na.rm = TRUE) / 1000, .groups = "drop") %>% 
+  ggplot(aes(x = jahr, y = leistung_MW, fill = energietraeger)) +
+  geom_area(position = "stack") +
+  labs(title = "EPH Erzeugungskapazitäten")
+```
+
