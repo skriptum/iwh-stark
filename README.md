@@ -2,6 +2,8 @@
 
 Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.de/forschung/projekte/evaluierung-des-invkg-und-des-bundesprogrammes-stark) (InvKG & KVBG) des IWH Halle
 
+
+
 **Fragen**:
 
 - Welche Stein-/Braunkohlekraftwerke werden in den Revieren abgeschaltet?
@@ -11,13 +13,31 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 
 
 
-**Datenquellen**
+**Inhaltsverzeichnis**
+
+ * [Datenquellen](#datenquellen)
+ * [Datensätze](#datensätze)
+       - [Kraftwerke.csv](#kraftwerkecsv)
+       - [Betreiber.csv](#betreibercsv)
+       - [Einheiten.csv](#einheitencsv)
+ * [Projektstruktur](#projektstruktur)
+    + [Reproduktion](#reproduktion)
+    + [Codedateien](#codedateien)
+
+
+
+## Datenquellen
 
 - Marktstammdatenregister (MASTR): [Bundesnetzagentur](https://www.marktstammdatenregister.de/MaStR)
+  - Online-Datenbank aller Energieerzeuger, Einheiten, Kraftwerke etc.
+  - seit 2021 verpflichtend
 - Kraftwerksliste (KWL): [Bundesnetzagentur](https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/start.html), basiert auf MASTR
+  - umfasst alle Kraftwerke > 10MW, mit vielen händischen Nachbesserungen der BNetzA
+  - aber hat trotzdem noch sehr viele Lücken
 - Liste deutscher Braunkohletagebaue (LBKT): [Wikipedia](https://de.wikipedia.org/wiki/Liste_deutscher_Braunkohletagebaue#Weblinks)
 - PLZ-Zuordnung zu Ort / BL (PLZ): [Postleitzahl.net](https://www.postleitzahl.net/plz-downloads)
 - Kompensation für Kraftwerke (KVBG): [Anlage 2 KVBG](https://www.buzer.de/Anlage_2_KVBG.htm)
+  - Liste an Kraftwerken, die nach dem KVBG abgeschaltet wurden / werden (und entschädigt werden)
 - Fördergebiete / Reviere (INVKG): [§2 / §11 / §12 InvKG](https://www.vdivde-it.de/sites/default/files/document/Hinweisblatt-F%c3%b6rdergebiete_0.pdf)
 
 
@@ -220,7 +240,7 @@ Filetree der Dateien mit Kommentaren:
 
 ```
 
-### Reproduktion...
+### Reproduktion
 
 ...ist wichtig. Deswegen sind die verwendeten Pakete mit `renv` (für R) und `venv` (für Python) aufgelistet. RStudio sollte die renv-Umgebung automatisch erkennen und anbieten alle Pakete runterzuladen. Alternativ im R-Terminal:
 
