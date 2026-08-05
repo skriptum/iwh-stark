@@ -267,3 +267,66 @@ Problem ist: dass sich das MASTR noch öfter ändern wird vermutlich. Irgendwann
 
 Der gesamte Code ist in Quarto-Dateien geschrieben (mehr dazu [hier](https://quarto.org/)). Die grundlegende Idee ist es, Code mit Text zu kombinieren, damit der Ablauf besser verständlich ist. RStudio erkennt Quarto Dateien automatisch und hebt die Codeblocks hervor. 
 
+#### 01_KWL_clean.qmd
+
+Reinigt die Kraftwerksliste (KWL) aus Excel und standardisiert die Spaltennamen für weitere Verarbeitung. Zusätzlich werden fehlende Betreiber händisch ergänzt und Sonderfälle bei zukünftigen KVBG-Stilllegungen behandelt.
+
+- *Inputs:* kraftwerksliste.xlsx
+- *Outputs:* 01_KWL_clean.csv
+
+#### 02_PLZ_clean.qmd
+
+Ordnet Postleitzahlen und Orte den KVBG-Fördergebieten und Revieren zu. Es erstellt eine Referenztabelle für §2 / §11 / §12 Gebiete und verbindet diese mit PLZ-Daten aus der Rohdatei.
+
+- *Inputs:* zuordnung_plz_ort.csv
+- *Outputs:* 02_foerdergebiete.csv
+
+#### 03_MASTR_download.qmd
+
+Lädt das Marktstammdatenregister (MaStR) herunter und speichert die Inhalte lokal in einer SQLite-Datenbank. Es verwendet das Python-Paket open_mastr, lädt einzelne Erzeugungstypen und exportiert die Tabellen als CSV. Dauert ca 45 min, bis alle benötigten Daten heruntergeladen sind.
+
+- *Inputs*: keine (MASTR-API, wird online heruntergeladen)
+- *Outputs*: mastr.db, data/mastr/data/*.csv
+
+#### 04_MASTR_clean.qmd
+
+Bereinigt die heruntergeladenen MaStR-Rohdaten pro Erzeugungsart und vereinheitlicht die Spalten. Speichert eine CSV-Datei pro Erzeugungsart. Betrifft hier nur einzelne Stromerzeugungseinheiten, noch keine aggregierten Kraftwerke
+
+- *Inputs:* data/mastr/data/*.csv
+
+- *Outputs:* 
+
+- _Einheiten.csv_
+- 04_combined.csv (alle Erzeugungseinheiten)
+- 04_combustion.csv (Verbrennung)
+- 04_wind.csv (Wind)
+- ... 
+
+#### 05_MASTR_aggregate.qmd
+
+Aggregiert die gereinigten MaStR-Einheiten zu Kraftwerken und summiert die Leistung pro Anlage. Dieser Aggregationsprozess ist nicht trivial, da die MaStR-Daten unvollständig sind was KW-Nummern oder Namen angeht. Einzelne Einheiten können dabei verloren gehen.
+
+- *Inputs:* 04_*.csv (alle Erzeugungseinheiten)
+- *Outputs:* 05_KW_aggregate.csv (alle Kraftwerke, aggregiert)
+
+#### 06_KWL_MASTR_merge.qmd
+
+Verbindet die Original-Kraftwerksliste (KWL) mit den aggregierten MaStR-Daten. Dabei werden fehlende Kraftwerke aus der KWL ergänzt und die Daten vereinheitlicht. Außerdem werden die stillegungsarten übernommen.
+
+- *Inputs:* 01_KWL_clean.csv, 05_KW_aggregate.csv
+- *Outputs:* 06_KW_cleaned.csv (alle Kraftwerke, vereinheitlicht)
+
+#### 07_Marktakteure
+
+Filtert und transformiert die MaStR-Betreiberdaten für die im Projekt relevanten Betreiber. Nur Betreiber mit Einheiten über 10 MW werden berücksichtigt. Außerdem werden die Betreiber den Konzernübergruppen zugeordnet (Dies ist eine händische Zuordnung, die bei Bedarf aktualisiert werden muss).
+
+- *Inputs:* 06_KW_cleaned.csv, 01_KWL_clean.csv, mastr/data/market_actors.csv
+- *Outputs:* 
+
+  - Betreiber.csv (alle relevanten Betreiber, vereinheitlicht)
+  - Kraftwerke.csv (alle relevanten Kraftwerke, vereinheitlicht)
+  - 07_Akteure.csv
+  - 07_KW.csv
+
+
+
