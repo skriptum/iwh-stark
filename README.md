@@ -23,6 +23,13 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 - [Projektstruktur](#projektstruktur)
   - [Reproduktion](#reproduktion)
   - [Codedateien](#codedateien)
+    - [01_KWL_clean.qmd](#01_kwl_cleanqmd)
+    - [02_PLZ_clean.qmd](#02_plz_cleanqmd)
+    - [03_MASTR_download.qmd](#03_mastr_downloadqmd)
+    - [04_MASTR_clean.qmd](#04_mastr_cleanqmd)
+    - [05_MASTR_aggregate.qmd](#05_mastr_aggregateqmd)
+    - [06_KWL_MASTR_merge.qmd](#06_kwl_mastr_mergeqmd)
+    - [07_Marktakteure](#07_marktakteure)
 
 
 
@@ -30,7 +37,8 @@ Aus dem Projekt zur [Evaluation des "Kohlekompromisses"](https://www.iwh-halle.d
 
 - Marktstammdatenregister (MASTR): [Bundesnetzagentur](https://www.marktstammdatenregister.de/MaStR)
   - Online-Datenbank aller Energieerzeuger, Einheiten, Kraftwerke etc.
-  - seit 2021 verpflichtend
+  - seit 2021 verpflichtend, viele ältere KW nur mit fehlenden Daten
+  - Grundlage aller Datensätze
 - Kraftwerksliste (KWL): [Bundesnetzagentur](https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Versorgungssicherheit/Erzeugungskapazitaeten/Kraftwerksliste/start.html), basiert auf MASTR
   - umfasst alle Kraftwerke > 10MW, mit vielen händischen Nachbesserungen der BNetzA
   - aber hat trotzdem noch sehr viele Lücken
